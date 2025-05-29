@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgmb6vrlludco"]
+
+[ext_resource type="Script" uid="uid://dqob7m0ujegbt" path="res://scenes/menu_game.gd" id="1_kf46e"]
+[ext_resource type="Texture2D" uid="uid://8wwvqpvm46p3" path="res://res/background.png" id="2_5kk4x"]
+[ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="3_bkshc"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_kf46e")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(608, 336)
+texture = ExtResource("2_5kk4x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 72.0
+theme = ExtResource("3_bkshc")
+text = "Bot Fighter"
+
+[node name="start" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 472.0
+offset_right = 696.0
+offset_bottom = 584.0
+theme = ExtResource("3_bkshc")
+text = "Start"
+
+[connection signal="pressed" from="start" to="." method="start_game"]

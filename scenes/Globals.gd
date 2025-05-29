@@ -89,3 +89,18 @@ const ROOMS = {
 		}
 	]
 }
+
+
+const UPGRADES = {
+	"t1": [
+		"res://scenes/bots/parts/cpu_t1_aim_med.tres", 
+		"res://scenes/bots/parts/cpu_t1_aim_weak.tres", 
+		"res://scenes/bots/parts/imp_t1_engine.tres", 
+		"res://scenes/bots/parts/weapon_t1_cannon.tres", 
+		"res://scenes/bots/parts/weapon_t1_laser.tres"
+	],
+	"t2": [
+		"res://scenes/bots/parts/cpu_t2_aim_perfect.tres",
+		"res://scenes/bots/parts/weapon_t2_cannon_fast.tres"
+	],
+}

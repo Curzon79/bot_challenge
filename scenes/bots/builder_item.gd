@@ -1,10 +1,25 @@
-extends TextureRect
+extends Panel
 
 @export var item:Resource
 
+signal selected(node:Node)
+
 func _ready() -> void:
-	self.texture = item.icon
+	set_item(item)
+	
+func set_item(item):
+	if (item == null):
+		return
+		
+	self.item = item
+	$Icon.texture = item.icon
 	$Label.text = item.name
+
+func set_highlight(highlight: bool):
+	if (highlight):
+		modulate = Color.YELLOW
+	else:
+		modulate = Color.WHITE
 
 func _get_drag_data(_pos):
 	# Use another rext as drag preview.
@@ -23,3 +38,10 @@ func _get_drag_data(_pos):
 
 	# Return color as drag data.
 	return item
+
+
+func _on_icon_gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton and event.pressed):
+		emit_signal("selected", self)
+		
+	

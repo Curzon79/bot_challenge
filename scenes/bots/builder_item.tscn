@@ -1,17 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bes6kt2gocxop"]
+[gd_scene load_steps=3 format=3 uid="uid://bes6kt2gocxop"]
 
 [ext_resource type="Script" uid="uid://csavps1uq1vla" path="res://scenes/bots/builder_item.gd" id="1_igkdc"]
+[ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_wtlpt"]
 
-[node name="BuilderItem" type="TextureRect"]
-custom_minimum_size = Vector2(50, 50)
-offset_right = 50.0
-offset_bottom = 50.0
-expand_mode = 2
+[node name="BuilderItem" type="Panel"]
+offset_right = 64.0
+offset_bottom = 64.0
 script = ExtResource("1_igkdc")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 58.0
+theme = ExtResource("1_wtlpt")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_right = 104.0
-offset_bottom = 23.0
+offset_left = 80.0
+offset_top = 24.0
+offset_right = 127.0
+offset_bottom = 47.0
 text = "Name"
+
+[connection signal="gui_input" from="Icon" to="." method="_on_icon_gui_input"]

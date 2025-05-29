@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://db0ssivj2on56"]
 
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_dy5hc"]
-[ext_resource type="Script" uid="uid://biay0qmjsw1r" path="res://scenes/ui/game_speed.gd" id="1_q6yhj"]
+[ext_resource type="Script" uid="uid://biay0qmjsw1r" path="res://scenes/game_speed.gd" id="1_q6yhj"]
 [ext_resource type="Texture2D" uid="uid://bsagbr5xrc7xw" path="res://res/pfeil.png" id="3_0wtdq"]
 
 [sub_resource type="Theme" id="Theme_q6yhj"]
