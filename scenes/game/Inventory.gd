@@ -7,12 +7,11 @@ var improvements: Array[Improvement]
 var cpus: Array[CPU_Module]
 
 func _init() -> void:
-	pass
-	#weapons = [
-		#load("res://scenes/bots/parts/weapon_t1_cannon.tres"), 
+	weapons = [
+		load("res://scenes/bots/parts/weapon_t1_cannon.tres"), 
 		#load("res://scenes/bots/parts/weapon_t1_laser.tres"), 
 		#load("res://scenes/bots/parts/weapon_t2_cannon_fast.tres"),
-		#]
+		]
 	#improvements = [
 		#load("res://scenes/bots/parts/imp_t1_engine.tres"), 
 		#]
