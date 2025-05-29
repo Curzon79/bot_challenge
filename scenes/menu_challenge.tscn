@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6n7j52f866cv"]
 
-[ext_resource type="Script" uid="uid://cbwgm7f5mr7ib" path="res://scenes/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://8wwvqpvm46p3" path="res://res/background.png" id="2_mhnvy"]
-[ext_resource type="Texture2D" uid="uid://coby82xp07c7t" path="res://res/room1.png" id="3_con2f"]
-[ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="3_mhnvy"]
+[ext_resource type="Script" uid="uid://cbwgm7f5mr7ib" path="res://scenes/menu_challenge.gd" id="1_4obed"]
+[ext_resource type="Texture2D" uid="uid://8wwvqpvm46p3" path="res://res/background.png" id="2_txtl6"]
+[ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="3_5plyx"]
+[ext_resource type="Texture2D" uid="uid://coby82xp07c7t" path="res://res/room1.png" id="4_bbyeu"]
 
 [node name="menu" type="Node2D"]
-script = ExtResource("1_yqeox")
+script = ExtResource("1_4obed")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(608, 336)
-texture = ExtResource("2_mhnvy")
+texture = ExtResource("2_txtl6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 32.0
 offset_top = 32.0
 offset_right = 232.0
 offset_bottom = 72.0
-theme = ExtResource("3_mhnvy")
+theme = ExtResource("3_5plyx")
 text = "Bot Challenge"
 
 [node name="room_select" type="Panel" parent="."]
@@ -25,7 +25,7 @@ offset_left = 312.0
 offset_top = 24.0
 offset_right = 712.0
 offset_bottom = 288.0
-theme = ExtResource("3_mhnvy")
+theme = ExtResource("3_5plyx")
 
 [node name="Room_name" type="Label" parent="room_select"]
 layout_mode = 0
@@ -44,7 +44,7 @@ offset_left = 16.0
 offset_top = 51.0
 offset_right = -16.0
 offset_bottom = -21.0
-texture = ExtResource("3_con2f")
+texture = ExtResource("4_bbyeu")
 expand_mode = 5
 
 [node name="left" type="Button" parent="room_select"]
@@ -53,7 +53,7 @@ offset_left = 16.0
 offset_top = -6.0
 offset_right = 48.0
 offset_bottom = 39.0
-theme = ExtResource("3_mhnvy")
+theme = ExtResource("3_5plyx")
 text = "<"
 
 [node name="right" type="Button" parent="room_select"]
@@ -65,7 +65,7 @@ offset_top = -6.0
 offset_right = -24.0
 offset_bottom = 39.0
 grow_horizontal = 2
-theme = ExtResource("3_mhnvy")
+theme = ExtResource("3_5plyx")
 text = ">"
 
 [node name="bot_select" type="VBoxContainer" parent="."]
@@ -73,14 +73,14 @@ offset_left = 728.0
 offset_top = 24.0
 offset_right = 1104.0
 offset_bottom = 280.0
-theme = ExtResource("3_mhnvy")
+theme = ExtResource("3_5plyx")
 
 [node name="start" type="Button" parent="."]
 offset_left = 344.0
 offset_top = 472.0
 offset_right = 696.0
 offset_bottom = 584.0
-theme = ExtResource("3_mhnvy")
+theme = ExtResource("3_5plyx")
 text = "Start"
 
 [connection signal="pressed" from="room_select/left" to="." method="last_room"]
