@@ -1,0 +1,85 @@
+extends "res://scenes/Controller.gd"
+
+var bot_definition:BotDefinition
+
+var last_command = Command.new(Command.IDLE, Vector2())
+var duration = 0
+
+const SHOOT_CMDS = [Command.SHOOT_W1, Command.SHOOT_W2, Command.SHOOT_W3]
+
+#sweep variables
+var vision_enemies = {}
+var vision_bullets = {}
+
+
+func get_color():
+	return Color.GREEN_YELLOW
+
+func set_bot(bot_definition):
+	self.bot_definition = bot_definition
+	bot_definition.update()
+
+
+func getNextCommand(cast:Node, shape_cast: Node, delta:float) -> Command:
+	var bot = cast.get_parent()
+	
+	raycast_sweep(cast)
+	
+	#check if any shoot is possible
+	var command = check_weapon_availability(bot)
+	if (command != null):
+		return command
+	
+	#call Move Prio Hook
+	command = bot_definition.call_move_prio(bot)
+	if (command != null):
+		last_command = command
+		duration = 5
+		return command
+	
+	#check if a command is still active
+	if (duration > 0):
+		duration -= 1
+		return last_command
+	
+	#call Move Hook
+	command = bot_definition.call_move(bot)
+	if (command != null):
+		last_command = command
+		duration = 20
+		return command
+		
+	#fallback: random move
+	last_command = Command.new(Command.MOVE, get_random_direction())
+	duration = 20
+	return last_command
+
+
+func raycast_sweep(cast:Node):
+	vision_enemies.clear()
+	vision_bullets.clear()
+	
+	for angle in range(0, 360, 6):
+		cast.target_position = Vector2(1000, 0).rotated(deg_to_rad(angle))
+		cast.force_raycast_update()		
+		var collider = cast.get_collider()
+		if (collider is Fighter):
+			vision_enemies[collider] = collider.global_position
+		
+		if (collider is Projectile):
+			vision_bullets[collider] = collider.global_position
+		
+	
+func get_random_direction() -> Vector2:
+	return Vector2(randf() * 2.0 - 1, randf() * 2.0 - 1).normalized()
+
+
+func check_weapon_availability(bot):
+	for i in range(len(bot_definition.weapons)):
+		if (bot.weapon_cooldowns[i].time_left <= 0):
+			return Command.new(SHOOT_CMDS[i], get_aim_direction(bot, vision_enemies.keys()))
+		
+	return null
+
+func get_aim_direction(bot, targets):
+	return bot_definition.call_aim(bot, targets)

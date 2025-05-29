@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckynnb5osy8h1"]
+
+[ext_resource type="PackedScene" uid="uid://dcfm8j5usc016" path="res://scenes/fighter.tscn" id="1_bfxum"]
+
+[node name="fighter_bunny" instance=ExtResource("1_bfxum")]
+allowed_commands = [0, 1]

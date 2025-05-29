@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bes6kt2gocxop"]
+
+[ext_resource type="Script" uid="uid://csavps1uq1vla" path="res://scenes/bots/builder_item.gd" id="1_igkdc"]
+
+[node name="BuilderItem" type="TextureRect"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+expand_mode = 2
+script = ExtResource("1_igkdc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 104.0
+offset_bottom = 23.0
+text = "Name"

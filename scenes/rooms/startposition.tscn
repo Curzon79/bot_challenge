@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://blbpiiry6gnee"]
+
+[node name="Startposition" type="Node2D" groups=["Startposition"]]

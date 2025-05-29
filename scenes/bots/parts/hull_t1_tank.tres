@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Hull" load_steps=3 format=3 uid="uid://bik8i0b6qe0s4"]
+
+[ext_resource type="Script" uid="uid://cg2o74g7rk80m" path="res://scenes/bots/hull.gd" id="1_32wis"]
+[ext_resource type="Texture2D" uid="uid://ctd1q1rlnef5k" path="res://res/bot_parts/ufo_2.png" id="1_ig8y4"]
+
+[resource]
+script = ExtResource("1_32wis")
+cost = 200
+health = 5
+speed = 300
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "Albatros"
+icon = ExtResource("1_ig8y4")
+metadata/_custom_type_script = "uid://cg2o74g7rk80m"

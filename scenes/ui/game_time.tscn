@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7tdwpkogpch"]
+
+[ext_resource type="Script" uid="uid://b5udohcct4yla" path="res://scenes/ui/game_time.gd" id="1_oold1"]
+[ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="2_3dxph"]
+
+[sub_resource type="Theme" id="Theme_q6yhj"]
+default_font_size = 27
+
+[node name="game_time" type="Node2D"]
+script = ExtResource("1_oold1")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1034.0
+offset_top = 9.0
+offset_right = 1146.0
+offset_bottom = 108.0
+theme = ExtResource("2_3dxph")
+
+[node name="Label" type="Label" parent="Panel"]
+z_index = 5
+layout_mode = 0
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 128.0
+offset_bottom = 61.0
+theme = SubResource("Theme_q6yhj")
+text = "Time"
+
+[node name="time" type="Label" parent="Panel"]
+z_index = 5
+layout_mode = 0
+offset_left = 14.0
+offset_top = 50.0
+offset_right = 117.0
+offset_bottom = 108.0
+theme = SubResource("Theme_q6yhj")
+text = "0.00 s"

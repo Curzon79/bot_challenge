@@ -1,0 +1,24 @@
+extends Panel
+
+class_name BuilderSlot
+
+enum Type {Improvement, Weapon, CPU_Module} 
+var type = Type.Improvement
+
+var item: Resource
+
+signal dropped
+
+func _can_drop_data(_pos, data):
+	match type:
+		Type.Improvement:
+			return data is Improvement
+		Type.Weapon:
+			return data is Weapon
+		Type.CPU_Module:
+			return data is CPU_Module
+	
+func _drop_data(_pos, data):
+	emit_signal("dropped", data, item)
+	item = data
+	$Texture.texture = item.icon

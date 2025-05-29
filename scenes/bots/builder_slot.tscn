@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwrnnp4vpy1u8"]
+
+[ext_resource type="Script" uid="uid://de1fxqpypet2u" path="res://scenes/bots/builder_slot.gd" id="1_6u4wj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u4wj"]
+bg_color = Color(0.272456, 0.638567, 0.857472, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.053118, 0.144804, 0.262447, 1)
+
+[node name="BuilderSlot" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u4wj")
+script = ExtResource("1_6u4wj")
+
+[node name="Texture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 52.0
+offset_bottom = 52.0
+expand_mode = 2

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Improvement" load_steps=3 format=3 uid="uid://b8fyj73dhmouy"]
+
+[ext_resource type="Texture2D" uid="uid://fsvdt000ccqn" path="res://res/bot_parts/engine_1.png" id="1_h2rwg"]
+[ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="1_n3lgl"]
+
+[resource]
+script = ExtResource("1_n3lgl")
+cost = 100
+modifier = Dictionary[int, float]({
+6: 1.1
+})
+name = "Simple Engine"
+icon = ExtResource("1_h2rwg")
+metadata/_custom_type_script = "uid://s3cvo323w0j6"

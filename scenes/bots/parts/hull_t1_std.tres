@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Hull" load_steps=3 format=3 uid="uid://egw4fkyid86a"]
+
+[ext_resource type="Script" uid="uid://cg2o74g7rk80m" path="res://scenes/bots/hull.gd" id="1_4wt5n"]
+[ext_resource type="Texture2D" uid="uid://bvhpy6ukaly1h" path="res://res/bot_parts/ufo_1.png" id="1_pwpe2"]
+
+[resource]
+script = ExtResource("1_4wt5n")
+cost = 100
+health = 3
+speed = 400
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "Pigeon"
+icon = ExtResource("1_pwpe2")
+metadata/_custom_type_script = "uid://cg2o74g7rk80m"

@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmr1ln5ajod3l"]
+
+[ext_resource type="Script" uid="uid://mw5yc57xfc5i" path="res://scenes/projectile.gd" id="1_c8fcr"]
+[ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_q3m7n"]
+[ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/explosion.wav" id="3_softn"]
+
+[sub_resource type="Curve" id="Curve_softn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.271845, 0.80483), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6aapk"]
+
+[node name="projectile" type="Area2D" groups=["Bullet"]]
+script = ExtResource("1_c8fcr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 13
+texture = ExtResource("2_q3m7n")
+lifetime = 0.44
+emission_shape = 2
+emission_sphere_radius = 4.88
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+scale_amount_curve = SubResource("Curve_softn")
+color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6aapk")
+
+[node name="Light" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("2_q3m7n")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+scale = Vector2(0.31, 0.31)
+polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
+
+[node name="Light2" type="Sprite2D" parent="CollisionShape2D"]
+rotation = 3.14159
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_q3m7n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_softn")
+volume_db = -5.876
+pitch_scale = 2.67
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

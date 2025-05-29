@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmw4gi6k14rh6"]
+
+[ext_resource type="PackedScene" uid="uid://dcfm8j5usc016" path="res://scenes/fighter.tscn" id="1_el7wl"]
+[ext_resource type="Script" uid="uid://drkxrj1g5uarl" path="res://scenes/controller/turret_bot.gd" id="2_vkurx"]
+
+[node name="fighter_turret" instance=ExtResource("1_el7wl")]
+health = 5000
+allowed_commands = [0, 2]
+controller_script = ExtResource("2_vkurx")

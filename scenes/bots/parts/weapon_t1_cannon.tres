@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://chjpbudtc04dr"]
+
+[ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="1_oqbvd"]
+[ext_resource type="Texture2D" uid="uid://bgy37m4cgmd7a" path="res://res/bot_parts/cannon_1.png" id="1_vhwwt"]
+
+[resource]
+script = ExtResource("1_oqbvd")
+cost = 100
+base_frequency = 0.2
+type = 0
+damage = 1
+name = "Cannon I"
+icon = ExtResource("1_vhwwt")
+metadata/_custom_type_script = "uid://da2ffydwbhbfh"

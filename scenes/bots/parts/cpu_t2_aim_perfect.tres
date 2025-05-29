@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CPU_Aim_Module" load_steps=3 format=3 uid="uid://c534t0lt0p08e"]
+
+[ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="1_w4c8t"]
+[ext_resource type="Texture2D" uid="uid://x21wa83xs4xy" path="res://res/bot_parts/chip_3.png" id="1_xr2a1"]
+
+[resource]
+script = ExtResource("1_w4c8t")
+accurracy = 1.0
+selection = 2
+cost = 100
+name = "Aim III"
+icon = ExtResource("1_xr2a1")
+metadata/_custom_type_script = "uid://bsbv8r7v5st3w"

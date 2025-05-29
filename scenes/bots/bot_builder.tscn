@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv5tw37ef07im"]
+
+[ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_av852"]
+[ext_resource type="Script" uid="uid://c1rfjij3co4lc" path="res://scenes/bots/bot_builder.gd" id="2_5u2f6"]
+[ext_resource type="Texture2D" uid="uid://b4x61rk5aw8n6" path="res://res/bot_parts/header_tools.png" id="3_l5ypw"]
+[ext_resource type="Texture2D" uid="uid://d22ksosotdjk0" path="res://res/bot_parts/header_weapons.png" id="6_p8w1d"]
+[ext_resource type="Texture2D" uid="uid://b4c45p2f45m2p" path="res://res/bot_parts/header_cpu.png" id="7_p8w1d"]
+
+[node name="BotBuilder" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_av852")
+script = ExtResource("2_5u2f6")
+
+[node name="Bot" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 616.0
+offset_bottom = 608.0
+
+[node name="Hull" type="TextureRect" parent="Bot"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 8.0
+offset_right = 352.0
+offset_bottom = 136.0
+expand_mode = 3
+
+[node name="Cpu" type="VBoxContainer" parent="Bot"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 232.0
+offset_right = 136.0
+offset_bottom = 552.0
+
+[node name="Improvements" type="VBoxContainer" parent="Bot"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 232.0
+offset_right = 320.0
+offset_bottom = 552.0
+
+[node name="Weapons" type="VBoxContainer" parent="Bot"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 232.0
+offset_right = 528.0
+offset_bottom = 544.0
+
+[node name="Line2D" type="Line2D" parent="Bot"]
+position = Vector2(7, 30)
+scale = Vector2(0.964286, 0.785714)
+points = PackedVector2Array(191.852, 134.909, 125.481, 134.909, 100.593, 185.818)
+width = 4.0
+default_color = Color(0.00784314, 0.729412, 1, 1)
+
+[node name="Line2D2" type="Line2D" parent="Bot"]
+position = Vector2(7, 30)
+scale = Vector2(0.964286, 0.785714)
+points = PackedVector2Array(390.963, 134.909, 465.63, 134.909, 507.111, 185.818)
+width = 4.0
+default_color = Color(0.00784314, 0.729412, 1, 1)
+
+[node name="Line2D3" type="Line2D" parent="Bot"]
+position = Vector2(7, 30)
+scale = Vector2(0.964286, 0.785714)
+points = PackedVector2Array(291.407, 145.091, 291.407, 185.818)
+width = 4.0
+default_color = Color(0.00784314, 0.729412, 1, 1)
+
+[node name="HeaderTools" type="Sprite2D" parent="Bot"]
+position = Vector2(288, 200)
+scale = Vector2(0.25, 0.233333)
+texture = ExtResource("3_l5ypw")
+
+[node name="Inventory" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 24.0
+offset_right = 1120.0
+offset_bottom = 608.0
+current_tab = 0
+
+[node name="Weapons" type="TabBar" parent="Inventory"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Weapons"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 13.0
+offset_right = 128.0
+offset_bottom = 509.0
+
+[node name="Cpu" type="TabBar" parent="Inventory"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Cpu"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 13.0
+offset_right = 128.0
+offset_bottom = 509.0
+
+[node name="Improvements" type="TabBar" parent="Inventory"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Improvements"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 13.0
+offset_right = 128.0
+offset_bottom = 509.0
+
+[node name="HeaderWeapons" type="Sprite2D" parent="."]
+position = Vector2(536, 224)
+scale = Vector2(0.4, 0.354546)
+texture = ExtResource("6_p8w1d")
+
+[node name="HeaderCpu" type="Sprite2D" parent="."]
+position = Vector2(144, 224)
+scale = Vector2(0.456989, 0.5)
+texture = ExtResource("7_p8w1d")

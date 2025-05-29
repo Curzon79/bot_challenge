@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcfm8j5usc016"]
+
+[ext_resource type="Script" uid="uid://i5x48jgqdbf2" path="res://scenes/fighter.gd" id="1_a4q2m"]
+[ext_resource type="Texture2D" uid="uid://cgigv44lgkq60" path="res://res/bot.png" id="2_1q4ya"]
+[ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_38ety"]
+[ext_resource type="Script" uid="uid://dxrp70hnuabum" path="res://scenes/controller/default_bot.gd" id="2_eelhu"]
+[ext_resource type="AudioStream" uid="uid://dyg5r68xjda0i" path="res://res/schuss.wav" id="4_rsphg"]
+[ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/explosion.wav" id="5_tlqsq"]
+
+[sub_resource type="Curve" id="Curve_38ety"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.271845, 0.80483), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yyin7"]
+radius = 23.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4q2m"]
+radius = 20.0
+
+[sub_resource type="Curve" id="Curve_rsphg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.563107, 0.821801), 0.0, 0.0, 0, 0, Vector2(0.776699, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="fighter" type="CharacterBody2D" groups=["Fighter"]]
+script = ExtResource("1_a4q2m")
+controller_script = ExtResource("2_eelhu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 28
+texture = ExtResource("2_38ety")
+lifetime = 1.59
+emission_shape = 2
+emission_sphere_radius = 20.39
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+scale_amount_curve = SubResource("Curve_38ety")
+
+[node name="Light" type="Sprite2D" parent="."]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_38ety")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yyin7")
+
+[node name="cooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_a4q2m")
+target_position = Vector2(0, 100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="Bot" type="Sprite2D" parent="."]
+scale = Vector2(0.465, 0.465)
+texture = ExtResource("2_1q4ya")
+
+[node name="death_particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 90
+texture = ExtResource("2_38ety")
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 323.71
+initial_velocity_max = 591.17
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_rsphg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rsphg")
+volume_db = -5.288
+pitch_scale = 1.3
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tlqsq")
+
+[connection signal="finished" from="death_particles" to="." method="_on_death_particles_finished"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Hull" load_steps=2 format=3 uid="uid://cer7wlyak15ap"]
+
+[ext_resource type="Script" uid="uid://cg2o74g7rk80m" path="res://scenes/bots/hull.gd" id="1_j7xme"]
+
+[resource]
+script = ExtResource("1_j7xme")
+cost = 200
+health = 2
+speed = 600
+cpu_slots = 1
+weapon_slots = 1
+name = "Hawk"
+metadata/_custom_type_script = "uid://cg2o74g7rk80m"

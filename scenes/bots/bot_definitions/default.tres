@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=9 format=3 uid="uid://dn2yf15w0l0df"]
+
+[ext_resource type="Script" uid="uid://dbttauggwkxi6" path="res://scenes/bots/cpu_module.gd" id="1_fryyp"]
+[ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="2_ak3ye"]
+[ext_resource type="Resource" uid="uid://d2uu5rtuuwp6d" path="res://scenes/bots/parts/cpu_t1_aim_weak.tres" id="2_pc8ax"]
+[ext_resource type="Resource" uid="uid://egw4fkyid86a" path="res://scenes/bots/parts/hull_t1_std.tres" id="2_s42bp"]
+[ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="3_s42bp"]
+[ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="4_pc8ax"]
+[ext_resource type="Resource" uid="uid://b8fyj73dhmouy" path="res://scenes/bots/parts/imp_t1_engine.tres" id="5_rvjm8"]
+[ext_resource type="Resource" uid="uid://chjpbudtc04dr" path="res://scenes/bots/parts/weapon_t1_cannon.tres" id="6_pc8ax"]
+
+[resource]
+script = ExtResource("3_s42bp")
+hull = ExtResource("2_s42bp")
+weapons = Array[ExtResource("4_pc8ax")]([ExtResource("6_pc8ax")])
+improvements = Array[ExtResource("2_ak3ye")]([ExtResource("5_rvjm8")])
+cpus = Array[ExtResource("1_fryyp")]([ExtResource("2_pc8ax")])
+metadata/_custom_type_script = "uid://dwuc4gihwllw"
