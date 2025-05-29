@@ -11,13 +11,13 @@ const DEFAULT_ROOMS = [
 		"name": "Garage",
 		"scene": "res://scenes/rooms/room_empty.tscn",
 		"preview": "res://res/room2.png",
-		"positions" : 4
+		"positions" : 2
 	},
 	{
 		"name": "Colliseum",
 		"scene": "res://scenes/rooms/room_empty.tscn",
 		"preview": "res://res/room3.png",
-		"positions" : 5
+		"positions" : 2
 	},
 ]
 
@@ -25,7 +25,7 @@ var rooms : Array = []
 var player_character: BotDefinition
 var player_inventory: Inventory
 
-func init():
+func _init():
 	rooms = DEFAULT_ROOMS.duplicate()
 	
 	player_character = load("res://scenes/bots/bot_definitions/default.tres")

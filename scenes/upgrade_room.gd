@@ -2,7 +2,6 @@ extends Node2D
 
 const DEFAULT_BOT = "res://scenes/controller/default_bot.gd"
 
-
 func start_game():
 	var room = Progress.get_next_room()
 	
@@ -15,5 +14,5 @@ func start_game():
 	
 	#replace scene
 	get_tree().root.add_child(scene)
-	get_node("/root/menu").queue_free()
+	get_node("/root/upgrade").queue_free()
 	

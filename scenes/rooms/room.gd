@@ -27,7 +27,7 @@ func player_died():
 	#game over -> menu
 	var scene = load("res://scenes/menu_game.tscn").instantiate()
 	get_tree().root.add_child(scene)
-	get_node("/root/menu").queue_free()
+	get_node("/root/room").queue_free()
 	
 func next_level():
 	var item_select = load("res://scenes/bots/bot_item_select.tscn").instantiate()
@@ -39,7 +39,7 @@ func next_level():
 func start_next_level():
 	var scene = load("res://scenes/upgrade_room.tscn").instantiate()
 	get_tree().root.add_child(scene)
-	get_node("/root/menu").queue_free()
+	get_node("/root/room").queue_free()
 
 func initialize_bots(bot_scene) -> void:
 	var starting_positions = get_tree().get_nodes_in_group("Startposition")
@@ -64,8 +64,8 @@ func initialize_bots(bot_scene) -> void:
 		add_child(bot)
 		
 	#add player bot
-	var player_bot = bot_scene.instantiate()
-	player_bot.set_controller(player_def)
+	var player_bot = CUSTOM_BOT_SCENE.instantiate()
+	player_bot.set_bot_definition(player_def)
 		
 	player_bot.set_color()
 	player_bot.global_position = starting_positions[-1].global_position

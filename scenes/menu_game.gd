@@ -3,7 +3,7 @@ extends Node2D
 const DEFAULT_BOT = "res://scenes/controller/default_bot.gd"
 
 func _ready() -> void:
-	Progress.init()
+	pass
 
 
 func start_game():

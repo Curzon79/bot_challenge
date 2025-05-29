@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dv5tw37ef07im" path="res://scenes/bots/bot_builder.tscn" id="2_wkujk"]
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="3_ltfsr"]
 
-[node name="menu" type="Node2D"]
+[node name="upgrade" type="Node2D"]
 script = ExtResource("1_en2w0")
 
 [node name="BotBuilder" parent="." instance=ExtResource("2_wkujk")]

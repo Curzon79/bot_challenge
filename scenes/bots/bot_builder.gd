@@ -4,11 +4,9 @@ const SLOT_SCENE = preload("res://scenes/bots/builder_slot.tscn")
 const ITEM_SCENE = preload("res://scenes/bots/builder_item.tscn")
 
 var bot_definition = null
-var inventory = null
 
 func _ready():
 	set_hull(load("res://scenes/bots/parts/hull_t1_std.tres"))
-	inventory = Inventory.new()
 	
 	fill_inventory()
 	
@@ -32,13 +30,13 @@ func add_slots(amount:int, control:Control, type:BuilderSlot.Type ):
 		slot.dropped.connect(item_dropped)
 
 func fill_inventory():
-	for weapon in inventory.weapons:
+	for weapon in Progress.player_inventory.weapons:
 		add_item($Inventory/Weapons/VBoxContainer, weapon)
 
-	for improvement in inventory.improvements:
+	for improvement in Progress.player_inventory.improvements:
 		add_item($Inventory/Improvements/VBoxContainer, improvement)
 
-	for cpu_module in inventory.cpus:
+	for cpu_module in Progress.player_inventory.cpus:
 		add_item($"Inventory/Cpu/VBoxContainer", cpu_module)
 		
 
