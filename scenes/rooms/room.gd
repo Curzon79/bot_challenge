@@ -14,7 +14,7 @@ func _ready():
 	add_child(TIME_SCENE.instantiate())
 	add_child(START_TIMER.instantiate())
 
-func set_bots(bots: Array, player: BotDefinition):
+func set_bots(bots: Array, player: BotDefinition = null):
 	bot_types = bots
 	player_def = player
 
@@ -64,10 +64,11 @@ func initialize_bots(bot_scene) -> void:
 		add_child(bot)
 		
 	#add player bot
-	var player_bot = CUSTOM_BOT_SCENE.instantiate()
-	player_bot.set_bot_definition(player_def)
-		
-	player_bot.set_color()
-	player_bot.global_position = starting_positions[-1].global_position
-	player_bot.died.connect(player_died)
-	add_child(player_bot)
+	if (player_def != null):
+		var player_bot = CUSTOM_BOT_SCENE.instantiate()
+		player_bot.set_bot_definition(player_def)
+			
+		player_bot.set_color()
+		player_bot.global_position = starting_positions[-1].global_position
+		player_bot.died.connect(player_died)
+		add_child(player_bot)

@@ -10,6 +10,7 @@ script = ExtResource("1_igkdc")
 
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 58.0
