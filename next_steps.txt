@@ -1,0 +1,40 @@
+--- General ---
+
+- constant life
+- upgrade item selection concept
+
+- continue run
+
+--- UI ----
+
+- upgrade screen
+- upgrade selection
+
+- health display
+
+- quit -> main menu
+
+- item graphics/specail effects
+
+--- Content ----
+
+- Items
+ - Laser
+ - Shield
+ - double cannon
+ - triple cannon
+ - peashooter
+ - big cannon
+ - shock weapon (immpbilize enemy)
+ 
+ - evade
+ - hunt
+
+- upgrade: extra slots
+
+- Rooms
+
+- Enemies
+
+
+--- Bugs -----
