@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_wtlpt"]
 
 [node name="BuilderItem" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
 offset_right = 64.0
 offset_bottom = 64.0
 script = ExtResource("1_igkdc")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://6dtpotxmd0y2"]
+[gd_scene load_steps=5 format=4 uid="uid://6dtpotxmd0y2"]
 
 [ext_resource type="TileSet" uid="uid://c0igmi6wjdjwi" path="res://scenes/main.tres" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dcfm8j5usc016" path="res://scenes/fighter.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://cs3ur7ww3a88d" path="res://scenes/controller/alex_bot.gd" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://5muccrdqqox1" path="res://scenes/controller/PlayerController.gd" id="4_jyhfs"]
-[ext_resource type="Script" uid="uid://dxrp70hnuabum" path="res://scenes/controller/default_bot.gd" id="5_tbgi4"]
 
 [node name="main" type="Node2D"]
 
@@ -25,39 +24,31 @@ controller_script = ExtResource("4_jyhfs")
 [node name="fighter3" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(-127, 115)
-controller_script = ExtResource("5_tbgi4")
 
 [node name="fighter4" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(-282, 354)
-controller_script = ExtResource("5_tbgi4")
 
 [node name="fighter5" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(1334, 279)
-controller_script = ExtResource("5_tbgi4")
 
 [node name="fighter6" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(1297, 540)
-controller_script = ExtResource("5_tbgi4")
 
 [node name="fighter9" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(-287, 535)
-controller_script = ExtResource("5_tbgi4")
 
 [node name="fighter10" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(1286, 463)
-controller_script = ExtResource("5_tbgi4")
 
 [node name="fighter7" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(1181, 325)
-controller_script = ExtResource("5_tbgi4")
 
 [node name="fighter8" parent="." instance=ExtResource("2_0wfyh")]
 modulate = Color(0.230897, 0.565938, 0.380627, 1)
 position = Vector2(-207, 229)
-controller_script = ExtResource("5_tbgi4")

@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://dpvj2a4u6wer3"]
+[gd_resource type="Resource" script_class="WeaponLaser" load_steps=3 format=3 uid="uid://c1n4ff73mwmqs"]
 
-[ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="1_me6k5"]
+[ext_resource type="Script" uid="uid://sg0e6ejxfyca" path="res://scenes/bots/weapon_laser.gd" id="1_me6k5"]
 [ext_resource type="Texture2D" uid="uid://867v3q5krcgr" path="res://res/bot_parts/laser_1.png" id="1_uwdt8"]
 
 [resource]
 script = ExtResource("1_me6k5")
+duration = 0.5
+sweep = 45.0
 cost = 100
-base_frequency = 0.2
-type = 1
+base_frequency = 1.0
 damage = 1
 name = "Laser I"
 icon = ExtResource("1_uwdt8")
-metadata/_custom_type_script = "uid://da2ffydwbhbfh"
+metadata/_custom_type_script = "uid://sg0e6ejxfyca"
