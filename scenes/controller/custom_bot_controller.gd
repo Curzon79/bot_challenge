@@ -10,6 +10,7 @@ const SHOOT_CMDS = [Command.SHOOT_W1, Command.SHOOT_W2, Command.SHOOT_W3]
 #sweep variables
 var vision_enemies = {}
 var vision_bullets = {}
+var vision_all = {}
 
 
 func get_color():
@@ -51,13 +52,14 @@ func getNextCommand(cast:Node, shape_cast: Node, delta:float) -> Command:
 		
 	#fallback: random move
 	last_command = Command.new(Command.MOVE, get_random_direction())
-	duration = 5
+	duration = 2
 	return last_command
 
 
 func raycast_sweep(cast:Node):
 	vision_enemies.clear()
 	vision_bullets.clear()
+	vision_all.clear()
 	
 	for angle in range(0, 360, 6):
 		cast.target_position = Vector2(1000, 0).rotated(deg_to_rad(angle))
@@ -65,10 +67,13 @@ func raycast_sweep(cast:Node):
 		var collider = cast.get_collider()
 		if (collider is Fighter):
 			vision_enemies[collider] = collider.global_position
-		
-		if (collider is Projectile):
+		elif (collider is Projectile):
 			vision_bullets[collider] = collider.global_position
-		
+		elif (collider != null):
+			if (!vision_all.has(collider)):
+				vision_all[collider] = []
+			vision_all[collider].append(collider.global_position)
+			
 	
 func get_random_direction() -> Vector2:
 	return Vector2(randf() * 2.0 - 1, randf() * 2.0 - 1).normalized()

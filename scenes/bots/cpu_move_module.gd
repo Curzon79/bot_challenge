@@ -17,7 +17,7 @@ func call_move(bot:CustomBot):
 			var enemy_position = get_direction_to_closest_enemy(bot.global_position, controller.vision_enemies)
 			return get_force_to_position(bot.global_position, enemy_position, target_distance)
 		Target.WALLS:
-			pass
+			return get_avg_force_to_positions(bot.global_position, controller.vision_all)
 			
 	return Vector2()
 
@@ -44,3 +44,15 @@ func get_force_to_position(position:Vector2, target_position:Vector2, target_dis
 	var direction = target_position - position
 	var factor = direction.length() - target_distance
 	return direction.normalized() * factor
+
+
+func get_avg_force_to_positions(position:Vector2, vision_all:Dictionary):
+	var direction = Vector2()
+	for key in vision_all:
+		for item_position in vision_all[key]:
+			var curr_direction = item_position - position
+			var factor = curr_direction.length() - target_distance if \
+						 curr_direction.length() < target_distance else 0
+			direction += curr_direction.normalized() * factor
+	
+	return direction

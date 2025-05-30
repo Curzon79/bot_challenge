@@ -1,9 +1,12 @@
 --- General ---
 
 - constant life
+- fractional life1
 - upgrade item selection concept
 
 - continue run
+
+- smooth movement
 
 --- UI ----
 
@@ -28,6 +31,8 @@
  - shock weapon (immpbilize enemy)
  
  - evade
+ + follow/flee
+ + evade walls
  - hunt
 
 - upgrade: extra slots

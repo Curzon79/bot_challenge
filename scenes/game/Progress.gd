@@ -3,7 +3,7 @@ extends Node
 const DEFAULT_ROOMS = [
 	{
 		"name": "Garden",
-		"scene": "res://scenes/rooms/room_empty.tscn",
+		"scene": "res://scenes/rooms/room_1.tscn",
 		"preview": "res://res/room1.png",
 		"positions" : 2
 	},

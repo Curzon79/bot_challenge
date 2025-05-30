@@ -76,6 +76,9 @@ func call_move(bot:CustomBot):
 	#var direction = get_random_direction()
 	var direction = force.normalized()
 	
+	if (direction == Vector2()):
+		direction = get_random_direction()
+		
 	return Command.new(Command.MOVE, direction)
 	
 

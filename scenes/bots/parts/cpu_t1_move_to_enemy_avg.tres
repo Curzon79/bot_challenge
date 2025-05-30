@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_sk3qc")
-target = 0
-target_distance = 100
+target = 1
+target_distance = 40
 cost = 100
-name = "Follow"
+name = "Avoid Walls"
 icon = ExtResource("1_r3468")
 metadata/_custom_type_script = "uid://b2cre8f5jra7b"
