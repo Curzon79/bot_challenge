@@ -17,5 +17,6 @@ func shoot_weapon(command:Command, bot:CustomBot):
 	new_laser.time = duration
 	new_laser.sweep = sweep
 	new_laser.modulate = bot.modulate
+	new_laser.damage = damage
 	bot.get_parent().add_child(new_laser)
 	
