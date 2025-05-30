@@ -63,6 +63,19 @@ func item_dropped(item:Resource, replaced_item:Resource):
 	
 	remove_item(control, item)
 
+func set_current_definition(bot_definition:BotDefinition):
+	for i in bot_definition.weapons.size():
+		remove_item($Inventory/Weapons/VBoxContainer, bot_definition.weapons[i])
+		$Bot/Weapons.get_child(i).set_item(bot_definition.weapons[i])
+
+	for i in bot_definition.improvements.size():
+		remove_item($Inventory/Improvements/VBoxContainer, bot_definition.improvements[i])
+		$Bot/Improvements.get_child(i).set_item(bot_definition.improvements[i])
+
+	for i in bot_definition.cpus.size():
+		remove_item($Inventory/Cpu/VBoxContainer, bot_definition.cpus[i])
+		$Bot/Cpu.get_child(i).set_item(bot_definition.cpus[i])
+
 func get_bot_definition():
 	for weapon in $Bot/Weapons.get_children():
 		if (weapon.item):

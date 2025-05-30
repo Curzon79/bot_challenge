@@ -2,6 +2,9 @@ extends Node2D
 
 const DEFAULT_BOT = "res://scenes/controller/default_bot.gd"
 
+func _ready() -> void:
+	$BotBuilder.set_current_definition(Progress.player_character)
+
 func start_game():
 	var room = Progress.get_next_room()
 	

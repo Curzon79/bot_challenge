@@ -20,5 +20,9 @@ func _can_drop_data(_pos, data):
 	
 func _drop_data(_pos, data):
 	emit_signal("dropped", data, item)
-	item = data
+	set_item(data)
+
+
+func set_item(item):
+	self.item = item
 	$Texture.texture = item.icon
