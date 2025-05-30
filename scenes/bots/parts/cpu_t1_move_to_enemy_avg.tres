@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CPU_Move_Module" load_steps=3 format=3 uid="uid://7dlopd14qgfw"]
+
+[ext_resource type="Texture2D" uid="uid://y6ofwsdcixye" path="res://res/bot_parts/chip_5.png" id="1_r3468"]
+[ext_resource type="Script" uid="uid://b2cre8f5jra7b" path="res://scenes/bots/cpu_move_module.gd" id="1_sk3qc"]
+
+[resource]
+script = ExtResource("1_sk3qc")
+target = 0
+target_distance = 100
+cost = 100
+name = "Follow"
+icon = ExtResource("1_r3468")
+metadata/_custom_type_script = "uid://b2cre8f5jra7b"

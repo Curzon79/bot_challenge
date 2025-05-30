@@ -68,8 +68,16 @@ func call_aim(bot:CustomBot, targets):
 func call_move(bot:CustomBot):
 	if (len(hooks[Hook.MOVE]) == 0):
 		return null
-		
-	return hooks[Hook.MOVE][0].call_move(bot)
+	
+	var force = Vector2()
+	for hook in hooks[Hook.MOVE]:
+		force = force + hook.call_move(bot)
+	
+	#var direction = get_random_direction()
+	var direction = force.normalized()
+	
+	return Command.new(Command.MOVE, direction)
+	
 
 func call_move_prio(bot:CustomBot):
 	if (len(hooks[Hook.MOVE_PRIO]) == 0):

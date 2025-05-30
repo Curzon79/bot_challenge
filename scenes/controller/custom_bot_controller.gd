@@ -46,12 +46,12 @@ func getNextCommand(cast:Node, shape_cast: Node, delta:float) -> Command:
 	command = bot_definition.call_move(bot)
 	if (command != null):
 		last_command = command
-		duration = 20
+		duration = 1
 		return command
 		
 	#fallback: random move
 	last_command = Command.new(Command.MOVE, get_random_direction())
-	duration = 20
+	duration = 5
 	return last_command
 
 
