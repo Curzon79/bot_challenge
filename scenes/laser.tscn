@@ -1,18 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjcj36m060btt"]
+[gd_scene load_steps=5 format=3 uid="uid://bjcj36m060btt"]
 
 [ext_resource type="Script" uid="uid://cy06fk1uh7diy" path="res://scenes/laser.gd" id="1_xmihv"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_a7dhc"]
+
+[sub_resource type="Curve" id="Curve_a7dhc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_jjj73"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.534091, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [node name="laser" type="RayCast2D"]
-target_position = Vector2(599.24, 0)
+target_position = Vector2(2000, 0)
 script = ExtResource("1_xmihv")
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 162, 0)
+width = 27.705
+width_curve = SubResource("Curve_a7dhc")
+texture = ExtResource("2_a7dhc")
+texture_mode = 2
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 162, 0)
+width = 6.225
+texture_mode = 2
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture = ExtResource("2_a7dhc")
