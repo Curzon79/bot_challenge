@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ExtraSlots" load_steps=3 format=3 uid="uid://dyebxo1mnljww"]
+
+[ext_resource type="Texture2D" uid="uid://t5o5awob1njp" path="res://res/bot_parts/slot_weapon.png" id="1_l8tcg"]
+[ext_resource type="Script" uid="uid://dwccjrff4lbux" path="res://scenes/bots/extra_slot.gd" id="2_cxliw"]
+
+[resource]
+script = ExtResource("2_cxliw")
+cost = 100
+slot_type = 0
+name = "Extra Weapon  Slot"
+icon = ExtResource("1_l8tcg")
+metadata/_custom_type_script = "uid://dwccjrff4lbux"

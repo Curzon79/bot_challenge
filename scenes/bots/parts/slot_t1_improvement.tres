@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ExtraSlots" load_steps=3 format=3 uid="uid://dg6qji1sujsmc"]
+
+[ext_resource type="Texture2D" uid="uid://i5eykfkqbwr0" path="res://res/bot_parts/slot_improvements.png" id="1_247yf"]
+[ext_resource type="Script" uid="uid://dwccjrff4lbux" path="res://scenes/bots/extra_slot.gd" id="2_gkmdf"]
+
+[resource]
+script = ExtResource("2_gkmdf")
+cost = 100
+slot_type = 1
+name = "Extra Improvement  Slot"
+icon = ExtResource("1_247yf")
+metadata/_custom_type_script = "uid://dwccjrff4lbux"

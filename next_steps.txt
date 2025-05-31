@@ -30,11 +30,12 @@
  - big cannon
  - shock weapon (immpbilize enemy)
  
- - evade
+ - evade bullets
  + follow/flee
  + evade walls
  - hunt
-
+ - explore 
+  
 - upgrade: extra slots
 
 - Rooms

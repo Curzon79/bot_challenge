@@ -2,11 +2,20 @@ extends Resource
 
 class_name BotDefinition
 
+enum SLOT_TYPE {Weapon, Improvement, Cpu}
+
 @export var hull: Hull
 
 @export var weapons: Array[Weapon]
 @export var improvements: Array[Improvement]
 @export var cpus: Array[CPU_Module]
+
+#extra slots: weapon, improvement, cpu
+@export var extra_slots = {
+	SLOT_TYPE.Weapon: 0,
+	SLOT_TYPE.Improvement: 0,
+	SLOT_TYPE.Cpu: 0,
+}
 
 enum Hook {
 		ACT, 
@@ -34,6 +43,19 @@ var hooks = {
 	Hook.MOD_FREQUENCY:[]
 }
 
+func add_slot(type: SLOT_TYPE) -> void:
+	extra_slots[type] += 1
+
+func get_slots(type: SLOT_TYPE) -> int:
+	match type: 
+		SLOT_TYPE.Weapon:
+			return hull.weapon_slots + extra_slots[type]
+		SLOT_TYPE.Improvement:
+			return hull.improvement_slots + extra_slots[type]
+		SLOT_TYPE.Cpu:
+			return hull.cpu_slots + extra_slots[type]
+	return 0
+
 func update():
 	#determine hooks
 	for cpu_module in cpus:
@@ -41,7 +63,7 @@ func update():
 
 	for improvement in improvements:
 		update_hooks_for_module(improvement)
-		
+
 func update_hooks_for_module(module):
 	if (module.has_method("call_aim")):
 		hooks[Hook.AIM].append(module)

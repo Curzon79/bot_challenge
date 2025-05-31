@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ExtraSlots" load_steps=3 format=3 uid="uid://rbuqmxw6gqjn"]
+
+[ext_resource type="Script" uid="uid://dwccjrff4lbux" path="res://scenes/bots/extra_slot.gd" id="1_8rly0"]
+[ext_resource type="Texture2D" uid="uid://dleae7f5daypr" path="res://res/bot_parts/slot_cpu.png" id="1_m6vxx"]
+
+[resource]
+script = ExtResource("1_8rly0")
+cost = 100
+slot_type = 2
+name = "Extra CPU Slot"
+icon = ExtResource("1_m6vxx")
+metadata/_custom_type_script = "uid://dwccjrff4lbux"

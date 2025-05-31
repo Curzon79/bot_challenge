@@ -43,7 +43,7 @@ func get_direction_to_closest_enemy(position:Vector2, vision_enemies:Dictionary)
 func get_force_to_position(position:Vector2, target_position:Vector2, target_distance:float) -> Vector2:
 	var direction = target_position - position
 	var factor = direction.length() - target_distance
-	return direction.normalized() * pow(factor / target_distance, 2) * sign(factor)
+	return direction.normalized() * pow(min(abs(factor / target_distance), 1), 2) * sign(factor)
 
 
 func get_avg_force_to_positions(position:Vector2, vision_all:Dictionary):

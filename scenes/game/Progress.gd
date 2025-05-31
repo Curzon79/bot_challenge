@@ -3,7 +3,7 @@ extends Node
 const DEFAULT_ROOMS = [
 	{
 		"name": "Garden",
-		"scene": "res://scenes/rooms/room_1.tscn",
+		"scene": "res://scenes/rooms/room_empty.tscn",
 		"preview": "res://res/room1.png",
 		"positions" : 2
 	},
@@ -28,7 +28,9 @@ var player_inventory: Inventory
 func _init():
 	rooms = DEFAULT_ROOMS.duplicate()
 	
-	player_character = load("res://scenes/bots/bot_definitions/default.tres")
+	player_character = BotDefinition.new()
+	player_character.hull = load("res://scenes/bots/parts/hull_t1_std.tres")
+	player_character.weapons.append(load("res://scenes/bots/parts/weapon_t1_cannon.tres") )
 	player_inventory = Inventory.new()
 
 func get_next_room():

@@ -6,18 +6,18 @@ const ITEM_SCENE = preload("res://scenes/bots/builder_item.tscn")
 var bot_definition = BotDefinition.new()
 
 func _ready():
-	set_hull(load("res://scenes/bots/parts/hull_t1_std.tres"))
+	#_set_hull(load("res://scenes/bots/parts/hull_t1_std.tres"))
 	
 	fill_inventory()
 	
-func set_hull(hull:Hull):
+func _set_hull(hull:Hull):
 	bot_definition.hull = hull
 	$Bot/Hull.texture = hull.icon
 	
 	add_slots(hull.cpu_slots, $Bot/Cpu, BuilderSlot.Type.CPU_Module)
 	add_slots(hull.improvement_slots, $Bot/Improvements, BuilderSlot.Type.Improvement)
 	add_slots(hull.weapon_slots, $Bot/Weapons,BuilderSlot.Type.Weapon)
-	
+
 
 func add_slots(amount:int, control:Control, type:BuilderSlot.Type ):
 	for child in control.get_children():
@@ -64,6 +64,13 @@ func item_dropped(item:Resource, replaced_item:Resource):
 	remove_item(control, item)
 
 func set_current_definition(bot_definition:BotDefinition):
+	self.bot_definition = bot_definition
+	$Bot/Hull.texture = bot_definition.hull.icon
+	
+	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Cpu), $Bot/Cpu, BuilderSlot.Type.CPU_Module)
+	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Improvement), $Bot/Improvements, BuilderSlot.Type.Improvement)
+	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Weapon), $Bot/Weapons,BuilderSlot.Type.Weapon)
+	
 	for i in bot_definition.weapons.size():
 		remove_item($Inventory/Weapons/VBoxContainer, bot_definition.weapons[i])
 		$Bot/Weapons.get_child(i).set_item(bot_definition.weapons[i])
@@ -76,7 +83,11 @@ func set_current_definition(bot_definition:BotDefinition):
 		remove_item($Inventory/Cpu/VBoxContainer, bot_definition.cpus[i])
 		$Bot/Cpu.get_child(i).set_item(bot_definition.cpus[i])
 
-func get_bot_definition():
+func update_bot_definition():
+	bot_definition.weapons.clear()
+	bot_definition.improvements.clear()
+	bot_definition.cpus.clear()
+	
 	for weapon in $Bot/Weapons.get_children():
 		if (weapon.item):
 			bot_definition.weapons.append(weapon.item)

@@ -20,7 +20,10 @@ func choose_item(tier:float):
 
 func _on_button_pressed() -> void:
 	if (selected_item):
-		Progress.player_inventory.add(selected_item.item)
+		if (selected_item.item is ExtraSlots):
+			Progress.player_character.add_slot(selected_item.item.slot_type)
+		else:
+			Progress.player_inventory.add(selected_item.item)
 	emit_signal("closed")
 
 func _on_item_selected(node: Node) -> void:

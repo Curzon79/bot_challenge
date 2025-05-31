@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_i15gx")
 target = 0
-target_distance = 20
+target_distance = 50
 cost = 100
 name = "Follow Close"
 icon = ExtResource("1_w608w")
