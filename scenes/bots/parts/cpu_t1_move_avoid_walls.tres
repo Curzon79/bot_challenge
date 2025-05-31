@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="CPU_Move_Module" load_steps=3 format=3 uid="uid://hjflphsj3pdd"]
 
-[ext_resource type="Texture2D" uid="uid://d4mrlb7yij67i" path="res://res/bot_parts/chip_4.png" id="1_u6dgo"]
+[ext_resource type="Texture2D" uid="uid://y6ofwsdcixye" path="res://res/bot_parts/chip_5.png" id="1_u6dgo"]
 [ext_resource type="Script" uid="uid://b2cre8f5jra7b" path="res://scenes/bots/cpu_move_module.gd" id="2_k48mv"]
 
 [resource]
 script = ExtResource("2_k48mv")
-target = 0
-target_distance = 20
+target = 1
+target_distance = 40
 cost = 100
-name = "Follow Close"
+name = "Avoid Walls"
 icon = ExtResource("1_u6dgo")
 metadata/_custom_type_script = "uid://b2cre8f5jra7b"

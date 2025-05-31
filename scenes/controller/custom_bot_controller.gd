@@ -44,15 +44,14 @@ func getNextCommand(cast:Node, shape_cast: Node, delta:float) -> Command:
 		return last_command
 	
 	#call Move Hook
-	command = bot_definition.call_move(bot)
+	var current_direction = last_command.direction
+	command = bot_definition.call_move(bot, current_direction)
 	if (command != null):
 		last_command = command
-		duration = 1
 		return command
 		
 	#fallback: random move
-	last_command = Command.new(Command.MOVE, get_random_direction())
-	duration = 2
+	last_command = Command.new(Command.MOVE, (current_direction + get_random_direction() * 0.2).normalized())
 	return last_command
 
 
@@ -72,7 +71,7 @@ func raycast_sweep(cast:Node):
 		elif (collider != null):
 			if (!vision_all.has(collider)):
 				vision_all[collider] = []
-			vision_all[collider].append(collider.global_position)
+			vision_all[collider].append(cast.get_collision_point())
 			
 	
 func get_random_direction() -> Vector2:
