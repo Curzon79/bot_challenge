@@ -26,18 +26,30 @@
 
 - Items
  + Laser
- - Shield
  - double cannon
  - triple cannon
  - peashooter
  - big cannon
  - shock weapon (immpbilize enemy)
+ - mines
+ - spawn
+ 
+ - Shield
+ - reflector
+ - repair
+ - teleport
+ - hide
+ 
  
  - evade bullets
  + follow/flee
  + evade walls
  - hunt
  - explore 
+ - programming?
+   - if (see enemy)
+   - if see multi enemies
+   - 
   
 + upgrade: extra slots
 

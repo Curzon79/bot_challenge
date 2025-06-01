@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mw5yc57xfc5i" path="res://scenes/projectile.gd" id="1_c8fcr"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_q3m7n"]
-[ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/explosion.wav" id="3_softn"]
+[ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/sounds/explosion.wav" id="3_softn"]
 
 [sub_resource type="Curve" id="Curve_softn"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.271845, 0.80483), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

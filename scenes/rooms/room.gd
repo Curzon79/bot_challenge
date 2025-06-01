@@ -10,9 +10,18 @@ var player_def = null
 var alive_bots = 0
 
 func _ready():
+	add_sound()
 	initialize_bots(BOT_SCENE)
 	add_child(TIME_SCENE.instantiate())
 	add_child(START_TIMER.instantiate())
+
+func add_sound():
+	var audioPlayer = AudioStreamPlayer.new()
+	audioPlayer.stream = load("res://res/sounds/background_theme_1.mp3")
+	audioPlayer.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(audioPlayer)
+	audioPlayer.play()
+	
 
 func set_bots(bots: Array, player: BotDefinition = null):
 	bot_types = bots

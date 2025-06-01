@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cgigv44lgkq60" path="res://res/bot.png" id="2_1q4ya"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_38ety"]
 [ext_resource type="Script" uid="uid://dxrp70hnuabum" path="res://scenes/controller/default_bot.gd" id="2_eelhu"]
-[ext_resource type="AudioStream" uid="uid://dyg5r68xjda0i" path="res://res/schuss.wav" id="4_rsphg"]
-[ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/explosion.wav" id="5_tlqsq"]
+[ext_resource type="AudioStream" uid="uid://dyg5r68xjda0i" path="res://res/sounds/schuss.wav" id="4_rsphg"]
+[ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/sounds/explosion.wav" id="5_tlqsq"]
 
 [sub_resource type="Curve" id="Curve_38ety"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.271845, 0.80483), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

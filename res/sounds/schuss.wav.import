@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dyg5r68xjda0i"
-path="res://.godot/imported/schuss.wav-075ca41fac089cca71fbf0347d2d04c5.sample"
+path="res://.godot/imported/schuss.wav-985cc5393ffcb44878146f5e79186b2e.sample"
 
 [deps]
 
-source_file="res://res/schuss.wav"
-dest_files=["res://.godot/imported/schuss.wav-075ca41fac089cca71fbf0347d2d04c5.sample"]
+source_file="res://res/sounds/schuss.wav"
+dest_files=["res://.godot/imported/schuss.wav-985cc5393ffcb44878146f5e79186b2e.sample"]
 
 [params]
 
