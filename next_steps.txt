@@ -1,8 +1,11 @@
 --- General ---
 
 - constant life
-- fractional life1
+- fractional life
 - upgrade item selection concept
+
+- enemy selection concept
+  + basic concept
 
 - continue run
 
@@ -39,8 +42,10 @@
 + upgrade: extra slots
 
 - Rooms
+  + base rooms
 
 - Enemies
+  + base enemies
 
 
 --- Bugs -----
