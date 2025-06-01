@@ -22,7 +22,7 @@
 --- Content ----
 
 - Items
- - Laser
+ + Laser
  - Shield
  - double cannon
  - triple cannon

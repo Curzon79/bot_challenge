@@ -58,6 +58,16 @@ func get_slots(type: SLOT_TYPE) -> int:
 	return 0
 
 func update():
+	hooks = {
+	Hook.ACT:[], 
+	Hook.AIM:[], 
+	Hook.MOVE:[],
+	Hook.MOVE_PRIO:[],
+	Hook.PRE_PROCCESS:[],
+	Hook.POST_PROCESS:[],
+	Hook.MOD_SPEED:[],
+	Hook.MOD_FREQUENCY:[]
+	}
 	#determine hooks
 	for cpu_module in cpus:
 		update_hooks_for_module(cpu_module)

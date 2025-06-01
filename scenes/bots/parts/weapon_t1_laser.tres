@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource("1_me6k5")
-duration = 0.5
-sweep = 45.0
+duration = 0.2
+sweep = 20.0
 cost = 100
 base_frequency = 1.0
-damage = 1
+damage = 1.0
 name = "Laser I"
 icon = ExtResource("1_uwdt8")
 metadata/_custom_type_script = "uid://sg0e6ejxfyca"
