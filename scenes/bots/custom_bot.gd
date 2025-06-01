@@ -24,6 +24,7 @@ func set_bot_definition(bot_definition:BotDefinition):
 	
 	max_health = bot_definition.hull.health
 	speed = bot_definition.hull.speed
+	self.modulate = bot_definition.color
 
 func set_controller(script: Script):
 	controller_script = script

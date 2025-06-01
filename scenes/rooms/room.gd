@@ -30,6 +30,8 @@ func player_died():
 	get_node("/root/room").queue_free()
 	
 func next_level():
+	Progress.progress_difficulty()
+	
 	var item_select = load("res://scenes/bots/bot_item_select.tscn").instantiate()
 	item_select.set_items(1.0)
 	add_child(item_select)
@@ -58,10 +60,11 @@ func initialize_bots(bot_scene) -> void:
 			bot.set_controller(bot_def)
 			
 		bot.set_color()
-		bot.global_position = starting_positions[i].global_position
+		bot.global_position = starting_positions[i + 1].global_position
 		bot.died.connect(bot_died)
 		
 		add_child(bot)
+	
 		
 	#add player bot
 	if (player_def != null):
@@ -69,6 +72,6 @@ func initialize_bots(bot_scene) -> void:
 		player_bot.set_bot_definition(player_def)
 			
 		player_bot.set_color()
-		player_bot.global_position = starting_positions[-1].global_position
+		player_bot.global_position = starting_positions[0].global_position
 		player_bot.died.connect(player_died)
 		add_child(player_bot)

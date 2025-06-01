@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=7 format=3 uid="uid://cxm8mu4rgqx8q"]
+
+[ext_resource type="Script" uid="uid://dbttauggwkxi6" path="res://scenes/bots/cpu_module.gd" id="1_nr4m6"]
+[ext_resource type="Resource" uid="uid://lfgehd0p8ch3" path="res://scenes/bots/enemy_parts/hull_enemy_heavy.tres" id="2_w8hew"]
+[ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="4_7t526"]
+[ext_resource type="Resource" uid="uid://dx3jwg03xg46a" path="res://scenes/bots/enemy_parts/weapon_t1_std_cannon_size_4.tres" id="6_6b5mw"]
+[ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="6_y7quo"]
+[ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="7_a7r0d"]
+
+[resource]
+script = ExtResource("6_y7quo")
+color = Color(0.163237, 0.305669, 0.175194, 1)
+hull = ExtResource("2_w8hew")
+weapons = Array[ExtResource("7_a7r0d")]([ExtResource("6_6b5mw")])
+improvements = Array[ExtResource("4_7t526")]([])
+cpus = Array[ExtResource("1_nr4m6")]([])
+extra_slots = {
+0: 0,
+1: 0,
+2: 0
+}
+metadata/_custom_type_script = "uid://dwuc4gihwllw"

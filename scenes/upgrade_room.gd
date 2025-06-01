@@ -7,12 +7,13 @@ func _ready() -> void:
 
 func start_game():
 	var room = Progress.get_next_room()
+	var enemies = Progress.get_enemy_set(room)
 	
 	#prepare battle: room + bots
 	var scene = load(room["scene"]).instantiate()
 	var bots = []
-	for i in range(room["positions"] - 1):
-		bots.append(DEFAULT_BOT)
+	for enemy in enemies:
+		bots.append(enemy)
 	
 	Progress.player_character = $BotBuilder.update_bot_definition()
 	scene.set_bots(bots, Progress.player_character)

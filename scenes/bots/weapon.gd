@@ -8,7 +8,7 @@ const Bullet = preload("res://scenes/projectile.tscn")
 @export var cost = 100
 
 @export var base_frequency = 0.2
-@export var damage = 1
+@export var damage = 1.0
 
 #Representtaion
 @export var name: String
@@ -20,6 +20,7 @@ func get_frequency():
 
 func shoot_weapon(command:Command, bot:CustomBot):
 	var new_bullet = Bullet.instantiate()
+	new_bullet.set_size(damage, damage)
 	new_bullet.direction = command.direction
 	new_bullet.ignore_character = bot
 	new_bullet.global_position = bot.global_position

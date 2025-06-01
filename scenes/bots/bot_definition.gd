@@ -4,6 +4,7 @@ class_name BotDefinition
 
 enum SLOT_TYPE {Weapon, Improvement, Cpu}
 
+@export var color = Color.WHITE
 @export var hull: Hull
 
 @export var weapons: Array[Weapon]
