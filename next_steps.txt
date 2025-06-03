@@ -20,7 +20,7 @@
 
 - quit -> main menu
 
-- item graphics/specail effects
+- item graphics/special effects
 
 --- Content ----
 
@@ -39,17 +39,17 @@
  - repair
  - teleport
  - hide
- 
+ - dampening field
+ - ram
  
  - evade bullets
  + follow/flee
  + evade walls
  - hunt
  - explore 
- - programming?
-   - if (see enemy)
-   - if see multi enemies
-   - 
+
+ - disadvantages : extra effects
+ 
   
 + upgrade: extra slots
 
