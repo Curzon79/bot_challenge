@@ -52,6 +52,11 @@ func _process(delta: float) -> void:
 			shoot_weapon(command, 2)
 			
 
+func receive_damage(damage: float):
+	health -= bot_definition.get_modifier(self, BotDefinition.Hook.MOD_RECEIVE_DAMAGE, damage)
+	if health <= 0:
+		die()
+
 
 func shoot_weapon(command, weapon_slot: int):
 	if weapon_cooldowns[weapon_slot].get_time_left() > 0:

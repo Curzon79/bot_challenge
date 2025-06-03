@@ -65,7 +65,7 @@ func set_color():
 	if (controller.has_method("get_color")):
 		modulate = controller.get_color()
 
-func receive_damage(damage):
+func receive_damage(damage: float):
 	health -= damage
 	if health <= 0:
 		die()

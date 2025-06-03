@@ -46,7 +46,9 @@ var hooks = {
 	Hook.PRE_PROCCESS:[],
 	Hook.POST_PROCESS:[],
 	Hook.MOD_SPEED:[],
-	Hook.MOD_FREQUENCY:[]
+	Hook.MOD_FREQUENCY:[],
+	Hook.MOD_VISION:[],
+	Hook.MOD_RECEIVE_DAMAGE:[]
 }
 
 func add_slot(type: SLOT_TYPE) -> void:
@@ -71,7 +73,9 @@ func update():
 	Hook.PRE_PROCCESS:[],
 	Hook.POST_PROCESS:[],
 	Hook.MOD_SPEED:[],
-	Hook.MOD_FREQUENCY:[]
+	Hook.MOD_FREQUENCY:[],
+	Hook.MOD_VISION:[],
+	Hook.MOD_RECEIVE_DAMAGE:[]
 	}
 	#determine hooks
 	for cpu_module in cpus:
@@ -143,6 +147,11 @@ func get_speed(bot:CustomBot):
 	for hook in hooks[Hook.MOD_SPEED]:
 		speed = hook.modify(bot, Hook.MOD_SPEED, speed) 
 	return speed
+	
+func get_modifier(bot:CustomBot, modifier_type: Hook, value: float):
+	for hook in hooks[modifier_type]:
+		value = hook.modify(bot, modifier_type, value) 
+	return value
 	
 func get_random_direction() -> Vector2:
 	return Vector2(randf() * 2.0 - 1, randf() * 2.0 - 1).normalized()

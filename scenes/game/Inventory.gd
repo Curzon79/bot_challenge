@@ -16,6 +16,7 @@ func _init() -> void:
 		]
 	improvements = [
 		load("res://scenes/bots/parts/imp_t1_engine.tres"), 
+		load("res://scenes/bots/parts/imp_t1_brittler.tres"), 
 		]
 	cpus = [
 		load("res://scenes/bots/parts/cpu_t1_aim_weak.tres"), 
