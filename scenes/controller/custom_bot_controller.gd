@@ -60,8 +60,9 @@ func raycast_sweep(cast:Node):
 	vision_bullets.clear()
 	vision_all.clear()
 	
+	var vision_range = bot_definition.get_modifier(cast.get_parent(), BotDefinition.Hook.MOD_VISION, 100.0)
 	for angle in range(0, 360, 6):
-		cast.target_position = Vector2(1000, 0).rotated(deg_to_rad(angle))
+		cast.target_position = Vector2(vision_range, 0).rotated(deg_to_rad(angle))
 		cast.force_raycast_update()		
 		var collider = cast.get_collider()
 		if (collider is Fighter):

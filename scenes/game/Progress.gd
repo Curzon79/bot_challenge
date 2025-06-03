@@ -90,9 +90,5 @@ func get_enemy_set(room:Dictionary):
 				enemy_set.erase(enemy)
 				enemy_set.append(replacement)
 					
-	
-	print("----")
-	print(player_progression)
-	print(enemy_set_value)
-	print(enemy_set)
+
 	return enemy_set

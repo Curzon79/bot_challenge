@@ -10,7 +10,6 @@ enum Selection {NEAREST, STRONGEST, RANDOM}
 func call_aim(bot, targets:Array) -> Vector2:
 	if (len(targets) == 0):
 		return get_random_direction()
-	
 	var target = get_targets(targets)
 	
 	return bot.global_position.direction_to(target.global_position)\
