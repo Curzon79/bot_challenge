@@ -8,6 +8,7 @@ script = ExtResource("1_kl3qg")
 accurracy = 0.75
 selection = 2
 cost = 100
+modifier = Dictionary[int, float]({})
 name = "Aim II"
 icon = ExtResource("1_jsn5y")
 metadata/_custom_type_script = "uid://bsbv8r7v5st3w"

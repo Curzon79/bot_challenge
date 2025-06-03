@@ -1,19 +1,12 @@
-extends Resource
+extends EffectResource
 
 class_name Weapon
 
 const Bullet = preload("res://scenes/projectile.tscn")
 
 #Structure
-@export var cost = 100
-
 @export var base_frequency = 0.2
 @export var damage = 1.0
-
-#Representtaion
-@export var name: String
-@export var icon: Texture2D
-@export var sprite: Texture2D
 
 func get_frequency():
 	return base_frequency 

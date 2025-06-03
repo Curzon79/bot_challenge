@@ -25,12 +25,17 @@ enum Hook {
 		MOVE_PRIO, 
 		PRE_PROCCESS,
 		POST_PROCESS,
+		
 		MOD_SPEED,
-		MOD_FREQUENCY}
+		MOD_FREQUENCY, 
+		MOD_VISION,
+		MOD_RECEIVE_DAMAGE}
 
 var modifiers = [
 	Hook.MOD_SPEED,
-	Hook.MOD_FREQUENCY
+	Hook.MOD_FREQUENCY,
+	Hook.MOD_VISION,
+	Hook.MOD_RECEIVE_DAMAGE,
 ]
 
 var hooks = {
