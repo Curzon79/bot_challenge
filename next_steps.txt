@@ -9,7 +9,7 @@
 
 - continue run
 
-- smooth movement
++ smooth movement
 
 --- UI ----
 
@@ -22,13 +22,15 @@
 
 - item graphics/special effects
 
+- item details
+
 --- Content ----
 
 - Items
  + Laser
  - double cannon
  - triple cannon
- - peashooter
+ + peashooter
  - big cannon
  - shock weapon (immpbilize enemy)
  - mines

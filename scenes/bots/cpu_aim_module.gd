@@ -7,13 +7,14 @@ enum Selection {NEAREST, STRONGEST, RANDOM}
 @export var accurracy = 0.8
 @export var selection = Selection.RANDOM
 
-func call_aim(bot, targets:Array) -> Vector2:
+func call_aim(bot:CustomBot, targets:Array) -> Vector2:
 	if (len(targets) == 0):
 		return get_random_direction()
 	var target = get_targets(targets)
 	
 	return bot.global_position.direction_to(target.global_position)\
-			.rotated((randf() - 0.5) * PI * 0.5 * (1.0 - accurracy))
+			.rotated((randf() - 0.5) * PI * 0.5 * 
+						(1.0 - min(bot.bot_definition.get_modifier(bot, BotDefinition.Hook.MOD_AIM, accurracy), 1.0)))
 
 func get_targets(targets:Array):
 	match selection:

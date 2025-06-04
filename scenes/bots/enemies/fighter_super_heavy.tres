@@ -1,20 +1,21 @@
-[gd_resource type="Resource" script_class="BotDefinition" load_steps=8 format=3 uid="uid://cy7qgj6shfnad"]
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=9 format=3 uid="uid://bvkmhgqvivhed"]
 
 [ext_resource type="Script" uid="uid://dbttauggwkxi6" path="res://scenes/bots/cpu_module.gd" id="1_iav84"]
 [ext_resource type="Resource" uid="uid://bw4ht4s04pu3" path="res://scenes/bots/enemy_parts/hull_enemy_very_heavy.tres" id="2_40dgx"]
+[ext_resource type="Resource" uid="uid://dnwgokuislsu6" path="res://scenes/bots/enemy_parts/cpu_t1_aim_weak.tres" id="2_48mgh"]
 [ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="3_48mgh"]
 [ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="4_m406d"]
 [ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="5_nuw4k"]
 [ext_resource type="Resource" uid="uid://dx3jwg03xg46a" path="res://scenes/bots/enemy_parts/weapon_t1_std_cannon_size_4.tres" id="6_hqpxu"]
-[ext_resource type="Resource" uid="uid://bgdb1jgal2daj" path="res://scenes/bots/enemy_parts/weapon_t1_std_cannon_size_1.tres" id="7_48mgh"]
+[ext_resource type="Resource" uid="uid://dvr6oppi4b06" path="res://scenes/bots/enemy_parts/weapon_t1_std_cannon_size_2.tres" id="7_40dgx"]
 
 [resource]
 script = ExtResource("4_m406d")
 color = Color(0.0968185, 0.1966, 0.105238, 1)
 hull = ExtResource("2_40dgx")
-weapons = Array[ExtResource("5_nuw4k")]([ExtResource("6_hqpxu"), ExtResource("7_48mgh")])
+weapons = Array[ExtResource("5_nuw4k")]([ExtResource("6_hqpxu"), ExtResource("7_40dgx")])
 improvements = Array[ExtResource("3_48mgh")]([])
-cpus = Array[ExtResource("1_iav84")]([])
+cpus = Array[ExtResource("1_iav84")]([ExtResource("2_48mgh")])
 extra_slots = {
 0: 0,
 1: 0,

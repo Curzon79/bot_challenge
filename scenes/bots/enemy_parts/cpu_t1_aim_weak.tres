@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CPU_Aim_Module" load_steps=3 format=3 uid="uid://dnwgokuislsu6"]
+
+[ext_resource type="Texture2D" uid="uid://dnmbnqfhuoek4" path="res://res/bot_parts/chip_1.png" id="1_dxksf"]
+[ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="2_y7yjm"]
+
+[resource]
+script = ExtResource("2_y7yjm")
+accurracy = 0.5
+selection = 2
+cost = 100
+modifier = Dictionary[int, float]({})
+name = "Aim I"
+icon = ExtResource("1_dxksf")
+metadata/_custom_type_script = "uid://bsbv8r7v5st3w"

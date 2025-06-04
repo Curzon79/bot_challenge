@@ -5,10 +5,12 @@
 
 [resource]
 script = ExtResource("1_312kq")
-cost = 100
 base_frequency = 0.15
-type = 0
-damage = 1
+damage = 1.0
+cost = 100
+modifier = Dictionary[int, float]({
+10: 0.9
+})
 name = "Cannon II"
 icon = ExtResource("1_fcpw2")
 metadata/_custom_type_script = "uid://da2ffydwbhbfh"

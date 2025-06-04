@@ -29,13 +29,15 @@ enum Hook {
 		MOD_SPEED,
 		MOD_FREQUENCY, 
 		MOD_VISION,
-		MOD_RECEIVE_DAMAGE}
+		MOD_RECEIVE_DAMAGE,
+		MOD_AIM}
 
 var modifiers = [
 	Hook.MOD_SPEED,
 	Hook.MOD_FREQUENCY,
 	Hook.MOD_VISION,
 	Hook.MOD_RECEIVE_DAMAGE,
+	Hook.MOD_AIM,
 ]
 
 var hooks = {
@@ -48,7 +50,8 @@ var hooks = {
 	Hook.MOD_SPEED:[],
 	Hook.MOD_FREQUENCY:[],
 	Hook.MOD_VISION:[],
-	Hook.MOD_RECEIVE_DAMAGE:[]
+	Hook.MOD_RECEIVE_DAMAGE:[],
+	Hook.MOD_AIM:[]
 }
 
 func add_slot(type: SLOT_TYPE) -> void:
@@ -75,7 +78,8 @@ func update():
 	Hook.MOD_SPEED:[],
 	Hook.MOD_FREQUENCY:[],
 	Hook.MOD_VISION:[],
-	Hook.MOD_RECEIVE_DAMAGE:[]
+	Hook.MOD_RECEIVE_DAMAGE:[],
+	Hook.MOD_AIM:[]
 	}
 	#determine hooks
 	for cpu_module in cpus:

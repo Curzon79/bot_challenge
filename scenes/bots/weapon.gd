@@ -13,7 +13,7 @@ func get_frequency():
 
 func shoot_weapon(command:Command, bot:CustomBot):
 	var new_bullet = Bullet.instantiate()
-	new_bullet.set_size(damage, damage)
+	new_bullet.set_size(sqrt(damage), damage)
 	new_bullet.direction = command.direction
 	new_bullet.ignore_character = bot
 	new_bullet.global_position = bot.global_position
