@@ -14,6 +14,7 @@ func _ready() -> void:
 	set_bot_definition(bot_definition)
 	update_health_indication()
 	
+	health = bot_definition.hull.health
 	#$cooldown.wait_time = shoot_cooldown
 	#controller = custom_controller_script.new()
 	#controller.set_bot(bot_definition)
