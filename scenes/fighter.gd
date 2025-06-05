@@ -90,23 +90,14 @@ func receive_damage(damage: float):
 		die()
 
 func update_health_indication():
+	var inner_count = int(health / 8)
+	var outer_count = health - inner_count * 8
 	#set outer ring
 	for i in range(len(health_indicators)):
-		if (i < health):
-			get_node(health_indicators[i]).visible = true
-		else:
-			get_node(health_indicators[i]).visible = false
-	#reset inner ring
+		get_node(health_indicators[i]).visible = (i < outer_count)
+			
 	for i in range(len(big_health_indicators)):
-		get_node(big_health_indicators[i]).visible = false
-	#set inner ring
-	if get_node(health_indicators[7]).visible == true:
-		for i in range(len(health_indicators)):
-			get_node(health_indicators[i]).visible = false
-		for i in range(len(big_health_indicators)):
-			if get_node(big_health_indicators[i]).visible == false:
-				get_node(big_health_indicators[i]).visible = true
-				break
+		get_node(big_health_indicators[i]).visible = (i < inner_count)
 
 func die():
 	if ! alive:
