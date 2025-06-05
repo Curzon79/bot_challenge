@@ -2,6 +2,23 @@ extends CharacterBody2D
 
 class_name Fighter
 
+var health_indicators = [
+	"health/Polygon2D",
+	"health/Polygon2D2",
+	"health/Polygon2D3",
+	"health/Polygon2D4",
+	"health/Polygon2D5",
+	"health/Polygon2D6",
+	"health/Polygon2D7",
+	"health/Polygon2D8",
+]
+var big_health_indicators = [
+	"health/Polygon2D9",
+	"health/Polygon2D10",
+	"health/Polygon2D11",
+]
+
+
 var rng = RandomNumberGenerator.new()
 
 #definitions
@@ -27,6 +44,7 @@ signal died
 var command:Command = Command.new(Command.IDLE, Vector2())
 
 func _ready() -> void:
+	update_health_indication()
 	$cooldown.wait_time = shoot_cooldown
 	controller = controller_script.new()
 
@@ -67,8 +85,28 @@ func set_color():
 
 func receive_damage(damage: float):
 	health -= damage
+	update_health_indication()
 	if health <= 0:
 		die()
+
+func update_health_indication():
+	#set outer ring
+	for i in range(len(health_indicators)):
+		if (i < health):
+			get_node(health_indicators[i]).visible = true
+		else:
+			get_node(health_indicators[i]).visible = false
+	#reset inner ring
+	for i in range(len(big_health_indicators)):
+		get_node(big_health_indicators[i]).visible = false
+	#set inner ring
+	if get_node(health_indicators[7]).visible == true:
+		for i in range(len(health_indicators)):
+			get_node(health_indicators[i]).visible = false
+		for i in range(len(big_health_indicators)):
+			if get_node(big_health_indicators[i]).visible == false:
+				get_node(big_health_indicators[i]).visible = true
+				break
 
 func die():
 	if ! alive:

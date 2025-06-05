@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("4_l5jw4")
-color = Color(1, 1, 1, 1)
+color = Color(1, 1, 0.47451, 1)
 hull = ExtResource("2_edy3s")
 weapons = Array[ExtResource("5_8ijeo")]([ExtResource("6_5yqm1")])
 improvements = Array[ExtResource("3_dasyt")]([])

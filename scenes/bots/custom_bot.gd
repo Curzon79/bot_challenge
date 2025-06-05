@@ -12,6 +12,7 @@ func _ready() -> void:
 	#initialize bot
 	weapon_cooldowns = [$cooldown, $cooldown2, $cooldown3]
 	set_bot_definition(bot_definition)
+	update_health_indication()
 	
 	#$cooldown.wait_time = shoot_cooldown
 	#controller = custom_controller_script.new()
@@ -54,6 +55,7 @@ func _process(delta: float) -> void:
 
 func receive_damage(damage: float):
 	health -= bot_definition.get_modifier(self, BotDefinition.Hook.MOD_RECEIVE_DAMAGE, damage)
+	update_health_indication()
 	if health <= 0:
 		die()
 
