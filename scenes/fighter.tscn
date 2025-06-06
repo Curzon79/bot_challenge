@@ -89,69 +89,113 @@ stream = ExtResource("5_tlqsq")
 
 [node name="health" type="Node2D" parent="."]
 
-[node name="Polygon2D" type="Polygon2D" parent="health"]
+[node name="Polygon2D" type="Sprite2D" parent="health"]
 position = Vector2(-14, 14)
-scale = Vector2(0.110109, 0.0992391)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D2" type="Polygon2D" parent="health"]
-position = Vector2(-9.53674e-07, 20)
-scale = Vector2(0.110109, 0.0992391)
+[node name="Polygon2D2" type="Sprite2D" parent="health"]
+position = Vector2(0, 20)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D2"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D3" type="Polygon2D" parent="health"]
-position = Vector2(15, 14)
-scale = Vector2(0.110109, 0.0992391)
+[node name="Polygon2D3" type="Sprite2D" parent="health"]
+position = Vector2(15, 15)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D3"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D4" type="Polygon2D" parent="health"]
-position = Vector2(20, 1.90735e-06)
-scale = Vector2(0.110109, 0.0992391)
+[node name="Polygon2D4" type="Sprite2D" parent="health"]
+position = Vector2(21, -0.999998)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D4"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D5" type="Polygon2D" parent="health"]
-position = Vector2(14, -14)
-scale = Vector2(0.110109, 0.0992391)
+[node name="Polygon2D5" type="Sprite2D" parent="health"]
+position = Vector2(15, -13)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D5"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D6" type="Polygon2D" parent="health"]
-position = Vector2(-0.73375, -19.1412)
-scale = Vector2(0.0985326, 0.0930978)
+[node name="Polygon2D6" type="Sprite2D" parent="health"]
+position = Vector2(0, -19)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D6"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D7" type="Polygon2D" parent="health"]
-position = Vector2(-16, -12)
-scale = Vector2(0.095, 0.095)
+[node name="Polygon2D7" type="Sprite2D" parent="health"]
+position = Vector2(-16, -13)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D7"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D8" type="Polygon2D" parent="health"]
-position = Vector2(-20, -1)
-scale = Vector2(0.09, 0.09)
+[node name="Polygon2D8" type="Sprite2D" parent="health"]
+position = Vector2(-20, 0)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D8"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D9" type="Polygon2D" parent="health"]
-position = Vector2(2.38419e-07, -4)
-scale = Vector2(0.09, 0.09)
+[node name="Polygon2D9" type="Sprite2D" parent="health"]
+position = Vector2(-4, 3)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D9"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D10" type="Polygon2D" parent="health"]
-position = Vector2(-3, 2)
-scale = Vector2(0.09, 0.09)
+[node name="Polygon2D10" type="Sprite2D" parent="health"]
+position = Vector2(4, 3)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D10"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
-[node name="Polygon2D11" type="Polygon2D" parent="health"]
-position = Vector2(3, 2)
-scale = Vector2(0.09, 0.09)
+[node name="Polygon2D11" type="Sprite2D" parent="health"]
+position = Vector2(4.76837e-07, -3)
+scale = Vector2(0.018225, 0.018225)
+texture = ExtResource("2_38ety")
+
+[node name="Polygon2D" type="Polygon2D" parent="health/Polygon2D11"]
+scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
 
