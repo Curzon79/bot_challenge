@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwbi38jxd6n4g"]
+
+[ext_resource type="Script" uid="uid://5jnu6np54ege" path="res://scenes/bomb.gd" id="1_vpdcx"]
+[ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_j15uc"]
+[ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/sounds/explosion.wav" id="3_j15uc"]
+
+[sub_resource type="Curve" id="Curve_4kkau"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.563107, 0.821801), 0.0, 0.0, 0, 0, Vector2(0.776699, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_vpdcx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.406557, 0.793103), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_j15uc"]
+offsets = PackedFloat32Array(0, 0.691756, 1)
+colors = PackedColorArray(0.332881, 0.332881, 0.332881, 1, 0.796078, 0.796078, 0.796078, 0.733333, 1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6bl7j"]
+radius = 171.05
+
+[node name="bomb" type="Node2D"]
+script = ExtResource("1_vpdcx")
+
+[node name="visuals" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="visuals"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
+
+[node name="explosion_particles" type="CPUParticles2D" parent="visuals"]
+scale = Vector2(0.87, 0.87)
+emitting = false
+amount = 90
+texture = ExtResource("2_j15uc")
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 323.71
+initial_velocity_max = 591.17
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_4kkau")
+
+[node name="smoke" type="CPUParticles2D" parent="visuals"]
+amount = 28
+texture = ExtResource("2_j15uc")
+lifetime = 2.94
+emission_shape = 1
+emission_sphere_radius = 8.07
+direction = Vector2(0, -1)
+spread = 59.36
+gravity = Vector2(0, 0)
+initial_velocity_min = 12.27
+initial_velocity_max = 55.21
+scale_amount_min = 0.0
+scale_amount_max = 0.03
+scale_amount_curve = SubResource("Curve_vpdcx")
+color_ramp = SubResource("Gradient_j15uc")
+
+[node name="functional" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="functional"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="functional/Area2D"]
+shape = SubResource("CircleShape2D_6bl7j")
+disabled = true
+
+[node name="Timer" type="Timer" parent="functional"]
+autostart = true
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j15uc")
+
+[connection signal="finished" from="visuals/explosion_particles" to="." method="_on_explosion_particles_finished"]
+[connection signal="timeout" from="functional/Timer" to="." method="_on_timer_timeout"]
