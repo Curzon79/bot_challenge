@@ -69,7 +69,7 @@ func initialize_bots(bot_scene) -> void:
 			bot.set_controller(bot_def)
 			
 		bot.set_color()
-		bot.global_position = starting_positions[i + 1].global_position
+		bot.global_position = starting_positions[i + (1 if player_def != null else 0)].global_position
 		bot.died.connect(bot_died)
 		
 		add_child(bot)
