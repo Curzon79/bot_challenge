@@ -20,6 +20,7 @@ script = ExtResource("2_n5kon")
 bot_definition = null
 
 [node name="Radar" type="Sprite2D" parent="." index="0"]
+modulate = Color(1, 1, 1, 0.411765)
 material = SubResource("ShaderMaterial_qskry")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("12_5lwvj")
