@@ -119,7 +119,7 @@ func get_enemy_set(room:Dictionary):
 
 
 func get_elite_enemy_set():
-	return get_closest_to_value(ELITES, player_progression)
+	return [get_closest_to_value(ELITES, player_progression)]
 	
 func get_swarm_enemy_set(amount: int):
 	var enemy = get_closest_to_value(ENEMIES, player_progression / amount)
