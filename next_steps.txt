@@ -1,6 +1,6 @@
 --- General ---
 
-- constant life
++ constant life
 + fractional life
 - upgrade item selection concept
 
@@ -17,7 +17,7 @@
 - upgrade screen
 - upgrade selection
 
-- health display
++ health display
 
 - quit -> main menu
 
@@ -34,7 +34,7 @@
  + peashooter
  - big cannon
  - shock weapon (immpbilize enemy)
- - mines
+ + mines
  - spawn
  
  - Shield
@@ -64,4 +64,3 @@
 
 
 --- Bugs -----
-
