@@ -7,6 +7,8 @@ var duration = 0
 
 const SHOOT_CMDS = [Command.SHOOT_W1, Command.SHOOT_W2, Command.SHOOT_W3]
 
+const BASE_VISION = 100.0
+
 #sweep variables
 var vision_enemies = {}
 var vision_bullets = {}
@@ -60,7 +62,8 @@ func raycast_sweep(cast:Node):
 	vision_bullets.clear()
 	vision_all.clear()
 	
-	var vision_range = bot_definition.get_modifier(cast.get_parent(), BotDefinition.Hook.MOD_VISION, 100.0)
+	var vision_range = bot_definition.get_modifier(cast.get_parent(), BotDefinition.Hook.MOD_VISION, BASE_VISION)
+	cast.get_parent().radar.scale = Vector2(vision_range, vision_range) / 1000
 	for angle in range(0, 360, 6):
 		cast.target_position = Vector2(vision_range, 0).rotated(deg_to_rad(angle))
 		cast.force_raycast_update()		
