@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_jhlf8")
 time = 1.0
-base_frequency = 0.2
+base_frequency = 1.0
 damage = 1.0
 cost = 100
 modifier = Dictionary[int, float]({})
-name = ""
+name = "Bomb 1"
 metadata/_custom_type_script = "uid://sg0e6ejxfyca"
