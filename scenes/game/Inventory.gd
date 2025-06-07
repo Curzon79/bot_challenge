@@ -14,6 +14,8 @@ func _init() -> void:
 		load("res://scenes/bots/parts/weapon_t2_laser.tres"),
 		load("res://scenes/bots/parts/weapon_t3_laser.tres"),
 		load("res://scenes/bots/parts/weapon_t1_bomb.tres"),
+		load("res://scenes/bots/parts/weapon_t2_bomb.tres"),
+		load("res://scenes/bots/parts/weapon_t3_bomb.tres"),
 		]
 	improvements = [
 		load("res://scenes/bots/parts/imp_t1_engine.tres"), 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponBomb" load_steps=2 format=3 uid="uid://bkte1y0dyq4v0"]
+
+[ext_resource type="Script" uid="uid://v8jxc3a6vixs" path="res://scenes/bots/weapon_bomb.gd" id="1_cmsxb"]
+
+[resource]
+script = ExtResource("1_cmsxb")
+time = 0.9
+base_frequency = 0.8
+damage = 1.5
+cost = 100
+modifier = Dictionary[int, float]({})
+name = "Bomb 2"
+metadata/_custom_type_script = "uid://sg0e6ejxfyca"
