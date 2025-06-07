@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("2_g156i")
 cost = 100
-health = 8
-speed = 250
+health = 12
+speed = 200
 cpu_slots = 3
 weapon_slots = 2
 improvement_slots = 2
