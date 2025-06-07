@@ -63,7 +63,8 @@ func raycast_sweep(cast:Node):
 	vision_all.clear()
 	
 	var vision_range = bot_definition.get_modifier(cast.get_parent(), BotDefinition.Hook.MOD_VISION, BASE_VISION)
-	cast.get_parent().radar.scale = Vector2(vision_range, vision_range) / 1000
+	if cast.get_parent().has_node("Radar"):
+		cast.get_parent().radar.scale = Vector2(vision_range, vision_range) / 1000
 	for angle in range(0, 360, 6):
 		cast.target_position = Vector2(vision_range, 0).rotated(deg_to_rad(angle))
 		cast.force_raycast_update()		

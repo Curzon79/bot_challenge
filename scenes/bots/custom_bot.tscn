@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cijm2lxy063bx"]
+[gd_scene load_steps=10 format=3 uid="uid://cijm2lxy063bx"]
 
 [ext_resource type="PackedScene" uid="uid://dcfm8j5usc016" path="res://scenes/fighter.tscn" id="1_clf0x"]
 [ext_resource type="Script" uid="uid://c5ukbmb3g2o7w" path="res://scenes/bots/custom_bot.gd" id="2_otixg"]
@@ -8,10 +8,6 @@
 [ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="5_42no0"]
 [ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="6_ue6u1"]
 [ext_resource type="Resource" uid="uid://chjpbudtc04dr" path="res://scenes/bots/parts/weapon_t1_cannon.tres" id="8_2ltam"]
-[ext_resource type="Shader" uid="uid://dk6hiwifwligp" path="res://scenes/bots/radar.gdshader" id="9_42no0"]
-[ext_resource type="Texture2D" uid="uid://ddjor5tnrjvlk" path="res://res/bottom_lines.png" id="10_2ltam"]
-[ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="10_ue6u1"]
-[ext_resource type="Texture2D" uid="uid://br1j173pyquxk" path="res://res/radar_thingy.png" id="11_2ltam"]
 
 [sub_resource type="Resource" id="Resource_en6fs"]
 script = ExtResource("6_ue6u1")
@@ -27,29 +23,15 @@ extra_slots = {
 }
 metadata/_custom_type_script = "uid://dwuc4gihwllw"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ltam"]
-shader = ExtResource("9_42no0")
-shader_parameter/total_speed = 1.0
-shader_parameter/new_color = Color(0, 0.19, 0.0918333, 1)
-shader_parameter/bottom_texture = ExtResource("10_2ltam")
-shader_parameter/velocity_bottom = Vector2(0.03, 0.03)
-shader_parameter/turn_part = ExtResource("11_2ltam")
-
 [node name="custom_bot" instance=ExtResource("1_clf0x")]
 script = ExtResource("2_otixg")
 bot_definition = SubResource("Resource_en6fs")
 controller_script = null
 
-[node name="Radar" type="Sprite2D" parent="." index="0"]
-visible = false
-material = SubResource("ShaderMaterial_2ltam")
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("10_ue6u1")
-
-[node name="cooldown2" type="Timer" parent="." index="5"]
+[node name="cooldown2" type="Timer" parent="." index="4"]
 wait_time = 0.2
 one_shot = true
 
-[node name="cooldown3" type="Timer" parent="." index="6"]
+[node name="cooldown3" type="Timer" parent="." index="5"]
 wait_time = 0.2
 one_shot = true

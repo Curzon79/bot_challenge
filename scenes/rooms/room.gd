@@ -2,6 +2,7 @@ extends Node2D
 
 const BOT_SCENE = preload("res://scenes/fighter.tscn")
 const CUSTOM_BOT_SCENE = preload("res://scenes/bots/custom_bot.tscn")
+const PLAYER_BOT_SCENE = preload("res://scenes/bots/player_custom_bot.tscn")
 
 const TIME_SCENE = preload("res://scenes/ui/game_speed.tscn")
 const START_TIMER = preload("res://scenes/ui/321_go.tscn")
@@ -64,9 +65,9 @@ func initialize_bots(bot_scene) -> void:
 		
 	#add player bot
 	if (player_def != null):
-		var player_bot = CUSTOM_BOT_SCENE.instantiate()
+		var player_bot = PLAYER_BOT_SCENE.instantiate()
 		player_bot.set_bot_definition(player_def)
-			
+		
 		player_bot.set_color()
 		player_bot.health = Progress.player_health
 		player_bot.global_position = starting_positions[0].global_position

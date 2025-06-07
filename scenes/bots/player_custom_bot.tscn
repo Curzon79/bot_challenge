@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvmoakr237pbf"]
+
+[ext_resource type="PackedScene" uid="uid://cijm2lxy063bx" path="res://scenes/bots/custom_bot.tscn" id="1_78m35"]
+[ext_resource type="Script" uid="uid://b38ynap3fq8xy" path="res://scenes/bots/player_custom_bot.gd" id="2_n5kon"]
+[ext_resource type="Shader" uid="uid://dk6hiwifwligp" path="res://scenes/bots/radar.gdshader" id="9_q6lbu"]
+[ext_resource type="Texture2D" uid="uid://ddjor5tnrjvlk" path="res://res/bottom_lines.png" id="10_btj0l"]
+[ext_resource type="Texture2D" uid="uid://br1j173pyquxk" path="res://res/radar_thingy.png" id="11_hdoxl"]
+[ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="12_5lwvj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qskry"]
+shader = ExtResource("9_q6lbu")
+shader_parameter/total_speed = 1.0
+shader_parameter/new_color = Color(0, 0.19, 0.0918333, 1)
+shader_parameter/bottom_texture = ExtResource("10_btj0l")
+shader_parameter/velocity_bottom = Vector2(0.03, 0.03)
+shader_parameter/turn_part = ExtResource("11_hdoxl")
+
+[node name="player_custom_bot" instance=ExtResource("1_78m35")]
+script = ExtResource("2_n5kon")
+bot_definition = null
+
+[node name="Radar" type="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_qskry")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_5lwvj")
