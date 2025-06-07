@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponSpawn" load_steps=2 format=3 uid="uid://bta2wh6k4a22t"]
+
+[ext_resource type="Script" uid="uid://c7sips3w53syk" path="res://scenes/bots/weapon_spawn.gd" id="1_45cth"]
+
+[resource]
+script = ExtResource("1_45cth")
+spawn_bot = "res://scenes/bots/enemies/bee.tres"
+base_frequency = 2.0
+damage = 1.0
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+metadata/_custom_type_script = "uid://c7sips3w53syk"

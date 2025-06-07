@@ -2,6 +2,7 @@ extends Node2D
 
 const BOT_SCENE = preload("res://scenes/fighter.tscn")
 const CUSTOM_BOT_SCENE = preload("res://scenes/bots/custom_bot.tscn")
+
 const TIME_SCENE = preload("res://scenes/ui/game_speed.tscn")
 const START_TIMER = preload("res://scenes/ui/321_go.tscn")
 
@@ -58,21 +59,7 @@ func initialize_bots(bot_scene) -> void:
 	alive_bots = bot_types.size()
 	#create new bots
 	for i in range(bot_types.size()):
-		var bot_def = load(bot_types[i])
-		
-		var bot = null
-		if (bot_def is BotDefinition):
-			bot = CUSTOM_BOT_SCENE.instantiate()
-			bot.set_bot_definition(bot_def)
-		else:
-			bot = bot_scene.instantiate()
-			bot.set_controller(bot_def)
-			
-		bot.set_color()
-		bot.global_position = starting_positions[i + (1 if player_def != null else 0)].global_position
-		bot.died.connect(bot_died)
-		
-		add_child(bot)
+		spawn_bot(bot_types[i], starting_positions[i + (1 if player_def != null else 0)].global_position)
 	
 		
 	#add player bot
@@ -85,3 +72,21 @@ func initialize_bots(bot_scene) -> void:
 		player_bot.global_position = starting_positions[0].global_position
 		player_bot.died.connect(player_died)
 		add_child(player_bot)
+
+
+func spawn_bot(bot_definition, position:Vector2):
+	var bot_def = load(bot_definition)
+		
+	var bot = null
+	if (bot_def is BotDefinition):
+		bot = CUSTOM_BOT_SCENE.instantiate()
+		bot.set_bot_definition(bot_def)
+	else:
+		bot = BOT_SCENE.instantiate()
+		bot.set_controller(bot_def)
+		
+	bot.set_color()
+	bot.global_position = position 
+	bot.died.connect(bot_died)
+	
+	add_child(bot)

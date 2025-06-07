@@ -63,8 +63,7 @@ const ELITES = {
 }
 
 const BOSSES = [
-	FIGHTER_VERY_HEAVY,
-	FIGHTER_SUPER_HEAVY,
+	BOSS_1
 ]
 
 
@@ -78,12 +77,14 @@ const FIGHTER_STD = "res://scenes/bots/enemies/fighter_std.tres"
 const FIGHTER_VERY_HEAVY = "res://scenes/bots/enemies/fighter_very_heavy.tres"
 const FIGHTER_SUPER_HEAVY = "res://scenes/bots/enemies/fighter_super_heavy.tres"
 
+const BOSS_1 = "res://scenes/bots/enemies/boss_1.tres"
+
 #var rooms : Array = []
 var player_character: BotDefinition
 var player_health: float
 var player_inventory: Inventory
 
-var player_progression = 100
+var player_progression = 250
 
 func _init():
 	#rooms = CHALLENGE_ROOMS.duplicate()
