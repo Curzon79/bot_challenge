@@ -1,11 +1,12 @@
 --- General ---
 
 - constant life
-- fractional life
++ fractional life
 - upgrade item selection concept
 
 - enemy selection concept
   + basic concept
+  - 10 levels + boss
 
 - continue run
 
@@ -50,7 +51,7 @@
  - hunt
  - explore 
 
- - disadvantages : extra effects
+ + disadvantages : extra effects
  
   
 + upgrade: extra slots
