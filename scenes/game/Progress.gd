@@ -1,5 +1,8 @@
 extends Node
 
+const PROGRESSION_FACTOR = 1.15
+const BOSS_THRESHOLD = 220
+
 const CHALLENGE_ROOMS = [
 	{
 		"name": "Challenge 1",
@@ -35,6 +38,14 @@ const CHALLENGE_ROOMS = [
 	},	
 ]
 
+const BOSS_ROOM = {
+		"name": "Boss",
+		"scene": "res://scenes/rooms/challenge_rooms/boss_room_1.tscn",
+		"preview": "res://res/room1.png",
+		"positions" : 1,
+		"selection": "boss"
+	}	
+
 const ENEMIES = {
 	PAWN : 10,
 	BEE: 20,
@@ -51,6 +62,11 @@ const ELITES = {
 	FIGHTER_SUPER_HEAVY: 250,
 }
 
+const BOSSES = [
+	FIGHTER_VERY_HEAVY,
+	FIGHTER_SUPER_HEAVY,
+]
+
 
 const PAWN = "res://scenes/bots/enemies/pawn.tres"
 const BEE = "res://scenes/bots/enemies/bee.tres"
@@ -64,6 +80,7 @@ const FIGHTER_SUPER_HEAVY = "res://scenes/bots/enemies/fighter_super_heavy.tres"
 
 #var rooms : Array = []
 var player_character: BotDefinition
+var player_health: float
 var player_inventory: Inventory
 
 var player_progression = 100
@@ -75,18 +92,23 @@ func _init():
 	player_character.color = Color.CORAL
 	player_character.hull = load("res://scenes/bots/parts/hull_t1_std.tres")
 	player_character.weapons.append(load("res://scenes/bots/parts/weapon_t1_cannon.tres") )
+	player_health = player_character.hull.health
 	player_inventory = Inventory.new()
 
 func progress_difficulty():
-	player_progression *= 1.15
+	player_progression *= PROGRESSION_FACTOR
 
 func get_next_room():
+	if (player_progression > BOSS_THRESHOLD):
+		return BOSS_ROOM
 	return CHALLENGE_ROOMS.pick_random()
 
 func get_enemy_set(room:Dictionary):
 	if (room.has("selection")):
 		if (room["selection"] == "elite"):
 			return get_elite_enemy_set()
+		if (room["selection"] == "boss"):
+			return get_boss_enemy_set()
 		elif (room["selection"] == "swarm"):
 			return get_swarm_enemy_set(room["positions"])
 	var enemy_set = []
@@ -120,6 +142,9 @@ func get_enemy_set(room:Dictionary):
 
 func get_elite_enemy_set():
 	return [get_closest_to_value(ELITES, player_progression)]
+
+func get_boss_enemy_set():
+	return [BOSSES.pick_random()]
 	
 func get_swarm_enemy_set(amount: int):
 	var enemy = get_closest_to_value(ENEMIES, player_progression / amount)

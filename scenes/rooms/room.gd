@@ -81,6 +81,7 @@ func initialize_bots(bot_scene) -> void:
 		player_bot.set_bot_definition(player_def)
 			
 		player_bot.set_color()
+		player_bot.health = Progress.player_health
 		player_bot.global_position = starting_positions[0].global_position
 		player_bot.died.connect(player_died)
 		add_child(player_bot)

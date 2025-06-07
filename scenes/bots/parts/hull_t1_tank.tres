@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_32wis")
 cost = 200
-health = 5
-speed = 300
+health = 20
+speed = 200
 cpu_slots = 3
 weapon_slots = 3
 improvement_slots = 1

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_j7xme")
 cost = 200
-health = 2
+health = 10
 speed = 600
 cpu_slots = 4
 weapon_slots = 2
