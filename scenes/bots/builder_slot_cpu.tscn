@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfyvqfc6orjh3"]
+
+[ext_resource type="PackedScene" uid="uid://bwrnnp4vpy1u8" path="res://scenes/bots/builder_slot.tscn" id="1_wj1ih"]
+
+[node name="BuilderSlot" instance=ExtResource("1_wj1ih")]

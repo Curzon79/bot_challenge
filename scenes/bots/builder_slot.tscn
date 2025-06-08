@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwrnnp4vpy1u8"]
+[gd_scene load_steps=4 format=3 uid="uid://bwrnnp4vpy1u8"]
 
 [ext_resource type="Script" uid="uid://de1fxqpypet2u" path="res://scenes/bots/builder_slot.gd" id="1_6u4wj"]
+[ext_resource type="Texture2D" uid="uid://b2darjujfkq5n" path="res://res/ui/cpu_base.png" id="2_g01it"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u4wj"]
 bg_color = Color(0.272456, 0.638567, 0.857472, 1)
@@ -16,12 +17,21 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6u4wj")
 script = ExtResource("1_6u4wj")
+type = 2
+
+[node name="Border" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_g01it")
+expand_mode = 2
 
 [node name="Texture" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 52.0
-offset_bottom = 52.0
+offset_right = 50.0
+offset_bottom = 50.0
 expand_mode = 2

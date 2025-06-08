@@ -84,7 +84,7 @@ var player_character: BotDefinition
 var player_health: float
 var player_inventory: Inventory
 
-var player_progression = 250 # 100
+var player_progression =  100
 
 func _init():
 	#rooms = CHALLENGE_ROOMS.duplicate()

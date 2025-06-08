@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuub20ixoffgs"]
+
+[ext_resource type="PackedScene" uid="uid://bwrnnp4vpy1u8" path="res://scenes/bots/builder_slot.tscn" id="1_0n6kk"]
+[ext_resource type="Texture2D" uid="uid://dvsoriuuv2btq" path="res://res/ui/weapons_base.png" id="2_2ob5x"]
+
+[node name="BuilderSlot" instance=ExtResource("1_0n6kk")]
+type = 1
+
+[node name="Border" parent="." index="0"]
+texture = ExtResource("2_2ob5x")

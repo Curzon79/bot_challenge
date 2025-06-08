@@ -3,10 +3,14 @@ extends Control
 const SLOT_SCENE = preload("res://scenes/bots/builder_slot.tscn")
 const ITEM_SCENE = preload("res://scenes/bots/builder_item.tscn")
 
+const CPU_SLOT = preload("res://scenes/bots/builder_slot_cpu.tscn")
+const WEAPON_SLOT = preload("res://scenes/bots/builder_slot_weapon.tscn")
+const IMP_SLOT = preload("res://scenes/bots/builder_slot_imp.tscn")
+
 var bot_definition = BotDefinition.new()
 
 func _ready():
-	#_set_hull(load("res://scenes/bots/parts/hull_t1_std.tres"))
+	_set_hull(load("res://scenes/bots/parts/hull_t1_std.tres"))
 	
 	fill_inventory()
 	
@@ -14,19 +18,18 @@ func _set_hull(hull:Hull):
 	bot_definition.hull = hull
 	$Bot/Hull.texture = hull.icon
 	
-	add_slots(hull.cpu_slots, $Bot/Cpu, BuilderSlot.Type.CPU_Module)
-	add_slots(hull.improvement_slots, $Bot/Improvements, BuilderSlot.Type.Improvement)
-	add_slots(hull.weapon_slots, $Bot/Weapons,BuilderSlot.Type.Weapon)
+	add_slots(hull.cpu_slots, $Bot/Cpu, CPU_SLOT)
+	add_slots(hull.improvement_slots, $Bot/Improvements, IMP_SLOT)
+	add_slots(hull.weapon_slots, $Bot/Weapons, WEAPON_SLOT)
 
 
-func add_slots(amount:int, control:Control, type:BuilderSlot.Type ):
+func add_slots(amount:int, control:Control, slot_scene ):
 	for child in control.get_children():
 		control.remove_child(child)
 		child.queue_free()
 		
 	for i in range(amount):
-		var slot = SLOT_SCENE.instantiate()
-		slot.type = type
+		var slot = slot_scene.instantiate()
 		control.add_child(slot)
 		slot.dropped.connect(item_dropped)
 

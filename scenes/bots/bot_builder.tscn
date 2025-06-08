@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv5tw37ef07im"]
+[gd_scene load_steps=3 format=3 uid="uid://dv5tw37ef07im"]
 
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_av852"]
 [ext_resource type="Script" uid="uid://c1rfjij3co4lc" path="res://scenes/bots/bot_builder.gd" id="2_5u2f6"]
-[ext_resource type="Texture2D" uid="uid://b4x61rk5aw8n6" path="res://res/bot_parts/header_tools.png" id="3_l5ypw"]
-[ext_resource type="Texture2D" uid="uid://d22ksosotdjk0" path="res://res/bot_parts/header_weapons.png" id="6_p8w1d"]
-[ext_resource type="Texture2D" uid="uid://b4c45p2f45m2p" path="res://res/bot_parts/header_cpu.png" id="7_p8w1d"]
 
 [node name="BotBuilder" type="Control"]
 layout_mode = 3
@@ -30,23 +27,26 @@ expand_mode = 3
 [node name="Cpu" type="VBoxContainer" parent="Bot"]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 232.0
+offset_top = 184.0
 offset_right = 136.0
 offset_bottom = 552.0
+theme_override_constants/separation = 30
 
 [node name="Improvements" type="VBoxContainer" parent="Bot"]
 layout_mode = 0
 offset_left = 256.0
-offset_top = 232.0
+offset_top = 184.0
 offset_right = 320.0
 offset_bottom = 552.0
+theme_override_constants/separation = 30
 
 [node name="Weapons" type="VBoxContainer" parent="Bot"]
 layout_mode = 0
 offset_left = 464.0
-offset_top = 232.0
+offset_top = 184.0
 offset_right = 528.0
 offset_bottom = 544.0
+theme_override_constants/separation = 30
 
 [node name="Line2D" type="Line2D" parent="Bot"]
 position = Vector2(7, 30)
@@ -68,11 +68,6 @@ scale = Vector2(0.964286, 0.785714)
 points = PackedVector2Array(291.407, 145.091, 291.407, 185.818)
 width = 4.0
 default_color = Color(0.00784314, 0.729412, 1, 1)
-
-[node name="HeaderTools" type="Sprite2D" parent="Bot"]
-position = Vector2(288, 200)
-scale = Vector2(0.25, 0.233333)
-texture = ExtResource("3_l5ypw")
 
 [node name="Inventory" type="TabContainer" parent="."]
 layout_mode = 0
@@ -116,13 +111,3 @@ offset_left = 64.0
 offset_top = 13.0
 offset_right = 128.0
 offset_bottom = 509.0
-
-[node name="HeaderWeapons" type="Sprite2D" parent="."]
-position = Vector2(536, 224)
-scale = Vector2(0.4, 0.354546)
-texture = ExtResource("6_p8w1d")
-
-[node name="HeaderCpu" type="Sprite2D" parent="."]
-position = Vector2(144, 224)
-scale = Vector2(0.456989, 0.5)
-texture = ExtResource("7_p8w1d")

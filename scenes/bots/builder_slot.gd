@@ -3,7 +3,7 @@ extends Panel
 class_name BuilderSlot
 
 enum Type {Improvement, Weapon, CPU_Module} 
-var type = Type.Improvement
+@export var type = Type.Improvement
 
 var item: Resource
 
