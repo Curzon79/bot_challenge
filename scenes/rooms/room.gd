@@ -7,13 +7,15 @@ const PLAYER_BOT_SCENE = preload("res://scenes/bots/player_custom_bot.tscn")
 const TIME_SCENE = preload("res://scenes/ui/game_speed.tscn")
 const START_TIMER = preload("res://scenes/ui/321_go.tscn")
 
+@export var default_bot_scene = BOT_SCENE
+
 var bot_types = []
 var player_def = null
 var alive_bots = 0
 
 func _ready():
 	add_sound()
-	initialize_bots(BOT_SCENE)
+	initialize_bots()
 	add_child(TIME_SCENE.instantiate())
 	add_child(START_TIMER.instantiate())
 
@@ -54,7 +56,7 @@ func start_next_level():
 	get_tree().root.add_child(scene)
 	get_node("/root/room").queue_free()
 
-func initialize_bots(bot_scene) -> void:
+func initialize_bots() -> void:
 	var starting_positions = get_tree().get_nodes_in_group("Startposition")
 	
 	alive_bots = 0
@@ -82,7 +84,7 @@ func spawn_bot(bot_definition, position:Vector2):
 		bot = CUSTOM_BOT_SCENE.instantiate()
 		bot.set_bot_definition(bot_def)
 	else:
-		bot = BOT_SCENE.instantiate()
+		bot = default_bot_scene.instantiate()
 		bot.set_controller(bot_def)
 		
 	bot.set_color()

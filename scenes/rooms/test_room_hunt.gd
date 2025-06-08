@@ -8,7 +8,9 @@ const START_BUNNY_COUNT = preload("res://scenes/ui/bunny_count.tscn")
 @export var spawn_bot_type:Script
 
 func _ready():
-	initialize_bots(BOT_TURRET)
+	default_bot_scene = BOT_TURRET
+	
+	initialize_bots()
 	add_child(TIME_SCENE.instantiate())
 	add_child(START_TIMER.instantiate())
 	add_child(START_BUNNY_COUNT.instantiate())
