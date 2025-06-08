@@ -1,0 +1,136 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgk1w4itbuyw1"]
+
+[ext_resource type="Script" uid="uid://bok7xl2nd1lwo" path="res://scenes/tools/enemy_builder.gd" id="1_u4kr7"]
+
+[node name="EnemyBuilder" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u4kr7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 16.0
+offset_right = 320.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 27
+text = "Enemy Builder"
+
+[node name="Name" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 16.0
+offset_right = 512.0
+offset_bottom = 56.0
+placeholder_text = "Enemy name"
+
+[node name="Hull" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 320.0
+
+[node name="Label2" type="Label" parent="Hull"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 256.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 16
+text = "Hull"
+
+[node name="HealthLabel" type="Label" parent="Hull"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 112.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 16
+text = "Health"
+
+[node name="Health" type="SpinBox" parent="Hull"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 32.0
+offset_right = 206.563
+offset_bottom = 63.0
+value = 3.0
+
+[node name="SpeedLabel" type="Label" parent="Hull"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 112.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 16
+text = "Speed"
+
+[node name="Speed" type="SpinBox" parent="Hull"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 72.0
+offset_right = 206.563
+offset_bottom = 103.0
+max_value = 500.0
+value = 300.0
+
+[node name="Icon" type="Label" parent="Hull"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 120.0
+offset_right = 112.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 16
+text = "Icon (later)"
+
+[node name="Weapons" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 344.0
+offset_right = 512.0
+offset_bottom = 616.0
+
+[node name="Label3" type="Label" parent="Weapons"]
+layout_mode = 0
+offset_right = 248.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 16
+text = "Weapons"
+
+[node name="Misc" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 320.0
+
+[node name="Label4" type="Label" parent="Misc"]
+layout_mode = 0
+offset_right = 248.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 16
+text = "Misc"
+
+[node name="Stats" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 344.0
+offset_right = 960.0
+offset_bottom = 616.0
+
+[node name="Label5" type="Label" parent="Stats"]
+layout_mode = 0
+offset_right = 248.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 16
+text = "Stats"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 584.0
+offset_right = 1128.0
+offset_bottom = 616.0
+text = "Save"
+
+[connection signal="pressed" from="Button" to="." method="_on_save"]
