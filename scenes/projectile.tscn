@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmr1ln5ajod3l"]
+[gd_scene load_steps=8 format=3 uid="uid://cmr1ln5ajod3l"]
 
 [ext_resource type="Script" uid="uid://mw5yc57xfc5i" path="res://scenes/projectile.gd" id="1_c8fcr"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_q3m7n"]
@@ -9,6 +9,14 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.271845, 0.80483), 0.0, 0.0, 0,
 point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6aapk"]
+
+[sub_resource type="Curve" id="Curve_ig43x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.639344, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ptqcf"]
+offsets = PackedFloat32Array(0.00358423, 0.591398, 0.924731)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="projectile" type="Area2D" groups=["Bullet"]]
 script = ExtResource("1_c8fcr")
@@ -45,6 +53,23 @@ texture = ExtResource("2_q3m7n")
 stream = ExtResource("3_softn")
 volume_db = -5.876
 pitch_scale = 2.67
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+scale = Vector2(2.49, 2.49)
+emitting = false
+amount = 53
+texture = ExtResource("2_q3m7n")
+lifetime = 0.34
+one_shot = true
+explosiveness = 1.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 631.9
+linear_accel_min = 2.45
+linear_accel_max = 55.21
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+scale_amount_curve = SubResource("Curve_ig43x")
+color_ramp = SubResource("Gradient_ptqcf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

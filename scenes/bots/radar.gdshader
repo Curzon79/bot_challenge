@@ -10,7 +10,7 @@ vec2 rotate(vec2 uv, vec2 pivot, float angle)
 {
 	mat2 rotation = mat2(vec2(sin(angle), -cos(angle)),
 						vec2(cos(angle), sin(angle)));
-	
+
 	uv -= pivot;
 	uv = uv * rotation;
 	uv += pivot;
@@ -23,7 +23,7 @@ void fragment() {
 	vec4 bottom = texture(bottom_texture, uv1);
 	vec2 rotated_uv = rotate(UV, vec2(0.5), -TIME * total_speed);
 	vec4 turn_thingy = texture(turn_part, rotated_uv);
-	
+
 	COLOR += bottom;
 	COLOR += vec4(turn_thingy.a);
 	COLOR += vec4(turn_thingy.a);

@@ -25,9 +25,13 @@ func _on_body_entered(body: Node2D) -> void:
 		if ! body.alive:
 			return
 		body.receive_damage(damage)
-		self.visible = false
+		$CPUParticles2D.visible = false
+		$CollisionShape2D.visible = false
 		$AudioStreamPlayer.play()
 		alive = false
+		$CPUParticles2D2.modulate = body.modulate
+		$CPUParticles2D2.direction = direction
+		$CPUParticles2D2.emitting = true
 	else:
 		self.queue_free()
 
