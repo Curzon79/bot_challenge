@@ -69,4 +69,3 @@
 --- Bugs -----
 + spawn in walls
 + win when all bots defeated
-

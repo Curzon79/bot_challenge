@@ -21,6 +21,10 @@ config/icon="res://icon.svg"
 
 Progress="*res://scenes/game/Progress.gd"
 
+[display]
+
+mouse_cursor/custom_image="uid://bxju2ry5gnu86"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
