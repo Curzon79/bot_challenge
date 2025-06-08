@@ -15,4 +15,4 @@ func _on_save() -> void:
 	enemy_bot_definition.hull.health = $Hull/Health.value
 	enemy_bot_definition.hull.speed = $Hull/Speed.value
 
-	ResourceSaver.save(enemy_bot_definition, "test_enemy.tres",  )
+	ResourceSaver.save(enemy_bot_definition, name + ".tres")
