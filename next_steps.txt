@@ -16,6 +16,7 @@
 
 - upgrade screen
    + nicer slots
+   
 - upgrade selection
 
 + health display
@@ -69,3 +70,4 @@
 --- Bugs -----
 + spawn in walls
 + win when all bots defeated
+

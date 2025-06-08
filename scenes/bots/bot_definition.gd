@@ -126,7 +126,7 @@ func call_move(bot:CustomBot, current_direction:Vector2):
 		direction = get_random_direction()
 	
 	
-	return Command.new(Command.MOVE, (current_direction + direction * 0.2).normalized())
+	return Command.new(Command.MOVE, (current_direction + direction * 0.25).normalized())
 	
 
 func call_move_prio(bot:CustomBot):

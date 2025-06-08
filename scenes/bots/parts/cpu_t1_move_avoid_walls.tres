@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_k48mv")
 target = 1
-target_distance = 40
+target_distance = 50
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Avoid Walls"
