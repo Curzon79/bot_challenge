@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgk1w4itbuyw1"]
+[gd_scene load_steps=3 format=3 uid="uid://cgk1w4itbuyw1"]
 
 [ext_resource type="Script" uid="uid://bok7xl2nd1lwo" path="res://scenes/tools/enemy_builder.gd" id="1_u4kr7"]
+[ext_resource type="PackedScene" uid="uid://c3q0jj47l5b7k" path="res://scenes/tools/weapon_builder.tscn" id="2_pqbvh"]
 
 [node name="EnemyBuilder" type="Control"]
 layout_mode = 3
@@ -29,7 +30,7 @@ layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 512.0
-offset_bottom = 320.0
+offset_bottom = 240.0
 
 [node name="Label2" type="Label" parent="Hull"]
 layout_mode = 0
@@ -76,33 +77,41 @@ value = 300.0
 
 [node name="Icon" type="Label" parent="Hull"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 120.0
-offset_right = 112.0
-offset_bottom = 144.0
+offset_left = 312.0
+offset_top = 24.0
+offset_right = 416.0
+offset_bottom = 48.0
 theme_override_font_sizes/font_size = 16
 text = "Icon (later)"
 
-[node name="Weapons" type="Panel" parent="."]
+[node name="Weapons" type="TabContainer" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 344.0
-offset_right = 512.0
-offset_bottom = 616.0
+offset_left = 576.0
+offset_top = 16.0
+offset_right = 960.0
+offset_bottom = 296.0
+current_tab = 0
 
-[node name="Label3" type="Label" parent="Weapons"]
-layout_mode = 0
-offset_right = 248.0
-offset_bottom = 48.0
-theme_override_font_sizes/font_size = 16
-text = "Weapons"
+[node name="Weapon 1" type="TabBar" parent="Weapons"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="WeaponBuilder" parent="Weapons/Weapon 1" instance=ExtResource("2_pqbvh")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 17.0
+offset_right = -24.0
+offset_bottom = -16.0
 
 [node name="Misc" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 576.0
-offset_top = 64.0
-offset_right = 1024.0
-offset_bottom = 320.0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 512.0
+offset_bottom = 624.0
 
 [node name="Label4" type="Label" parent="Misc"]
 layout_mode = 0
@@ -114,7 +123,7 @@ text = "Misc"
 [node name="Stats" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 576.0
-offset_top = 344.0
+offset_top = 312.0
 offset_right = 960.0
 offset_bottom = 616.0
 
@@ -125,7 +134,7 @@ offset_bottom = 48.0
 theme_override_font_sizes/font_size = 16
 text = "Stats"
 
-[node name="Button" type="Button" parent="."]
+[node name="Save" type="Button" parent="."]
 layout_mode = 0
 offset_left = 992.0
 offset_top = 584.0
@@ -133,4 +142,21 @@ offset_right = 1128.0
 offset_bottom = 616.0
 text = "Save"
 
-[connection signal="pressed" from="Button" to="." method="_on_save"]
+[node name="Add_weapon" type="Button" parent="."]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1128.0
+offset_bottom = 48.0
+text = "Add Wepaon"
+
+[node name="Delete_weapon" type="Button" parent="."]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 56.0
+offset_right = 1128.0
+offset_bottom = 88.0
+text = "Delete Wepaon"
+
+[connection signal="pressed" from="Save" to="." method="_on_save"]
+[connection signal="pressed" from="Add_weapon" to="." method="_on_add_weapon_pressed"]

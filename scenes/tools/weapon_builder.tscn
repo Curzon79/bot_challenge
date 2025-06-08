@@ -1,0 +1,161 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3q0jj47l5b7k"]
+
+[ext_resource type="Script" uid="uid://dx4plvm7jxn5i" path="res://scenes/tools/weapon_builder.gd" id="1_mku71"]
+
+[node name="WeaponBuilder" type="Panel"]
+anchors_preset = -1
+offset_right = 288.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mku71")
+
+[node name="WeaponType" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 8.0
+offset_right = 272.0
+offset_bottom = 39.0
+selected = 0
+item_count = 4
+popup/item_0/text = "Cannon"
+popup/item_0/id = 0
+popup/item_1/text = "Laser"
+popup/item_1/id = 1
+popup/item_2/text = "Bomb"
+popup/item_2/id = 2
+popup/item_3/text = "Spawn"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 39.0
+text = "Weapon"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 113.0
+offset_bottom = 79.0
+text = "Frequency"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 113.0
+offset_bottom = 119.0
+text = "Damage"
+
+[node name="Frequency" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 272.0
+offset_bottom = 79.0
+step = 0.01
+value = 0.2
+
+[node name="Damage" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 88.0
+offset_right = 272.0
+offset_bottom = 119.0
+step = 0.1
+value = 1.0
+
+[node name="Laser" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 280.0
+offset_bottom = 216.0
+
+[node name="Label4" type="Label" parent="Laser"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 97.0
+offset_bottom = 39.0
+text = "Sweep"
+
+[node name="Label5" type="Label" parent="Laser"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 97.0
+offset_bottom = 79.0
+text = "Duration"
+
+[node name="Sweep" type="SpinBox" parent="Laser"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 8.0
+offset_right = 256.0
+offset_bottom = 39.0
+value = 45.0
+
+[node name="Duration" type="SpinBox" parent="Laser"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 79.0
+step = 0.1
+value = 1.0
+
+[node name="Bomb" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 280.0
+offset_bottom = 216.0
+
+[node name="Label4" type="Label" parent="Bomb"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 97.0
+offset_bottom = 39.0
+text = "Time"
+
+[node name="Time" type="SpinBox" parent="Bomb"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 8.0
+offset_right = 256.0
+offset_bottom = 39.0
+step = 0.1
+value = 2.0
+
+[node name="Spawn" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 280.0
+offset_bottom = 216.0
+
+[node name="Label4" type="Label" parent="Spawn"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 97.0
+offset_bottom = 47.0
+text = "Type"
+
+[node name="spawnType" type="TextEdit" parent="Spawn"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 8.0
+offset_right = 248.0
+offset_bottom = 48.0
+
+[connection signal="item_selected" from="WeaponType" to="." method="_on_weapon_type_item_selected"]

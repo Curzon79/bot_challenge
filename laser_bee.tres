@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scenes/bots/cpu_module.gd" id="1_eoq3d"]
+[ext_resource type="Script" path="res://scenes/bots/hull.gd" id="2_ummkq"]
+[ext_resource type="Script" path="res://scenes/bots/improvement.gd" id="3_3drg0"]
+[ext_resource type="Script" path="res://scenes/bots/bot_definition.gd" id="4_vdewe"]
+[ext_resource type="Script" path="res://scenes/bots/weapon.gd" id="5_jgc17"]
+[ext_resource type="Script" path="res://scenes/bots/weapon_laser.gd" id="6_yg455"]
+
+[sub_resource type="Resource" id="Resource_i3db4"]
+script = ExtResource("2_ummkq")
+cost = 100
+health = 2.0
+speed = 300.0
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "laser_bee"
+
+[sub_resource type="Resource" id="Resource_qs85g"]
+script = ExtResource("6_yg455")
+duration = 1.0
+sweep = 45.0
+base_frequency = 0.25
+damage = 1.0
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+
+[sub_resource type="Resource" id="Resource_75k88"]
+script = ExtResource("5_jgc17")
+base_frequency = 1.0
+damage = 2.0
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+
+[resource]
+script = ExtResource("4_vdewe")
+color = Color(1, 1, 1, 1)
+hull = SubResource("Resource_i3db4")
+weapons = Array[ExtResource("5_jgc17")]([SubResource("Resource_qs85g"), SubResource("Resource_75k88")])
+improvements = Array[ExtResource("3_3drg0")]([])
+cpus = Array[ExtResource("1_eoq3d")]([])
+extra_slots = {
+0: 0,
+1: 0,
+2: 0
+}
