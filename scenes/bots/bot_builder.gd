@@ -70,9 +70,9 @@ func set_current_definition(bot_definition:BotDefinition):
 	self.bot_definition = bot_definition
 	$Bot/Hull.texture = bot_definition.hull.icon
 	
-	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Cpu), $Bot/Cpu, BuilderSlot.Type.CPU_Module)
-	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Improvement), $Bot/Improvements, BuilderSlot.Type.Improvement)
-	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Weapon), $Bot/Weapons,BuilderSlot.Type.Weapon)
+	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Cpu), $Bot/Cpu, CPU_SLOT)
+	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Improvement), $Bot/Improvements, IMP_SLOT)
+	add_slots(bot_definition.get_slots(BotDefinition.SLOT_TYPE.Weapon), $Bot/Weapons, WEAPON_SLOT)
 	
 	for i in bot_definition.weapons.size():
 		remove_item($Inventory/Weapons/VBoxContainer, bot_definition.weapons[i])
