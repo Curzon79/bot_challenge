@@ -15,6 +15,7 @@
 --- UI ----
 
 - upgrade screen
+   + nicer slots
 - upgrade selection
 
 + health display
