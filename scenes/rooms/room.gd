@@ -57,12 +57,11 @@ func start_next_level():
 func initialize_bots(bot_scene) -> void:
 	var starting_positions = get_tree().get_nodes_in_group("Startposition")
 	
-	alive_bots = bot_types.size()
+	alive_bots = 0
 	#create new bots
 	for i in range(bot_types.size()):
 		spawn_bot(bot_types[i], starting_positions[i + (1 if player_def != null else 0)].global_position)
 	
-		
 	#add player bot
 	if (player_def != null):
 		var player_bot = PLAYER_BOT_SCENE.instantiate()
@@ -90,4 +89,11 @@ func spawn_bot(bot_definition, position:Vector2):
 	bot.global_position = position 
 	bot.died.connect(bot_died)
 	
+	alive_bots += 1
 	add_child(bot)
+
+#ächeck for wall collision
+func is_possible_spawn_position(position:Vector2) -> bool:
+	var map_position = $playing_field.local_to_map($playing_field.to_local(position))
+	var tiledata = $playing_field.get_cell_tile_data(map_position)
+	return (tiledata != null) and (tiledata.get_collision_polygons_count(0) == 0)

@@ -66,6 +66,6 @@
 
 
 --- Bugs -----
-- spawn in walls
-- win when all bots defeated
++ spawn in walls
++ win when all bots defeated
 

@@ -7,4 +7,8 @@ class_name WeaponSpawn
 
 func shoot_weapon(command:Command, bot:CustomBot):
 	var room = bot.get_parent()
-	room.spawn_bot(spawn_bot, bot.global_position + Vector2(100, 0).rotated(randf() * 2 * PI))
+	var spawn_position = Vector2()
+	while(! room.is_possible_spawn_position(spawn_position)):
+		spawn_position = bot.global_position + Vector2(100, 0).rotated(randf() * 2 * PI)
+	
+	room.spawn_bot(spawn_bot, spawn_position)

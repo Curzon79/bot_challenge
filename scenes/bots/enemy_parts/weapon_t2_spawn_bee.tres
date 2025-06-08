@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_45cth")
 spawn_bot = "res://scenes/bots/enemies/bee.tres"
-base_frequency = 2.0
+base_frequency = 0.5
 damage = 1.0
 cost = 100
 modifier = Dictionary[int, float]({})
