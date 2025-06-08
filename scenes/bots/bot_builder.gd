@@ -10,7 +10,7 @@ const IMP_SLOT = preload("res://scenes/bots/builder_slot_imp.tscn")
 var bot_definition = BotDefinition.new()
 
 func _ready():
-	_set_hull(load("res://scenes/bots/parts/hull_t1_std.tres"))
+	#_set_hull(load("res://scenes/bots/parts/hull_t1_std.tres"))
 	
 	fill_inventory()
 	
