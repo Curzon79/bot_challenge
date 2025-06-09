@@ -14,12 +14,12 @@ func _ready() -> void:
 	$Line2D2.default_color = modulate
 	modulate = Color.WHITE
 	
-	var local_sweep = global_rotation_degrees + sweep
 	
 	global_rotation = direction.angle() - deg_to_rad(sweep * 0.5)
+	var local_sweep = global_rotation + deg_to_rad(sweep)
 	
 	tween = get_tree().create_tween()
-	tween.tween_property(self, "global_rotation_degrees", local_sweep, time)
+	tween.tween_property(self, "global_rotation", local_sweep, time)
 	
 	$Timer.start(time)
 
