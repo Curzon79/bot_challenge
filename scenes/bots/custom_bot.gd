@@ -11,7 +11,7 @@ var weapon_cooldowns = []
 func _ready() -> void:
 	#initialize bot
 	weapon_cooldowns = [$cooldown, $cooldown2, $cooldown3]
-	set_bot_definition(bot_definition)
+	#set_bot_definition(bot_definition)
 	update_health_indication()
 	
 	#$cooldown.wait_time = shoot_cooldown

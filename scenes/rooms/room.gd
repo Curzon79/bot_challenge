@@ -12,6 +12,7 @@ const START_TIMER = preload("res://scenes/ui/321_go.tscn")
 var bot_types = []
 var player_def = null
 var alive_bots = 0
+var player_bot = null
 
 func _ready():
 	add_sound()
@@ -43,6 +44,8 @@ func player_died():
 	get_node("/root/room").queue_free()
 	
 func next_level():
+	#store player health
+	Progress.player_health = player_bot.health
 	Progress.progress_difficulty()
 	
 	var item_select = load("res://scenes/bots/bot_item_select.tscn").instantiate()
@@ -66,11 +69,11 @@ func initialize_bots() -> void:
 	
 	#add player bot
 	if (player_def != null):
-		var player_bot = PLAYER_BOT_SCENE.instantiate()
+		player_bot = PLAYER_BOT_SCENE.instantiate()
 		player_bot.set_bot_definition(player_def)
 		
-		player_bot.set_color()
 		player_bot.health = Progress.player_health
+		player_bot.update_health_indication()
 		player_bot.global_position = starting_positions[0].global_position
 		player_bot.died.connect(player_died)
 		add_child(player_bot)
