@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Imp_Repair_Module" load_steps=2 format=3 uid="uid://c2qswvltvlsyi"]
+[gd_resource type="Resource" script_class="Imp_Repair_Module" load_steps=3 format=3 uid="uid://c2qswvltvlsyi"]
 
 [ext_resource type="Script" uid="uid://cga081bg542y7" path="res://scenes/bots/imp_repair_module.gd" id="1_gapwj"]
+[ext_resource type="Texture2D" uid="uid://bamwe7scgin1m" path="res://res/bot_parts/icon_repair.png" id="1_y5qa1"]
 
 [resource]
 script = ExtResource("1_gapwj")
@@ -8,4 +9,5 @@ repair_per_second = 0.1
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Repair Small"
+icon = ExtResource("1_y5qa1")
 metadata/_custom_type_script = "uid://cga081bg542y7"

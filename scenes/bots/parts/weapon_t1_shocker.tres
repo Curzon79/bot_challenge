@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bpsihhfgav35a"]
 
 [ext_resource type="Script" uid="uid://b8mxl56lnos2x" path="res://scenes/bots/weapon_shocker.gd" id="1_7dxpm"]
-[ext_resource type="Texture2D" uid="uid://d22ksosotdjk0" path="res://res/bot_parts/header_weapons.png" id="1_375t4"]
+[ext_resource type="Texture2D" uid="uid://w0ryb572en7s" path="res://res/bot_parts/icon_shocker.png" id="1_375t4"]
 
 [resource]
 script = ExtResource("1_7dxpm")
