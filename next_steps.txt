@@ -38,7 +38,7 @@
  - triple cannon
  + peashooter
  + big cannon
- - shock weapon (immpbilize enemy)
+ + shock weapon (immpbilize enemy)
  + mines
  + spawn
  

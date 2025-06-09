@@ -30,6 +30,7 @@ const bullet = preload("res://scenes/projectile.tscn")
 var controller
 
 
+
 #bot stats
 @export var shoot_cooldown = 0.2
 @export var speed = 400
@@ -39,6 +40,7 @@ var controller
 @export var health = 3
 var alive = true
 signal died
+var freeze_time = 0.0
 
 #current command
 var command:Command = Command.new(Command.IDLE, Vector2())
@@ -54,6 +56,9 @@ func set_controller(script: Script):
 
 func _process(delta: float) -> void:
 	if ! alive:
+		return
+		
+	if check_freese(delta):
 		return
 	command = controller.getNextCommand($RayCast2D, $ShapeCast2D, delta)
 	#execute current command (if allowed)
@@ -120,6 +125,15 @@ func die():
 	$Light.visible = false
 	$CPUParticles2D.visible = false
 
+func check_freese(delta):
+	if freeze_time > 0:
+		if ! $shocked_particles.emitting:
+			$shocked_particles.emitting = true
+		freeze_time -= delta
+		return true
+	else:
+		$shocked_particles.emitting = false
+		return false
 
 func _on_death_particles_finished() -> void:
 	self.queue_free()

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5vemoe2v2r48"]
+
+[ext_resource type="Shader" uid="uid://qb857lqqebqr" path="res://scenes/bots/glowing.gdshader" id="1_kcyuh"]
+[ext_resource type="Script" uid="uid://daa388k6eood2" path="res://scenes/shocker.gd" id="1_ss5a6"]
+[ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_ss5a6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ss5a6"]
+shader = ExtResource("1_kcyuh")
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6bl7j"]
+radius = 101.02
+
+[node name="shocker" type="Node2D"]
+script = ExtResource("1_ss5a6")
+
+[node name="visuals" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="visuals"]
+material = SubResource("ShaderMaterial_ss5a6")
+emitting = false
+amount = 73
+texture = ExtResource("2_ss5a6")
+lifetime = 0.17
+one_shot = true
+randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 64.05
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 233.13
+scale_amount_min = 0.0
+scale_amount_max = 0.02
+
+[node name="functional" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="functional"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="functional/Area2D"]
+shape = SubResource("CircleShape2D_6bl7j")
+
+[connection signal="finished" from="visuals/CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
+[connection signal="body_entered" from="functional/Area2D" to="." method="_on_area_2d_body_entered"]

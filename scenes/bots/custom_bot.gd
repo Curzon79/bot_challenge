@@ -37,6 +37,11 @@ func set_controller(script: Script):
 func _process(delta: float) -> void:
 	if ! alive:
 		return
+		
+	if check_freese(delta):
+		return
+
+	
 	command = controller.getNextCommand($RayCast2D, $ShapeCast2D, delta)
 	#execute current command (if allowed)
 	if (!command.type in allowed_commands):

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bpsihhfgav35a"]
+
+[ext_resource type="Script" uid="uid://b8mxl56lnos2x" path="res://scenes/bots/weapon_shocker.gd" id="1_7dxpm"]
+[ext_resource type="Texture2D" uid="uid://d22ksosotdjk0" path="res://res/bot_parts/header_weapons.png" id="1_375t4"]
+
+[resource]
+script = ExtResource("1_7dxpm")
+duration = 0.2
+size = 1.0
+base_frequency = 0.2
+damage = 1.0
+cost = 100
+modifier = Dictionary[int, float]({})
+name = "Shocker I"
+icon = ExtResource("1_375t4")
+metadata/_custom_type_script = "uid://sg0e6ejxfyca"

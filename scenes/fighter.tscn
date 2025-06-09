@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcfm8j5usc016"]
+[gd_scene load_steps=13 format=3 uid="uid://dcfm8j5usc016"]
 
 [ext_resource type="Script" uid="uid://i5x48jgqdbf2" path="res://scenes/fighter.gd" id="1_a4q2m"]
 [ext_resource type="Texture2D" uid="uid://cgigv44lgkq60" path="res://res/bot.png" id="2_1q4ya"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dxrp70hnuabum" path="res://scenes/controller/default_bot.gd" id="2_eelhu"]
 [ext_resource type="AudioStream" uid="uid://dyg5r68xjda0i" path="res://res/sounds/schuss.wav" id="4_rsphg"]
 [ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/sounds/explosion.wav" id="5_tlqsq"]
+[ext_resource type="Shader" uid="uid://qb857lqqebqr" path="res://scenes/bots/glowing.gdshader" id="7_1bj3w"]
 
 [sub_resource type="Curve" id="Curve_38ety"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.271845, 0.80483), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -20,6 +21,10 @@ radius = 20.0
 [sub_resource type="Curve" id="Curve_rsphg"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.563107, 0.821801), 0.0, 0.0, 0, 0, Vector2(0.776699, 0), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ql5yn"]
+shader = ExtResource("7_1bj3w")
+shader_parameter/color = Color(0, 0, 0.99, 1)
 
 [node name="fighter" type="CharacterBody2D" groups=["Fighter"]]
 script = ExtResource("1_a4q2m")
@@ -198,5 +203,19 @@ texture = ExtResource("2_38ety")
 scale = Vector2(7.40741, 7.40741)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-23, 0, -22, -7, -19, -13, -16, -17, -11, -20, -6, -22, 0, -23, 6, -22, 12, -20, 17, -16, 20, -11, 22, -6, 23, 0, 22, 6, 20, 12, 16, 16, 12, 20, 6, 22, 0, 23, -6, 22, -11, 20, -16, 16, -20, 11, -22, 6)
+
+[node name="shocked_particles" type="CPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_ql5yn")
+emitting = false
+amount = 22
+texture = ExtResource("2_38ety")
+lifetime = 0.21
+emission_shape = 2
+emission_sphere_radius = 25.34
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 55.21
+scale_amount_min = 0.0
+scale_amount_max = 0.01
 
 [connection signal="finished" from="death_particles" to="." method="_on_death_particles_finished"]
