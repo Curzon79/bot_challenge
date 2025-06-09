@@ -1,4 +1,5 @@
 extends "res://scenes/Controller.gd"
+class_name BotController
 
 var bot_definition:BotDefinition
 

@@ -13,7 +13,7 @@ const BOTS = {
 	"Player (Controller)" : "res://scenes/controller/controler_controler.gd",
 	"Player Cheater (Controller)" : "res://scenes/controller/op_controler_player.gd",
 	"Custom: default" : "res://scenes/bots/bot_definitions/default.tres", 
-	"Wasp": "res://scenes/bots/enemies/wasp.tres"
+	"Wasp": "res://scenes/bots/enemies/wasp.tres", 
 }
 
 enum RoomType {MENU, TEST}

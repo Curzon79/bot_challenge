@@ -27,7 +27,8 @@
 
 - item details
 
-- enemy builder
++ enemy builder
+  - test enememy fighter
 
 --- Content ----
 
@@ -71,3 +72,4 @@
 + spawn in walls
 + win when all bots defeated
 
+- laser sweep

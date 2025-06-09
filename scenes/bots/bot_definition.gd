@@ -8,8 +8,8 @@ enum SLOT_TYPE {Weapon, Improvement, Cpu}
 @export var hull: Hull
 
 @export var weapons: Array[Weapon]
-@export var improvements: Array[Improvement]
-@export var cpus: Array[CPU_Module]
+@export var improvements: Array[EffectResource] #Can be anythig really
+@export var cpus: Array[EffectResource]
 
 #extra slots: weapon, improvement, cpu
 @export var extra_slots = {
