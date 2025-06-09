@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://chachfbkae3sr"]
+
+[ext_resource type="Texture2D" uid="uid://ce8axh6nc0u4r" path="res://res/bot_parts/icon_cannon.png" id="1_3a075"]
+[ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="2_sehfa"]
+
+[resource]
+script = ExtResource("2_sehfa")
+base_frequency = 0.6
+damage = 4.0
+cost = 200
+modifier = Dictionary[int, float]({})
+name = "Big Cannon II"
+icon = ExtResource("1_3a075")
+metadata/_custom_type_script = "uid://da2ffydwbhbfh"

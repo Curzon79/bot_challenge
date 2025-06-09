@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cijm2lxy063bx"]
+[gd_scene load_steps=9 format=3 uid="uid://cijm2lxy063bx"]
 
 [ext_resource type="PackedScene" uid="uid://dcfm8j5usc016" path="res://scenes/fighter.tscn" id="1_clf0x"]
 [ext_resource type="Script" uid="uid://c5ukbmb3g2o7w" path="res://scenes/bots/custom_bot.gd" id="2_otixg"]
+[ext_resource type="Script" uid="uid://bdbf87l5e6ln0" path="res://scenes/bots/effect_resource.gd" id="3_mnu7y"]
 [ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="3_otixg"]
-[ext_resource type="Script" uid="uid://dbttauggwkxi6" path="res://scenes/bots/cpu_module.gd" id="3_rn1rr"]
 [ext_resource type="Resource" uid="uid://egw4fkyid86a" path="res://scenes/bots/parts/hull_t1_std.tres" id="4_7kaqq"]
-[ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="5_42no0"]
 [ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="6_ue6u1"]
 [ext_resource type="Resource" uid="uid://chjpbudtc04dr" path="res://scenes/bots/parts/weapon_t1_cannon.tres" id="8_2ltam"]
 
@@ -14,8 +13,8 @@ script = ExtResource("6_ue6u1")
 color = Color(1, 1, 1, 1)
 hull = ExtResource("4_7kaqq")
 weapons = Array[ExtResource("3_otixg")]([ExtResource("8_2ltam")])
-improvements = Array[ExtResource("5_42no0")]([])
-cpus = Array[ExtResource("3_rn1rr")]([])
+improvements = Array[ExtResource("3_mnu7y")]([])
+cpus = Array[ExtResource("3_mnu7y")]([])
 extra_slots = {
 0: 0,
 1: 0,
