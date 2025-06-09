@@ -3,12 +3,9 @@ extends Node2D
 var start = false
 
 
-func _process(delta: float) -> void:
-	if ! start:
-		start = true
-	else:
-		get_tree().paused = true
-		$AnimationPlayer.play("game_start")
+func _ready() -> void:
+	get_tree().paused = true
+	$AnimationPlayer.play("game_start")
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	get_tree().paused = false
