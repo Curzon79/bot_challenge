@@ -23,8 +23,15 @@ func set_bot(bot_definition):
 	self.bot_definition = bot_definition
 	bot_definition.update()
 
-
 func getNextCommand(cast:Node, shape_cast: Node, delta:float) -> Command:
+	var command = getNextCommand_internal(cast, shape_cast, delta)
+
+	#do post processing
+	bot_definition.call_post_process(cast.get_parent(), delta)
+	
+	return command
+	
+func getNextCommand_internal(cast:Node, shape_cast: Node, delta:float) -> Command:
 	var bot = cast.get_parent()
 	
 	raycast_sweep(cast)

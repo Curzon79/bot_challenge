@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Imp_Repair_Module" load_steps=2 format=3 uid="uid://bgsgvkh1qci58"]
+
+[ext_resource type="Script" uid="uid://cga081bg542y7" path="res://scenes/bots/imp_repair_module.gd" id="1_3sp3i"]
+
+[resource]
+script = ExtResource("1_3sp3i")
+repair_per_second = 1.0
+cost = 100
+modifier = Dictionary[int, float]({})
+name = "Repair Large"
+metadata/_custom_type_script = "uid://cga081bg542y7"

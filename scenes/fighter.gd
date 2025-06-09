@@ -89,6 +89,13 @@ func receive_damage(damage: float):
 	if health <= 0:
 		die()
 
+func repair(value: float):
+	health += value
+	health = min(health, max_health)
+	update_health_indication()
+	if health <= 0:
+		die()
+
 func update_health_indication():
 	var inner_count = int(health / 8)
 	var outer_count = health - inner_count * 8

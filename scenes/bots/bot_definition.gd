@@ -30,7 +30,9 @@ enum Hook {
 		MOD_FREQUENCY, 
 		MOD_VISION,
 		MOD_RECEIVE_DAMAGE,
-		MOD_AIM}
+		MOD_AIM,
+		MOD_REPAIR
+		}
 
 var modifiers = [
 	Hook.MOD_SPEED,
@@ -38,6 +40,7 @@ var modifiers = [
 	Hook.MOD_VISION,
 	Hook.MOD_RECEIVE_DAMAGE,
 	Hook.MOD_AIM,
+	Hook.MOD_REPAIR,
 ]
 
 var hooks = {
@@ -51,7 +54,8 @@ var hooks = {
 	Hook.MOD_FREQUENCY:[],
 	Hook.MOD_VISION:[],
 	Hook.MOD_RECEIVE_DAMAGE:[],
-	Hook.MOD_AIM:[]
+	Hook.MOD_AIM:[],
+	Hook.MOD_REPAIR:[]
 }
 
 func add_slot(type: SLOT_TYPE) -> void:
@@ -79,7 +83,8 @@ func update():
 	Hook.MOD_FREQUENCY:[],
 	Hook.MOD_VISION:[],
 	Hook.MOD_RECEIVE_DAMAGE:[],
-	Hook.MOD_AIM:[]
+	Hook.MOD_AIM:[],
+	Hook.MOD_REPAIR:[]
 	}
 	#determine hooks
 	for cpu_module in cpus:
@@ -97,6 +102,9 @@ func update_hooks_for_module(module):
 
 	if (module.has_method("call_move_prio")):
 		hooks[Hook.MOVE_PRIO].append(module)
+	
+	if (module.has_method("call_post_process")):
+		hooks[Hook.POST_PROCESS].append(module)
 	
 	if (! module.has_method("does_modify")):
 		return
@@ -134,6 +142,11 @@ func call_move_prio(bot:CustomBot):
 		return null
 		
 	return hooks[Hook.MOVE_PRIO][0].call_move_prio(bot)
+
+
+func call_post_process(bot:CustomBot, delta:float):
+	for hook in hooks[Hook.POST_PROCESS]:
+		hook.call_post_process(bot, delta)
 
 
 func shoot_weapon(command:Command, bot:CustomBot, weapon_slot:int):
