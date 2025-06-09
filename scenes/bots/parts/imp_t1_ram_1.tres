@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Imp_Ram_Module" load_steps=3 format=3 uid="uid://denrrj5m1j4cn"]
+
+[ext_resource type="Texture2D" uid="uid://d28p1mbum7ai2" path="res://res/bot_parts/icon_ram.png" id="1_onkv7"]
+[ext_resource type="Script" uid="uid://ccncp3jg0orxu" path="res://scenes/bots/imp_ram_module.gd" id="1_ws64w"]
+
+[resource]
+script = ExtResource("1_ws64w")
+ram_damage = 1.0
+cooldown = 1.0
+cost = 100
+modifier = Dictionary[int, float]({
+9: 1.1
+})
+name = "Simple Ram"
+icon = ExtResource("1_onkv7")
+metadata/_custom_type_script = "uid://ccncp3jg0orxu"

@@ -44,11 +44,11 @@
  
  - Shield
  - reflector
- - repair
+ + repair
  - teleport
  - hide
  - dampening field
- - ram
+ + ram
  
  - evade bullets
  + follow/flee

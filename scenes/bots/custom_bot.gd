@@ -40,7 +40,6 @@ func _process(delta: float) -> void:
 		
 	if check_freese(delta):
 		return
-
 	
 	command = controller.getNextCommand($RayCast2D, $ShapeCast2D, delta)
 	#execute current command (if allowed)

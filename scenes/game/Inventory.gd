@@ -29,6 +29,7 @@ func _init() -> void:
 		load("res://scenes/bots/parts/imp_t1_optics_2.tres"),
 		load("res://scenes/bots/parts/imp_t1_repair_1.tres"), 
 		load("res://scenes/bots/parts/imp_t1_repair_2.tres"),
+		load("res://scenes/bots/parts/imp_t1_ram_1.tres"),
 		]
 	cpus = [
 		load("res://scenes/bots/parts/cpu_t1_aim_weak.tres"), 

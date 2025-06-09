@@ -15,6 +15,8 @@ var vision_enemies = {}
 var vision_bullets = {}
 var vision_all = {}
 
+#custom data for slot items
+var runtime_data = {}
 
 func get_color():
 	return Color.GREEN_YELLOW
