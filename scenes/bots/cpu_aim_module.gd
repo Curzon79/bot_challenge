@@ -2,27 +2,40 @@ extends CPU_Module
 
 class_name CPU_Aim_Module
 
-enum Selection {NEAREST, STRONGEST, RANDOM}
+enum Selection {
+	NEAREST_ENEMY, 
+	STRONGEST_ENEMY, 
+	RANDOM_ENEMY, 
+	WALL, 
+	FORWARD,
+	NONE}
 
 @export var accurracy = 0.8
-@export var selection = Selection.RANDOM
+@export var selection = Selection.RANDOM_ENEMY
+@export var spread_type = Aim.SpreadType.RANDOM
 
-func call_aim(bot:CustomBot, targets:Array) -> Vector2:
+func call_aim(bot:CustomBot, targets:Array) -> Aim:
+	var curr_accurracy = bot.bot_definition.get_modifier(bot, BotDefinition.Hook.MOD_AIM, accurracy)
+
+	if (selection == Selection.NONE):
+		return Aim.new(Vector2(), curr_accurracy, spread_type)
+
+	if (selection == Selection.FORWARD):
+		return Aim.new(bot.controller.last_command.direction, curr_accurracy, spread_type)
+
 	if (len(targets) == 0):
-		return get_random_direction()
+		return Aim.new(Vector2(), curr_accurracy, spread_type)
+		
 	var target = get_targets(targets)
-	
-	return bot.global_position.direction_to(target.global_position)\
-			.rotated((randf() - 0.5) * PI * 0.5 * 
-						(1.0 - min(bot.bot_definition.get_modifier(bot, BotDefinition.Hook.MOD_AIM, accurracy), 1.0)))
+	return Aim.new(bot.global_position.direction_to(target.global_position), curr_accurracy, spread_type)
 
 func get_targets(targets:Array):
 	match selection:
-		Selection.NEAREST:
+		Selection.NEAREST_ENEMY:
 			return targets[0]
-		Selection.STRONGEST:
+		Selection.STRONGEST_ENEMY:
 			return targets[0]
-		Selection.RANDOM:
+		Selection.RANDOM_ENEMY:
 			return targets[0]
 	
 	return targets[0]

@@ -101,4 +101,4 @@ func check_weapon_availability(bot):
 	return null
 
 func get_aim_direction(bot, targets):
-	return bot_definition.call_aim(bot, targets)
+	return bot_definition.call_aim(bot, targets).get_aim_direction()

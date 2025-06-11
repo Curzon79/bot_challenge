@@ -37,10 +37,11 @@
  - double cannon
  - triple cannon
  + peashooter
- + big cannon
+ + big cannon 
  + shock weapon (immpbilize enemy)
  + mines
  + spawn
+ - star shooter
  
  - Shield
  - reflector
@@ -55,8 +56,19 @@
  + evade walls
  - hunt
  - explore 
+ 
+ - aim walls
+ - aim move
+ - separate precision
+ - aim sweep
+ - bursts
+ 
 
  + disadvantages : extra effects
+   - damage dealing
+   + frequency
+   - aim precision
+   - 
  
   
 + upgrade: extra slots

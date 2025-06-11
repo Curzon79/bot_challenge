@@ -115,9 +115,15 @@ func update_hooks_for_module(module):
 	
 func call_aim(bot:CustomBot, targets):
 	if (len(hooks[Hook.AIM]) == 0):
-		return get_random_direction()
-		
-	return hooks[Hook.AIM][0].call_aim(bot, targets)
+		return Aim.new(get_random_direction(), 1.0)
+	
+	var aim = null
+	for hook in hooks[Hook.AIM]:
+		if (aim == null):
+			aim = hook.call_aim(bot, targets)
+		else:
+			aim = aim.merge(hook.call_aim(bot, targets))
+	return aim
 
 func call_move(bot:CustomBot, current_direction:Vector2):
 	if (len(hooks[Hook.MOVE]) == 0):

@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("1_1865b")
-accurracy = 0.5
+accurracy = 0.7
 selection = 2
+spread_type = 0
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Aim I"
