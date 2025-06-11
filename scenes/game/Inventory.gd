@@ -37,6 +37,7 @@ func _init() -> void:
 		load("res://scenes/bots/parts/cpu_t1_aim_med.tres"), 
 		load("res://scenes/bots/parts/cpu_t1_aim_sweep.tres"), 
 		load("res://scenes/bots/parts/cpu_t1_aim_forward.tres"), 
+		load("res://scenes/bots/parts/cpu_t1_aim_no_walls.tres"), 
 		load("res://scenes/bots/parts/cpu_t2_aim_perfect.tres"), 
 		load("res://scenes/bots/parts/cpu_t1_move_from_enemy.tres"), 
 		load("res://scenes/bots/parts/cpu_t1_move_to_enemy_avg.tres"), 

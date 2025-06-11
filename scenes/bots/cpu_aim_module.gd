@@ -14,7 +14,7 @@ enum Selection {
 @export var selection = Selection.RANDOM_ENEMY
 @export var spread_type = Aim.SpreadType.RANDOM
 
-func call_aim(bot:CustomBot, targets:Array) -> Aim:
+func call_aim(bot:CustomBot, targets:Array, vision_all:Dictionary) -> Aim:
 	var curr_accurracy = bot.bot_definition.get_modifier(bot, BotDefinition.Hook.MOD_AIM, accurracy)
 
 	if (selection == Selection.NONE):
@@ -22,6 +22,9 @@ func call_aim(bot:CustomBot, targets:Array) -> Aim:
 
 	if (selection == Selection.FORWARD):
 		return Aim.new(bot.controller.last_command.direction, curr_accurracy, spread_type)
+
+	if (selection == Selection.WALL):
+		return Aim.new(get_direction_to_wall(bot.global_position, vision_all) * -1, curr_accurracy, spread_type)
 
 	if (len(targets) == 0):
 		return Aim.new(Vector2(), curr_accurracy, spread_type)
@@ -40,6 +43,12 @@ func get_targets(targets:Array):
 	
 	return targets[0]
 
+func get_direction_to_wall(position: Vector2, vision_all):
+	var direction = Vector2()
+	for item in vision_all.keys():
+		for pos in vision_all[item]:
+			direction += position.direction_to(pos)
+	return direction.normalized() 
 
 func get_random_direction() -> Vector2:
 	return Vector2(randf() * 2.0 - 1, randf() * 2.0 - 1).normalized()

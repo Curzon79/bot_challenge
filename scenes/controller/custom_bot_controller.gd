@@ -96,9 +96,9 @@ func get_random_direction() -> Vector2:
 func check_weapon_availability(bot):
 	for i in range(len(bot_definition.weapons)):
 		if (bot.weapon_cooldowns[i].time_left <= 0):
-			return Command.new(SHOOT_CMDS[i], get_aim_direction(bot, vision_enemies.keys()))
+			return Command.new(SHOOT_CMDS[i], get_aim_direction(bot, vision_enemies.keys(), vision_all))
 		
 	return null
 
-func get_aim_direction(bot, targets):
-	return bot_definition.call_aim(bot, targets).get_aim_direction()
+func get_aim_direction(bot, targets, vision_all):
+	return bot_definition.call_aim(bot, targets, vision_all).get_aim_direction()

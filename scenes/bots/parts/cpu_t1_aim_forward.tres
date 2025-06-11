@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_ucwdn")
-accurracy = 0.9
+accurracy = 0.6
 selection = 4
 spread_type = 0
 cost = 100

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CPU_Aim_Module" load_steps=3 format=3 uid="uid://dhidkcy8lat5t"]
+
+[ext_resource type="Texture2D" uid="uid://dv0141v07w8u5" path="res://res/bot_parts/icon_aim.png" id="1_14fd0"]
+[ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="2_ixsos"]
+
+[resource]
+script = ExtResource("2_ixsos")
+accurracy = 0.7
+selection = 3
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({})
+name = "Avoid Walls"
+icon = ExtResource("1_14fd0")
+metadata/_custom_type_script = "uid://bsbv8r7v5st3w"

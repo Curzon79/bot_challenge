@@ -8,7 +8,7 @@ script = ExtResource("2_xkr2o")
 accurracy = 1.0
 selection = 4
 spread_type = 1
-cost = 100
+cost = null
 modifier = Dictionary[int, float]({
 10: 0.95
 })
