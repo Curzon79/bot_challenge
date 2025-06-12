@@ -32,7 +32,7 @@
   - test enememy fighter
 
 --- Content ----
-- merge resource items -> random items
++ merge resource items -> random items
 
 
 - Items

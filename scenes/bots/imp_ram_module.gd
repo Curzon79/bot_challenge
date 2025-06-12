@@ -22,7 +22,7 @@ func call_post_process(bot: CustomBot, delta: float):
 				collider_keys.erase(collider)
 				continue
 			runtime_data[collider] = cooldown
-			collider.receive_damage(ram_damage)
+			collider.receive_damage(bot.bot_definition.get_modifier(bot, BotDefinition.Hook.MOD_DEAL_DAMAGE, ram_damage) )
 
 	#cleanup all data that we don't collide with
 	for key in collider_keys:

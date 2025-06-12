@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_3f1vw")
 cost = 100
-health = 4
+health = 3
 speed = 350
 cpu_slots = 3
 weapon_slots = 1

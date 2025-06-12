@@ -19,19 +19,20 @@ enum SLOT_TYPE {Weapon, Improvement, Cpu}
 }
 
 enum Hook {
-		ACT, 
-		AIM, 
-		MOVE, 
-		MOVE_PRIO, 
-		PRE_PROCCESS,
-		POST_PROCESS,
+		ACT 			= 0, 
+		AIM 			= 1, 
+		MOVE 			= 2, 
+		MOVE_PRIO 		= 3, 
+		PRE_PROCCESS 	= 4,
+		POST_PROCESS 	= 5,
 		
-		MOD_SPEED,
-		MOD_FREQUENCY, 
-		MOD_VISION,
-		MOD_RECEIVE_DAMAGE,
-		MOD_AIM,
-		MOD_REPAIR
+		MOD_SPEED  			= 10,
+		MOD_FREQUENCY 		= 11, 
+		MOD_VISION  		= 12,
+		MOD_RECEIVE_DAMAGE 	= 13,
+		MOD_DEAL_DAMAGE		= 14,
+		MOD_AIM				= 15,
+		MOD_REPAIR			= 16,
 		}
 
 var modifiers = [
@@ -39,6 +40,7 @@ var modifiers = [
 	Hook.MOD_FREQUENCY,
 	Hook.MOD_VISION,
 	Hook.MOD_RECEIVE_DAMAGE,
+	Hook.MOD_DEAL_DAMAGE,
 	Hook.MOD_AIM,
 	Hook.MOD_REPAIR,
 ]
@@ -54,6 +56,7 @@ var hooks = {
 	Hook.MOD_FREQUENCY:[],
 	Hook.MOD_VISION:[],
 	Hook.MOD_RECEIVE_DAMAGE:[],
+	Hook.MOD_DEAL_DAMAGE:[],
 	Hook.MOD_AIM:[],
 	Hook.MOD_REPAIR:[]
 }
@@ -83,6 +86,7 @@ func update():
 	Hook.MOD_FREQUENCY:[],
 	Hook.MOD_VISION:[],
 	Hook.MOD_RECEIVE_DAMAGE:[],
+	Hook.MOD_DEAL_DAMAGE:[],
 	Hook.MOD_AIM:[],
 	Hook.MOD_REPAIR:[]
 	}
