@@ -47,7 +47,8 @@ func get_direction_to_wall(position: Vector2, vision_all):
 	var direction = Vector2()
 	for item in vision_all.keys():
 		for pos in vision_all[item]:
-			direction += position.direction_to(pos)
+			var vector_to_wall = pos - position
+			direction += vector_to_wall.normalized() * 10 / (10 + vector_to_wall.length())
 	return direction.normalized() 
 
 func get_random_direction() -> Vector2:

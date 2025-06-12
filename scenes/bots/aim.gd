@@ -15,7 +15,7 @@ func _init(direction: Vector2, accurracy: float, spread_type = SpreadType.RANDOM
 
 func merge(other: Aim):
 	self.spread_type = max( self.spread_type, other.spread_type)
-	self.direction = (self.direction + other.direction).normalized()
+	self.direction = self.direction if self.direction != Vector2() else other.direction
 	self.accurracy = min(self.accurracy, other.accurracy)
 	return self
 

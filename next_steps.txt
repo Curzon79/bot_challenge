@@ -57,10 +57,10 @@
  - hunt
  - explore 
  
- - aim walls
- - aim move
- - separate precision
- - aim sweep
+ + aim walls
+ + aim move
+ + separate precision
+ + aim sweep
  - bursts
  
 
