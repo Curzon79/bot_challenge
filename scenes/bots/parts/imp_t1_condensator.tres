@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Improvement" load_steps=3 format=3 uid="uid://b7m66dtry4ute"]
+
+[ext_resource type="Texture2D" uid="uid://dvdc5qq74p2a0" path="res://res/bot_parts/icon_capacitator.png" id="1_lbr6o"]
+[ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="2_uwr77"]
+
+[resource]
+script = ExtResource("2_uwr77")
+cost = 100
+modifier = Dictionary[int, float]({
+7: 0.9,
+10: 0.92
+})
+name = "Condensator I"
+icon = ExtResource("1_lbr6o")
+metadata/_custom_type_script = "uid://s3cvo323w0j6"

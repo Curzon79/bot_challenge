@@ -12,6 +12,7 @@
 
 + smooth movement
 
+
 --- UI ----
 
 - upgrade screen
@@ -31,6 +32,8 @@
   - test enememy fighter
 
 --- Content ----
+- merge resource items -> random items
+
 
 - Items
  + Laser

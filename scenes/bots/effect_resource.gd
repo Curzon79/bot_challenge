@@ -21,3 +21,6 @@ func modify(bot: CustomBot, type:BotDefinition.Hook, value):
 	if (!modifier.has(type)):
 		return value
 	return value * modifier[type]
+
+func merge(other:EffectResource) -> void:
+	modifier.merge(other.modifier, false)
