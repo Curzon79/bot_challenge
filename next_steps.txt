@@ -70,7 +70,7 @@
  + disadvantages : extra effects
    - damage dealing
    + frequency
-   - aim precision
+   + aim precision
    - 
  
   
