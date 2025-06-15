@@ -8,6 +8,11 @@ enum Target {ENEMY, WALLS}
 @export var target = Target.ENEMY
 @export var target_distance = 20
 
+func get_description() -> String:
+	if (target == Target.WALLS):
+		return "Moves away from walls"
+	return "Tries to move in a way to keep  the enemy a distance {distance}".format({"distance" : target_distance})
+
 
 #returns the forces for the target move
 func call_move(bot:CustomBot):

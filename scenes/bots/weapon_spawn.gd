@@ -5,6 +5,11 @@ class_name WeaponSpawn
 #Structure
 @export var spawn_bot = "res://scenes/bots/enemies/bee.tres"
 
+func get_description() -> String:
+	return "Spawns bots.\n\nbase frequency: {frequency}/s"\
+			.format({ "frequency":base_frequency})
+
+
 func shoot_weapon(command:Command, bot:CustomBot):
 	var room = bot.get_parent()
 	var spawn_position = Vector2()

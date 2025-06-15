@@ -7,6 +7,11 @@ const Bomb = preload("res://scenes/bomb.tscn")
 #Structure
 @export var time = 1.0
 
+func get_description() -> String:
+	return "Deposits mines.\n\nbase damage: {damage}\nbase frequency: {frequency}/s"\
+			.format({"damage" : damage, "frequency":base_frequency})
+
+
 func shoot_weapon(_command:Command, bot:CustomBot):
 	var new_bomb = Bomb.instantiate()
 	new_bomb.ignore_character = bot

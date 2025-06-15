@@ -5,6 +5,9 @@
 [resource]
 script = ExtResource("1_vovst")
 cost = 100
-modifier = Dictionary[int, float]({})
+modifier = Dictionary[int, float]({
+13: 0.95
+})
 name = ""
+description = ""
 metadata/_custom_type_script = "uid://bdbf87l5e6ln0"

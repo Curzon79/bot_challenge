@@ -5,6 +5,10 @@ extends "res://scenes/bots/weapon.gd"
 
 const Shocker = preload("res://scenes/shocker.tscn")
 
+func get_description() -> String:
+	return "Disables the enemy for a brief period of time.\n\nbase frequency: {frequency}/s"\
+			.format({ "frequency":base_frequency})
+
 func shoot_weapon(command:Command, bot:CustomBot):
 	var new_shocker = Shocker.instantiate()
 	new_shocker.duration = duration

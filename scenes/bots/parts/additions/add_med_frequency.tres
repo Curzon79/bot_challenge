@@ -9,4 +9,5 @@ modifier = Dictionary[int, float]({
 11: 0.98
 })
 name = ""
+description = ""
 metadata/_custom_type_script = "uid://bdbf87l5e6ln0"

@@ -11,5 +11,6 @@ spread_type = 0
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Aim I"
+description = ""
 icon = ExtResource("1_v4sfl")
 metadata/_custom_type_script = "uid://bsbv8r7v5st3w"

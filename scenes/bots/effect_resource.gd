@@ -34,12 +34,14 @@ func merge(other:EffectResource, merge_type:String) -> EffectResource:
 	modifier.merge(other.modifier, false)
 	return self
 
-func get_base_description(): 
+func get_description(): 
 	return ""
 
-func get_description() -> String:
-	var full_description = get_base_description()
-	
+func get_full_description() -> String:
+	var full_description = get_description() + "\n"
+	for key in modifier.keys():
+		full_description += "{key} : {value}%\n".format({"key":BotDefinition.Hook.find_key(key), "value": modifier[key] * 100})
+
 	return full_description
 
 func get_item_name() -> String:

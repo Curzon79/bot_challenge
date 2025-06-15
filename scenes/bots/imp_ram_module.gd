@@ -5,6 +5,9 @@ class_name Imp_Ram_Module
 @export var ram_damage = 1.0
 @export var cooldown = 1.0
 
+func get_description() -> String:
+	return "When the bot hits an enemy directly, causes {damage} damage.\n".format({"damage" : ram_damage})
+
 func call_post_process(bot: CustomBot, delta: float):
 	var controller = bot.controller
 	var runtime_data = {}

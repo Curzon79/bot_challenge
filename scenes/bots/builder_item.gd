@@ -14,6 +14,7 @@ func set_item(item):
 	self.item = item
 	$Icon.texture = item.icon
 	$Label.text = item.get_item_name()
+	$Icon.tooltip_text = item.get_full_description()
 
 func set_highlight(highlight: bool):
 	if (highlight):

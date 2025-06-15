@@ -8,6 +8,9 @@ const Laser = preload("res://scenes/laser.tscn")
 @export var duration = 1.0
 @export var sweep = 45.0
 
+func get_description() -> String:
+	return "Shoots Lasers at the enemy.\n\nbase damage: {damage}\nbase frequency: {frequency}/s\nsweep: {sweep} degrees"\
+			.format({"damage" : damage, "frequency":base_frequency, "sweep": sweep})
 
 func shoot_weapon(command:Command, bot:CustomBot):
 	var new_laser = Laser.instantiate()

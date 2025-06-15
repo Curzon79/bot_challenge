@@ -12,5 +12,6 @@ modifier = Dictionary[int, float]({
 13: 1.2
 })
 name = "Simple Ram"
+description = ""
 icon = ExtResource("1_onkv7")
 metadata/_custom_type_script = "uid://ccncp3jg0orxu"

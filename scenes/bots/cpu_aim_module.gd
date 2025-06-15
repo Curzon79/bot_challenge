@@ -14,6 +14,16 @@ enum Selection {
 @export var selection = Selection.RANDOM_ENEMY
 @export var spread_type = Aim.SpreadType.RANDOM
 
+func get_description() -> String:
+	if (selection == Selection.WALL):
+		return "Aims away from walls"
+	if (selection == Selection.FORWARD):
+		return "Aims in move direction"
+	if (spread_type == Aim.SpreadType.SWEEP):
+		return "Aim imprecision is executed as a sweeping motion."
+	return "Aims at the enemy with\n\nbase accurracy: {accurracy}%".format({"accurracy" : accurracy * 100})
+
+
 func call_aim(bot:CustomBot, targets:Array, vision_all:Dictionary) -> Aim:
 	var curr_accurracy = bot.bot_definition.get_modifier(bot, BotDefinition.Hook.MOD_AIM, accurracy)
 

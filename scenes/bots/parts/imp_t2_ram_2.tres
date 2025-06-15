@@ -5,12 +5,13 @@
 
 [resource]
 script = ExtResource("2_qebdv")
-ram_damage = 1.0
+ram_damage = 0.8
 cooldown = 1.0
 cost = 100
 modifier = Dictionary[int, float]({
 13: 1.2
 })
-name = "Simple Ram"
+name = "Big Ram"
+description = ""
 icon = ExtResource("1_8oson")
 metadata/_custom_type_script = "uid://ccncp3jg0orxu"
