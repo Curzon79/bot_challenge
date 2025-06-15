@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectResource" load_steps=2 format=3 uid="uid://b8vpmyx6sro11"]
+
+[ext_resource type="Script" uid="uid://bdbf87l5e6ln0" path="res://scenes/bots/effect_resource.gd" id="1_vovst"]
+
+[resource]
+script = ExtResource("1_vovst")
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+metadata/_custom_type_script = "uid://bdbf87l5e6ln0"

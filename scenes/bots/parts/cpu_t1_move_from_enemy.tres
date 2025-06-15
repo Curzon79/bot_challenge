@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1vq54lheqbb5" path="res://res/bot_parts/icon_tracking_ufo.png" id="1_i4p5j"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_edpnw")
 target = 0
 target_distance = 500

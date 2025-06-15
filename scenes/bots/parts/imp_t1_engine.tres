@@ -7,7 +7,8 @@
 script = ExtResource("1_n3lgl")
 cost = 100
 modifier = Dictionary[int, float]({
-6: 1.1
+10: 1.1,
+15: 0.95
 })
 name = "Simple Engine"
 icon = ExtResource("1_h2rwg")

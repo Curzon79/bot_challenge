@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource("1_ws64w")
-ram_damage = 1.0
+ram_damage = 0.5
 cooldown = 1.0
 cost = 100
 modifier = Dictionary[int, float]({
-9: 1.1
+13: 1.2
 })
 name = "Simple Ram"
 icon = ExtResource("1_onkv7")

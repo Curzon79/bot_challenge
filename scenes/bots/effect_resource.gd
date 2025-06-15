@@ -13,7 +13,6 @@ class_name EffectResource
 @export var icon: Texture2D
 @export var sprite: Texture2D
 
-
 func does_modify(type):
 	return modifier.has(type)
 	
@@ -22,5 +21,6 @@ func modify(bot: CustomBot, type:BotDefinition.Hook, value):
 		return value
 	return value * modifier[type]
 
-func merge(other:EffectResource) -> void:
+func merge(other:EffectResource) -> EffectResource:
 	modifier.merge(other.modifier, false)
+	return self

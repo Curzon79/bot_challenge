@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_3sp3i")
-repair_per_second = 1.0
+repair_per_second = 0.3
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Repair Large"

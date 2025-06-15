@@ -7,8 +7,8 @@
 script = ExtResource("2_uwr77")
 cost = 100
 modifier = Dictionary[int, float]({
-7: 0.9,
-10: 0.92
+10: 0.92,
+11: 0.9
 })
 name = "Condensator I"
 icon = ExtResource("1_lbr6o")

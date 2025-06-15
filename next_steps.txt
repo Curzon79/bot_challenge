@@ -27,6 +27,7 @@
 - item graphics/special effects
 
 - item details
+- show rank
 
 + enemy builder
   - test enememy fighter
@@ -71,7 +72,8 @@
    - damage dealing
    + frequency
    + aim precision
-   - 
+   
+- walk through all items   
  
   
 + upgrade: extra slots

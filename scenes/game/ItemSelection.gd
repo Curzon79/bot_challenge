@@ -1,7 +1,12 @@
-extends Object
+extends Node
 
-class_name ItemSelection
 
+const Ranks = [
+	0.2,		# Rank 5
+	1.5, 		# Rank 4
+	8.0, 		# Rank 3
+	20.0, 		# Rank 2
+]
 
 const Items = {
 	"common": [
@@ -20,11 +25,9 @@ const Items = {
 		"res://scenes/bots/parts/weapon_t1_pea_shooter.tres", 
 		"res://scenes/bots/parts/weapon_t1_shocker.tres",
 		"res://scenes/bots/parts/imp_t1_condensator.tres", 
-		"res://scenes/bots/parts/imp_t1_condensator_2.tres", 
 		"res://scenes/bots/parts/imp_t1_engine.tres", 
 		"res://scenes/bots/parts/imp_t1_optics_1.tres", 
 		"res://scenes/bots/parts/imp_t1_ram_1.tres", 
-		"res://scenes/bots/parts/imp_t1_ram_2.tres", 
 		"res://scenes/bots/parts/imp_t1_repair_1.tres"
 	],
 	"uncommon":[
@@ -33,10 +36,12 @@ const Items = {
 		"res://scenes/bots/parts/weapon_t2_cannon_fast.tres",
 		"res://scenes/bots/parts/weapon_t2_laser.tres",
 		"res://scenes/bots/parts/weapon_t2_shocker.tres",
-		"res://scenes/bots/parts/imp_t1_repair_2.tres",
-		"res://scenes/bots/parts/imp_t1_optics_2.tres", 
+		"res://scenes/bots/parts/imp_t2_repair_2.tres",
+		"res://scenes/bots/parts/imp_t2_optics_2.tres", 
 		"res://scenes/bots/parts/cpu_t1_aim_no_walls.tres",	
-		
+		"res://scenes/bots/parts/imp_t2_condensator_2.tres", 
+		"res://scenes/bots/parts/imp_t2_engine_fast.tres", 
+		"res://scenes/bots/parts/imp_t2_ram_2.tres"
 	],
 	"rare":[
 		"res://scenes/bots/parts/cpu_t2_aim_perfect.tres",
@@ -48,25 +53,21 @@ const Items = {
 
 const Additions = {
 	"low" : [
-		"res://scenes/bots/parts/additions/slow_move_t1_.tres",
-		"res://scenes/bots/parts/additions/slow_shooting_t1.tres"
+		"res://scenes/bots/parts/additions/add_low_frequency.tres", 
+		"res://scenes/bots/parts/additions/add_low_slow_move.tres",
+		"res://scenes/bots/parts/additions/add_low_brittle.tres"
 	],
 	"med" : [
-		"res://scenes/bots/parts/additions/slow_move_t2.tres",
-		"res://scenes/bots/parts/additions/slow_shooting_t2.tres"
+		"res://scenes/bots/parts/additions/add_med_frequency.tres", 
+		"res://scenes/bots/parts/additions/add_med_move.tres",
+		"res://scenes/bots/parts/additions/add_med_brittle.tres"
 	],
 	"hi" : [
-		"res://scenes/bots/parts/additions/slow_move_t3.tres",
-		"res://scenes/bots/parts/additions/slow_shooting_t3.tres"
+		"res://scenes/bots/parts/additions/add_hi_frequency.tres", 
+		"res://scenes/bots/parts/additions/add_hi_move.tres",
+		"res://scenes/bots/parts/additions/add_hi_armor.tres",
 	]
 }
-
-const Ranks = [
-	0.2,		# Rank 5
-	1.5, 		# Rank 4
-	8.0, 		# Rank 3
-	20.0, 		# Rank 2
-]
 
 const RankOptions = {
 	1: [["common", "low"]],
@@ -94,6 +95,7 @@ func get_random_item():
 			break
 		rank = rank - 1
 	var option = RankOptions[rank].pick_random()
-	var item = Items[option[0]].pick_random()
-	var addition = Additions[option[1]].pick_random()
-	return item.merge(addition)
+	var item = load(Items[option[0]].pick_random()).duplicate()
+	var addition = load(Additions[option[1]].pick_random())
+	item.merge(addition)
+	return item

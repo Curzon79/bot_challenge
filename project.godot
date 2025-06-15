@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Progress="*res://scenes/game/Progress.gd"
+ItemSelection="*res://scenes/game/ItemSelection.gd"
 
 [display]
 

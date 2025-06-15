@@ -9,14 +9,12 @@ func _ready():
 	
 func set_items(tier:float):
 	var item_fields = [$Item1, $Item2, $Item3]
-	for i in range(3):
-		var item = choose_item(tier)
+	var items = ItemSelection.get_item_Selection(3)
+	var i = 0 
+	for item in items:
 		item_fields[i].set_item(item)
+		i += 1
 		
-func choose_item(tier:float):
-	var items = Globals.UPGRADES["t1"]
-	return load(items.pick_random())
-
 
 func _on_button_pressed() -> void:
 	if (selected_item):
