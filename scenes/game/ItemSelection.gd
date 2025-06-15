@@ -97,5 +97,5 @@ func get_random_item():
 	var option = RankOptions[rank].pick_random()
 	var item = load(Items[option[0]].pick_random()).duplicate()
 	var addition = load(Additions[option[1]].pick_random())
-	item.merge(addition)
+	item.merge(addition, option[1])
 	return item

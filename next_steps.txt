@@ -73,7 +73,7 @@
    + frequency
    + aim precision
    
-- walk through all items   
++ walk through all items   
  
   
 + upgrade: extra slots

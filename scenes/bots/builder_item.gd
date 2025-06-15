@@ -13,7 +13,7 @@ func set_item(item):
 		
 	self.item = item
 	$Icon.texture = item.icon
-	$Label.text = item.name
+	$Label.text = item.get_item_name()
 
 func set_highlight(highlight: bool):
 	if (highlight):
