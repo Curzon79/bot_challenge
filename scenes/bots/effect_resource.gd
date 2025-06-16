@@ -15,8 +15,9 @@ class_name EffectResource
 @export var sprite: Texture2D
 
 var merge_type = null
+var rank = 1
 const Prefixes = {
-	"low" : ["Buggy", "Junkyard", "Homemade"],
+	"low" : ["Buggy", "Junkyard", "Improvised"],
 	"med" : ["Basic", "Industry standard", "Solid"],
 	"hi" : ["High performance", "Professional", "Military grade"],
 }
@@ -40,8 +41,10 @@ func get_description():
 func get_full_description() -> String:
 	var full_description = get_description() + "\n"
 	for key in modifier.keys():
-		full_description += "{key} : {value}%\n".format({"key":BotDefinition.Hook.find_key(key), "value": modifier[key] * 100})
-
+		if (modifier[key] > 1):
+			full_description += "{key} : +{value}%\n".format({"key":BotDefinition.HookNames[key], "value": (100.0 - modifier[key] * 100)})
+		else:
+			full_description += "{key} : -{value}%\n".format({"key":BotDefinition.HookNames[key], "value": (100.0 - modifier[key] * 100)})
 	return full_description
 
 func get_item_name() -> String:

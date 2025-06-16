@@ -15,6 +15,7 @@ func set_item(item):
 	$Icon.texture = item.icon
 	$Label.text = item.get_item_name()
 	$Icon.tooltip_text = item.get_full_description()
+	$Rank.value = item.rank
 
 func set_highlight(highlight: bool):
 	if (highlight):

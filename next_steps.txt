@@ -26,8 +26,8 @@
 
 - item graphics/special effects
 
-- item details
-- show rank
++ item details
++ show rank
 
 + enemy builder
   - test enememy fighter
@@ -74,7 +74,9 @@
    + aim precision
    
 + walk through all items   
- 
+
++ category names
+  + improvised 
   
 + upgrade: extra slots
 

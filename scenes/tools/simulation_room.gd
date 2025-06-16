@@ -31,15 +31,16 @@ func _ready() -> void:
 
 
 func start_new_round():
+	if used_weapons >= weapon_list.size():
+		print(Weapons_wins)
+		return
+		
 	spawn_bot(get_new_player_bot_defenition(), $playing_field/Startposition.global_position, on_bot_1_died, 1)
 	spawn_bot(enemy_bot_defenition, $playing_field/Startposition2.global_position, on_bot_2_died, 2)
 	curr_rounds_done += 1
 	if curr_rounds_done == 100:
 		curr_rounds_done = 0
 		used_weapons += 1
-		if used_weapons >= weapon_list.size():
-			print(Weapons_wins)
-			clear_bots()
 
 
 func get_new_player_bot_defenition():

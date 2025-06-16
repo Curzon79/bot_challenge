@@ -27,3 +27,4 @@ func set_item(item):
 	self.item = item
 	$Texture.texture = item.icon
 	$Texture.tooltip_text = item.get_full_description()
+	$Rank.value = item.rank

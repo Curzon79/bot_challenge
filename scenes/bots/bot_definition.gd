@@ -35,6 +35,16 @@ enum Hook {
 		MOD_REPAIR			= 16,
 		}
 
+const HookNames = {
+	Hook.MOD_SPEED: "Speed",
+	Hook.MOD_FREQUENCY: "Shoot rate", 
+	Hook.MOD_VISION: "Vision",
+	Hook.MOD_RECEIVE_DAMAGE: "Resistance",
+	Hook.MOD_DEAL_DAMAGE: "Damage",
+	Hook.MOD_AIM: "Precision",
+	Hook.MOD_REPAIR: "Repair",
+}
+
 var modifiers = [
 	Hook.MOD_SPEED,
 	Hook.MOD_FREQUENCY,
