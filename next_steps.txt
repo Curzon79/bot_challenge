@@ -92,3 +92,5 @@
 + win when all bots defeated
 
 + laser sweep
+
++ no wall bumping

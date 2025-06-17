@@ -66,6 +66,8 @@ func getNextCommand_internal(cast:Node, shape_cast: Node, delta:float) -> Comman
 	last_command = Command.new(Command.MOVE, (current_direction + get_random_direction() * 0.2).normalized())
 	return last_command
 
+func update_last_direction(direction:Vector2):
+	last_command.direction = direction
 
 func raycast_sweep(cast:Node):
 	vision_enemies.clear()

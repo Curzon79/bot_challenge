@@ -50,7 +50,9 @@ func _process(delta: float) -> void:
 			pass
 		Command.MOVE:
 			velocity = command.direction * bot_definition.get_speed(self)
-			move_and_slide()
+			var collided = move_and_slide()
+			if (collided && controller.has_method("update_last_direction")):
+				controller.update_last_direction(velocity.normalized())
 		Command.SHOOT_W1:
 			shoot_weapon(command, 0)
 		Command.SHOOT_W2:
