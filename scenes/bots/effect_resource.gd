@@ -42,7 +42,7 @@ func get_full_description() -> String:
 	var full_description = get_description() + "\n"
 	for key in modifier.keys():
 		if (modifier[key] > 1):
-			full_description += "{key} : +{value}%\n".format({"key":BotDefinition.HookNames[key], "value": (100.0 - modifier[key] * 100)})
+			full_description += "{key} : +{value}%\n".format({"key":BotDefinition.HookNames[key], "value": (modifier[key] * 100 - 100.0)})
 		else:
 			full_description += "{key} : -{value}%\n".format({"key":BotDefinition.HookNames[key], "value": (100.0 - modifier[key] * 100)})
 	return full_description

@@ -36,13 +36,13 @@ enum Hook {
 		}
 
 const HookNames = {
-	Hook.MOD_SPEED: "Speed",
-	Hook.MOD_FREQUENCY: "Shoot rate", 
-	Hook.MOD_VISION: "Vision",
-	Hook.MOD_RECEIVE_DAMAGE: "Resistance",
-	Hook.MOD_DEAL_DAMAGE: "Damage",
-	Hook.MOD_AIM: "Precision",
-	Hook.MOD_REPAIR: "Repair",
+	Hook.MOD_SPEED: 			"Speed",
+	Hook.MOD_FREQUENCY: 		"Shoot rate", 
+	Hook.MOD_VISION: 			"Vision",
+	Hook.MOD_RECEIVE_DAMAGE: 	"Armor",
+	Hook.MOD_DEAL_DAMAGE: 		"Damage",
+	Hook.MOD_AIM: 				"Precision",
+	Hook.MOD_REPAIR: 			"Repair",
 }
 
 var modifiers = [

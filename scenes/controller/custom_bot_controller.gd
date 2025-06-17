@@ -8,7 +8,7 @@ var duration = 0
 
 const SHOOT_CMDS = [Command.SHOOT_W1, Command.SHOOT_W2, Command.SHOOT_W3]
 
-const BASE_VISION = 100.0
+const BASE_VISION = 250.0
 
 #sweep variables
 var vision_enemies = {}

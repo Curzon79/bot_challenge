@@ -8,8 +8,9 @@ script = ExtResource("2_xelqb")
 cost = 100
 modifier = Dictionary[int, float]({
 10: 0.95,
-12: 2.0
+12: 1.5
 })
 name = "Optics I"
+description = ""
 icon = ExtResource("1_x66r5")
 metadata/_custom_type_script = "uid://s3cvo323w0j6"

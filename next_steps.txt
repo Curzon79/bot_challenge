@@ -34,7 +34,7 @@
 
 --- Content ----
 + merge resource items -> random items
-
+- everyone gets aim & better vision
 
 - Items
  + Laser

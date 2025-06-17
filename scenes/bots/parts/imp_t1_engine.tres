@@ -11,5 +11,6 @@ modifier = Dictionary[int, float]({
 15: 0.95
 })
 name = "Simple Engine"
+description = ""
 icon = ExtResource("1_h2rwg")
 metadata/_custom_type_script = "uid://s3cvo323w0j6"

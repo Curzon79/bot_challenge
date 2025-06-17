@@ -89,10 +89,8 @@ var player_progression =  100
 func _init():
 	#rooms = CHALLENGE_ROOMS.duplicate()
 	
-	player_character = BotDefinition.new()
+	player_character = load("res://scenes/bots/bot_definitions/player_start.tres").duplicate()
 	player_character.color = Color.CORAL
-	player_character.hull = load("res://scenes/bots/parts/hull_t1_std.tres")
-	player_character.weapons.append(load("res://scenes/bots/parts/weapon_t1_cannon.tres") )
 	player_health = player_character.hull.health
 	player_inventory = Inventory.new()
 
