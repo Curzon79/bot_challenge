@@ -41,10 +41,12 @@ func get_description():
 func get_full_description() -> String:
 	var full_description = get_description() + "\n"
 	for key in modifier.keys():
-		if (modifier[key] > 1):
-			full_description += "{key} : +{value}%\n".format({"key":BotDefinition.HookNames[key], "value": (modifier[key] * 100 - 100.0)})
+		var effective_modifier = (modifier[key] * 100 - 100.0)
+		if (key == BotDefinition.Hook.MOD_RECEIVE_DAMAGE): effective_modifier *= -1		#Armor is inverse -> lower is better
+		if (effective_modifier > 0):
+			full_description += "{key} : +{value}%\n".format({"key":BotDefinition.HookNames[key], "value": effective_modifier})
 		else:
-			full_description += "{key} : -{value}%\n".format({"key":BotDefinition.HookNames[key], "value": (100.0 - modifier[key] * 100)})
+			full_description += "{key} : {value}%\n".format({"key":BotDefinition.HookNames[key], "value": effective_modifier})
 	return full_description
 
 func get_item_name() -> String:

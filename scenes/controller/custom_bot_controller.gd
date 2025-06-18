@@ -19,6 +19,8 @@ var vision_all = {}
 var runtime_data = {}
 
 func get_color():
+	if (bot_definition.color):
+		return bot_definition.color
 	return Color.GREEN_YELLOW
 
 func set_bot(bot_definition):

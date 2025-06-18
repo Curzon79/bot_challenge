@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=16 format=3 uid="uid://blpj37co3l8lk"]
+
+[ext_resource type="Script" uid="uid://bdbf87l5e6ln0" path="res://scenes/bots/effect_resource.gd" id="1_uc4m0"]
+[ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="2_8ddhv"]
+[ext_resource type="Texture2D" uid="uid://dpd8l85eiadd1" path="res://res/bots/bot_diamond.png" id="3_u1lar"]
+[ext_resource type="Script" uid="uid://cg2o74g7rk80m" path="res://scenes/bots/hull.gd" id="4_rbd0q"]
+[ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="5_mj6xu"]
+[ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="6_7xdhf"]
+
+[sub_resource type="Resource" id="Resource_k0yso"]
+script = ExtResource("2_8ddhv")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.5
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_pdx5n"]
+script = ExtResource("2_8ddhv")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.6
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_0u3vw"]
+script = ExtResource("2_8ddhv")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.6
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_eyswp"]
+script = ExtResource("2_8ddhv")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.7
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_2x34p"]
+script = ExtResource("2_8ddhv")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.5
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_sq7m5"]
+script = ExtResource("2_8ddhv")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.5
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_lpqli"]
+script = ExtResource("4_rbd0q")
+cost = 100
+health = 3
+speed = 400
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "Fly II"
+sprite = ExtResource("3_u1lar")
+
+[sub_resource type="Resource" id="Resource_88b15"]
+script = ExtResource("1_uc4m0")
+cost = 100
+modifier = Dictionary[int, float]({
+12: 0.8
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_nbv7f"]
+script = ExtResource("6_7xdhf")
+base_frequency = 0.15
+damage = 0.3
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+description = ""
+
+[resource]
+script = ExtResource("5_mj6xu")
+color = Color(0.532095, 0.840569, 0.902941, 1)
+hull = SubResource("Resource_lpqli")
+weapons = Array[ExtResource("6_7xdhf")]([SubResource("Resource_nbv7f")])
+improvements = Array[ExtResource("1_uc4m0")]([SubResource("Resource_88b15")])
+cpus = Array[ExtResource("1_uc4m0")]([SubResource("Resource_k0yso"), SubResource("Resource_pdx5n"), SubResource("Resource_0u3vw"), SubResource("Resource_eyswp"), SubResource("Resource_2x34p"), SubResource("Resource_sq7m5")])
+extra_slots = {
+0: 0,
+1: 0,
+2: 0
+}

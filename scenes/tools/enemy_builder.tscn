@@ -75,14 +75,38 @@ offset_bottom = 103.0
 max_value = 500.0
 value = 300.0
 
-[node name="Icon" type="Label" parent="Hull"]
+[node name="IconLabel" type="Label" parent="Hull"]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 24.0
-offset_right = 416.0
-offset_bottom = 48.0
+offset_left = 224.0
+offset_top = 32.0
+offset_right = 328.0
+offset_bottom = 56.0
 theme_override_font_sizes/font_size = 16
-text = "Icon (later)"
+text = "Sprite"
+
+[node name="Icon" type="TextEdit" parent="Hull"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 24.0
+offset_right = 432.0
+offset_bottom = 64.0
+placeholder_text = "file"
+
+[node name="ColorLabel" type="Label" parent="Hull"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 72.0
+offset_right = 328.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 16
+text = "Color"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Hull"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 72.0
+offset_right = 432.0
+offset_bottom = 104.0
 
 [node name="Weapons" type="TabContainer" parent="."]
 layout_mode = 0

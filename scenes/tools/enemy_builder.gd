@@ -11,9 +11,12 @@ func _on_save() -> void:
 	if ($Name.text == ""): 
 		return
 		
+	enemy_bot_definition.color = $Hull/ColorPickerButton.color
+		
 	enemy_bot_definition.hull.name = $Name.text
 	enemy_bot_definition.hull.health = $Hull/Health.value
 	enemy_bot_definition.hull.speed = $Hull/Speed.value
+	enemy_bot_definition.hull.sprite = load($Hull/Icon.text)
 	
 	enemy_bot_definition.weapons.clear()
 	for weapon in $Weapons.get_children():

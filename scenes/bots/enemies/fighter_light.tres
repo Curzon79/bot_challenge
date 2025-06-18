@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BotDefinition" load_steps=9 format=3 uid="uid://ba4mvyvmevqhd"]
 
-[ext_resource type="Script" uid="uid://dbttauggwkxi6" path="res://scenes/bots/cpu_module.gd" id="1_77wf1"]
+[ext_resource type="Script" uid="uid://bdbf87l5e6ln0" path="res://scenes/bots/effect_resource.gd" id="1_kvbh0"]
 [ext_resource type="Texture2D" uid="uid://bvhpy6ukaly1h" path="res://res/bot_parts/ufo_1.png" id="2_kvbh0"]
 [ext_resource type="Script" uid="uid://cg2o74g7rk80m" path="res://scenes/bots/hull.gd" id="3_4huol"]
-[ext_resource type="Script" uid="uid://s3cvo323w0j6" path="res://scenes/bots/improvement.gd" id="3_tx3e5"]
 [ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="4_4huol"]
+[ext_resource type="Texture2D" uid="uid://dyyk3v26fmkyj" path="res://res/bots/bot_small.png" id="4_tx3e5"]
 [ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="5_k80hi"]
 [ext_resource type="Resource" uid="uid://dvr6oppi4b06" path="res://scenes/bots/enemy_parts/weapon_t1_std_cannon_size_2.tres" id="6_77wf1"]
 
@@ -18,6 +18,7 @@ weapon_slots = 1
 improvement_slots = 2
 name = "Pigeon"
 icon = ExtResource("2_kvbh0")
+sprite = ExtResource("4_tx3e5")
 metadata/_custom_type_script = "uid://cg2o74g7rk80m"
 
 [resource]
@@ -25,8 +26,8 @@ script = ExtResource("4_4huol")
 color = Color(0.253661, 0.451316, 0.270026, 1)
 hull = SubResource("Resource_k80hi")
 weapons = Array[ExtResource("5_k80hi")]([ExtResource("6_77wf1")])
-improvements = Array[ExtResource("3_tx3e5")]([])
-cpus = Array[ExtResource("1_77wf1")]([])
+improvements = Array[ExtResource("1_kvbh0")]([])
+cpus = Array[ExtResource("1_kvbh0")]([])
 extra_slots = {
 0: 0,
 1: 0,

@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=13 format=3 uid="uid://6n4v4eg53ts2"]
+
+[ext_resource type="Script" uid="uid://bdbf87l5e6ln0" path="res://scenes/bots/effect_resource.gd" id="1_0u3vw"]
+[ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="2_qv8pq"]
+[ext_resource type="Texture2D" uid="uid://8rngplwdunm2" path="res://res/bots/bot_turret.png" id="3_pv5de"]
+[ext_resource type="Script" uid="uid://cg2o74g7rk80m" path="res://scenes/bots/hull.gd" id="4_7hjbs"]
+[ext_resource type="Script" uid="uid://dwuc4gihwllw" path="res://scenes/bots/bot_definition.gd" id="5_48ad4"]
+[ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="6_rknhp"]
+
+[sub_resource type="Resource" id="Resource_k0yso"]
+script = ExtResource("2_qv8pq")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.5
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_pdx5n"]
+script = ExtResource("2_qv8pq")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.6
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_0u3vw"]
+script = ExtResource("2_qv8pq")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.6
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_lpqli"]
+script = ExtResource("4_7hjbs")
+cost = 100
+health = 5.0
+speed = 10.0
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "Snail II"
+sprite = ExtResource("3_pv5de")
+
+[sub_resource type="Resource" id="Resource_qv8pq"]
+script = ExtResource("1_0u3vw")
+cost = 100
+modifier = Dictionary[int, float]({
+12: 1.2
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_pv5de"]
+script = ExtResource("6_rknhp")
+base_frequency = 0.2
+damage = 1.0
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+description = ""
+
+[resource]
+script = ExtResource("5_48ad4")
+color = Color(0.75, 0.660851, 0.47168, 1)
+hull = SubResource("Resource_lpqli")
+weapons = Array[ExtResource("6_rknhp")]([SubResource("Resource_pv5de")])
+improvements = Array[ExtResource("1_0u3vw")]([SubResource("Resource_qv8pq")])
+cpus = Array[ExtResource("1_0u3vw")]([SubResource("Resource_k0yso"), SubResource("Resource_pdx5n"), SubResource("Resource_0u3vw")])
+extra_slots = {
+0: 0,
+1: 0,
+2: 0
+}

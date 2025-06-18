@@ -12,6 +12,7 @@
 
 + smooth movement
 
+- enemies: friend/foe detection
 
 --- UI ----
 
@@ -94,3 +95,19 @@
 + laser sweep
 
 + no wall bumping
+
+
+
+---- Bot logic -----
+
+Color: 
+  - light: easy - dark: hard
+  - green: normal
+  - blue: defense oriented
+  - red: attack oriented 
+
+Design
+  - bot_small: no real threat
+  - normal: light weapons
+  - large: boss
+  

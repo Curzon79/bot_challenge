@@ -47,14 +47,22 @@ const BOSS_ROOM = {
 	}	
 
 const ENEMIES = {
-	PAWN : 10,
-	BEE: 20,
-	WASP: 35,
-	FIGHTER_PEA: 50,
-	FIGHTER_LIGHT: 50,
-	FIGHTER_STD : 70,
-	FIGHTER_HEAVY: 80,
-	FIGHTER_VERY_HEAVY: 140,
+	PAWN: 10,
+	SNAIL_I: 40,
+	SNAIL_II: 70,
+	SNAIL_III: 100,
+	FLY_I: 30,
+	FLY_II: 40,
+	FLY_III: 50,
+	BEE_I: 70,
+	BEE_II: 120,
+	BEE_III: 160,
+	WASP_I: 60,
+	WASP_II: 90,
+	WASP_III: 120,
+	BAT_I: 100,
+	BAT_II: 120,
+	BAT_III: 180,
 }
 
 const ELITES = {
@@ -66,14 +74,23 @@ const BOSSES = [
 	BOSS_1
 ]
 
-
 const PAWN = "res://scenes/bots/enemies/pawn.tres"
-const BEE = "res://scenes/bots/enemies/bee.tres"
-const WASP = "res://scenes/bots/enemies/wasp.tres"
-const FIGHTER_HEAVY = "res://scenes/bots/enemies/fighter_heavy.tres"
-const FIGHTER_LIGHT = "res://scenes/bots/enemies/fighter_light.tres"
-const FIGHTER_PEA = "res://scenes/bots/enemies/fighter_pea.tres"
-const FIGHTER_STD = "res://scenes/bots/enemies/fighter_std.tres"
+const BAT_I = "res://scenes/bots/enemies/Bat I.tres"
+const BAT_II = "res://scenes/bots/enemies/Bat II.tres"
+const BAT_III = "res://scenes/bots/enemies/Bat III.tres"
+const BEE_I = "res://scenes/bots/enemies/Bee I.tres"
+const BEE_II = "res://scenes/bots/enemies/Bee II.tres"
+const BEE_III = "res://scenes/bots/enemies/Bee III.tres"
+const FLY_I = "res://scenes/bots/enemies/Fly I.tres"
+const FLY_II = "res://scenes/bots/enemies/Fly II.tres"
+const FLY_III = "res://scenes/bots/enemies/Fly III.tres"
+const SNAIL_I = "res://scenes/bots/enemies/Snail I.tres"
+const SNAIL_II = "res://scenes/bots/enemies/Snail II.tres"
+const SNAIL_III = "res://scenes/bots/enemies/Snail III.tres"
+const WASP_I = "res://scenes/bots/enemies/Wasp I.tres"
+const WASP_II = "res://scenes/bots/enemies/Wasp II.tres"
+const WASP_III = "res://scenes/bots/enemies/Wasp III.tres"
+
 const FIGHTER_VERY_HEAVY = "res://scenes/bots/enemies/fighter_very_heavy.tres"
 const FIGHTER_SUPER_HEAVY = "res://scenes/bots/enemies/fighter_super_heavy.tres"
 

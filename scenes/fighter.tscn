@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://dcfm8j5usc016"]
 
 [ext_resource type="Script" uid="uid://i5x48jgqdbf2" path="res://scenes/fighter.gd" id="1_a4q2m"]
-[ext_resource type="Texture2D" uid="uid://cgigv44lgkq60" path="res://res/bot.png" id="2_1q4ya"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_38ety"]
 [ext_resource type="Script" uid="uid://dxrp70hnuabum" path="res://scenes/controller/default_bot.gd" id="2_eelhu"]
+[ext_resource type="Texture2D" uid="uid://uf6yodjwv1i5" path="res://res/bots/bot_med.png" id="4_1bj3w"]
 [ext_resource type="AudioStream" uid="uid://dyg5r68xjda0i" path="res://res/sounds/schuss.wav" id="4_rsphg"]
 [ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/sounds/explosion.wav" id="5_tlqsq"]
 [ext_resource type="Shader" uid="uid://qb857lqqebqr" path="res://scenes/bots/glowing.gdshader" id="7_1bj3w"]
@@ -66,7 +66,7 @@ collide_with_areas = true
 
 [node name="Bot" type="Sprite2D" parent="."]
 scale = Vector2(0.465, 0.465)
-texture = ExtResource("2_1q4ya")
+texture = ExtResource("4_1bj3w")
 
 [node name="death_particles" type="CPUParticles2D" parent="."]
 emitting = false

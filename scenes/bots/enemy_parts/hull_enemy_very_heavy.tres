@@ -13,4 +13,5 @@ weapon_slots = 2
 improvement_slots = 2
 name = "Pigeon"
 icon = ExtResource("1_u01vs")
+sprite = "res://res/bots/bot_dark.png"
 metadata/_custom_type_script = "uid://cg2o74g7rk80m"

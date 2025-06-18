@@ -28,6 +28,9 @@ func set_bot_definition(bot_definition:BotDefinition):
 	health = max_health
 	speed = bot_definition.hull.speed
 	self.modulate = bot_definition.color
+	
+	if (bot_definition.hull.sprite != null):
+		$Bot.texture = bot_definition.hull.sprite
 
 func set_controller(script: Script):
 	controller_script = script
