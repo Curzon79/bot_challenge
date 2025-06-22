@@ -1,16 +1,12 @@
-extends Resource
+extends EffectResource
 
 class_name ExtraSlots
 
 
 #Structure
-@export var cost = 100
 @export var slot_type: BotDefinition.SLOT_TYPE = BotDefinition.SLOT_TYPE.Weapon
 
-#Representtaion
-@export var name: String
-@export var icon: Texture2D
-@export var sprite: Texture2D
 
-
-	
+func get_description() -> String:
+	return "Adds a slot of type: {slot}" \
+			.format({"slot" : BotDefinition.SLOT_TYPE.keys()[slot_type]})

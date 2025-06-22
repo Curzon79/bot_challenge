@@ -6,7 +6,7 @@
 script = ExtResource("1_uwkbh")
 cost = 100
 modifier = Dictionary[int, float]({
-11: 0.98
+11: 1.02
 })
 name = ""
 description = ""

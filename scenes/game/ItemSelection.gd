@@ -47,7 +47,11 @@ const Items = {
 		"res://scenes/bots/parts/cpu_t2_aim_perfect.tres",
 		"res://scenes/bots/parts/weapon_t3_bomb.tres", 
 		"res://scenes/bots/parts/weapon_t3_laser.tres", 
-		"res://scenes/bots/parts/weapon_t3_shocker.tres"
+		"res://scenes/bots/parts/weapon_t3_shocker.tres",
+		"res://scenes/bots/parts/slot_t1_cpu.tres", 
+		"res://scenes/bots/parts/slot_t1_improvement.tres", 
+		"res://scenes/bots/parts/slot_t2_weapon.tres"
+
 	]
 }
 
