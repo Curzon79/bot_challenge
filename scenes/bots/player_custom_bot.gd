@@ -1,5 +1,7 @@
 extends "res://scenes/bots/custom_bot.gd"
 
+class_name PlayerBot
+
 var radar : Node2D
 
 func _ready() -> void:

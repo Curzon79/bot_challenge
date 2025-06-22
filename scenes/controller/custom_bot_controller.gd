@@ -84,7 +84,8 @@ func raycast_sweep(cast:Node):
 		cast.force_raycast_update()		
 		var collider = cast.get_collider()
 		if (collider is Fighter):
-			vision_enemies[collider] = collider.global_position
+			if (is_collider_enemy(cast.get_parent(), collider)):
+				vision_enemies[collider] = collider.global_position
 		elif (collider is Projectile):
 			vision_bullets[collider] = collider.global_position
 		elif (collider != null):
@@ -96,6 +97,14 @@ func raycast_sweep(cast:Node):
 func get_random_direction() -> Vector2:
 	return Vector2(randf() * 2.0 - 1, randf() * 2.0 - 1).normalized()
 
+func is_collider_enemy(self_bot, collider) -> bool:
+	if (!collider is Fighter):
+		return false
+	
+	if (self_bot is PlayerBot or collider is PlayerBot):	
+		return true
+	
+	return false
 
 func check_weapon_availability(bot):
 	for i in range(len(bot_definition.weapons)):

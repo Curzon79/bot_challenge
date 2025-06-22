@@ -12,10 +12,10 @@
 
 + smooth movement
 
-- enemies: friend/foe detection
++ enemies: friend/foe detection
 
--balance: repair too strong
--add slots to upgrade options
++balance: repair too strong
++add slots to upgrade options
 
 --- UI ----
 

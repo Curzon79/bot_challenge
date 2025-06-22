@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_gapwj")
-repair_per_second = 0.1
+repair_per_second = 0.02
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Repair Small"
