@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CPU_Move_Module" load_steps=3 format=3 uid="uid://hjflphsj3pdd"]
 
-[ext_resource type="Texture2D" uid="uid://bue3ephdy3yr0" path="res://res/bot_parts/icon_evade_wall.png" id="1_u6dgo"]
+[ext_resource type="Texture2D" uid="uid://bsoomvddim35r" path="res://res/bot_parts/icon_cpu_move_no_wall.png" id="1_u6dgo"]
 [ext_resource type="Script" uid="uid://b2cre8f5jra7b" path="res://scenes/bots/cpu_move_module.gd" id="2_k48mv"]
 
 [resource]
@@ -10,5 +10,6 @@ target_distance = 50
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Avoid Walls"
+description = ""
 icon = ExtResource("1_u6dgo")
 metadata/_custom_type_script = "uid://b2cre8f5jra7b"

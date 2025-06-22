@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://dhdc2ngrr7sg8"]
 
 [ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="1_312kq"]
-[ext_resource type="Texture2D" uid="uid://ce8axh6nc0u4r" path="res://res/bot_parts/icon_cannon.png" id="1_fcpw2"]
+[ext_resource type="Texture2D" uid="uid://0vlaxmpamxlm" path="res://res/bot_parts/icon_weapon_cannon.png" id="1_fcpw2"]
 
 [resource]
 script = ExtResource("1_312kq")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Imp_Ram_Module" load_steps=3 format=3 uid="uid://cxhn45xd3x4ic"]
 
-[ext_resource type="Texture2D" uid="uid://d28p1mbum7ai2" path="res://res/bot_parts/icon_ram.png" id="1_8oson"]
+[ext_resource type="Texture2D" uid="uid://du06xcbl8c8mi" path="res://res/bot_parts/icon_imp_ram_big.png" id="1_goukg"]
 [ext_resource type="Script" uid="uid://ccncp3jg0orxu" path="res://scenes/bots/imp_ram_module.gd" id="2_qebdv"]
 
 [resource]
@@ -13,5 +13,5 @@ modifier = Dictionary[int, float]({
 })
 name = "Big Ram"
 description = ""
-icon = ExtResource("1_8oson")
+icon = ExtResource("1_goukg")
 metadata/_custom_type_script = "uid://ccncp3jg0orxu"

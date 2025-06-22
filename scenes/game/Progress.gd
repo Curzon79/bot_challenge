@@ -47,7 +47,7 @@ const BOSS_ROOM = {
 	}	
 
 const ENEMIES = {
-	PAWN: 10,
+	AMOEBA: 15,
 	SNAIL_I: 40,
 	SNAIL_II: 70,
 	SNAIL_III: 100,
@@ -74,7 +74,7 @@ const BOSSES = [
 	BOSS_1
 ]
 
-const PAWN = "res://scenes/bots/enemies/pawn.tres"
+const AMOEBA = "res://scenes/bots/enemies/Amoeba I.tres"
 const BAT_I = "res://scenes/bots/enemies/Bat I.tres"
 const BAT_II = "res://scenes/bots/enemies/Bat II.tres"
 const BAT_III = "res://scenes/bots/enemies/Bat III.tres"

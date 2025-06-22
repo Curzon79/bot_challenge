@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CPU_Move_Module" load_steps=3 format=3 uid="uid://dw1a5y76hbbp7"]
 
 [ext_resource type="Script" uid="uid://b2cre8f5jra7b" path="res://scenes/bots/cpu_move_module.gd" id="1_edpnw"]
-[ext_resource type="Texture2D" uid="uid://c1vq54lheqbb5" path="res://res/bot_parts/icon_tracking_ufo.png" id="1_i4p5j"]
+[ext_resource type="Texture2D" uid="uid://cwwv3j2dcf61d" path="res://res/bot_parts/icon_cpu_move_far.png" id="1_i4p5j"]
 
 [resource]
 resource_local_to_scene = true
@@ -11,5 +11,6 @@ target_distance = 500
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Flee Enemy"
+description = ""
 icon = ExtResource("1_i4p5j")
 metadata/_custom_type_script = "uid://b2cre8f5jra7b"

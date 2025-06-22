@@ -43,6 +43,7 @@ func get_full_description() -> String:
 	for key in modifier.keys():
 		var effective_modifier = (modifier[key] * 100 - 100.0)
 		if (key == BotDefinition.Hook.MOD_RECEIVE_DAMAGE): effective_modifier *= -1		#Armor is inverse -> lower is better
+		if (key == BotDefinition.Hook.MOD_FREQUENCY): effective_modifier *= -1		#Armor is inverse -> lower is better
 		if (effective_modifier > 0):
 			full_description += "{key} : +{value}%\n".format({"key":BotDefinition.HookNames[key], "value": effective_modifier})
 		else:

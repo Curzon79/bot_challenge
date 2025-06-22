@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scenes/bots/effect_resource.gd" id="1_r2qic"]
+[ext_resource type="Script" path="res://scenes/bots/hull.gd" id="2_wa3my"]
+[ext_resource type="Script" path="res://scenes/bots/bot_definition.gd" id="3_oawsj"]
+[ext_resource type="Script" path="res://scenes/bots/weapon.gd" id="4_uxmvs"]
+
+[sub_resource type="Resource" id="Resource_ra2bv"]
+script = ExtResource("2_wa3my")
+cost = 100
+health = 2.0
+speed = 250.0
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "Amoeba I"
+
+[sub_resource type="Resource" id="Resource_j86ap"]
+script = ExtResource("1_r2qic")
+cost = 100
+modifier = Dictionary[int, float]({
+12: 1.2
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_2ltq0"]
+script = ExtResource("4_uxmvs")
+base_frequency = 0.25
+damage = 0.2
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+description = ""
+
+[resource]
+script = ExtResource("3_oawsj")
+color = Color(1, 1, 1, 1)
+hull = SubResource("Resource_ra2bv")
+weapons = Array[ExtResource("4_uxmvs")]([SubResource("Resource_2ltq0")])
+improvements = Array[ExtResource("1_r2qic")]([SubResource("Resource_j86ap")])
+cpus = Array[ExtResource("1_r2qic")]([])
+extra_slots = {
+0: 0,
+1: 0,
+2: 0
+}

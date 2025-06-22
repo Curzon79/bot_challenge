@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponBomb" load_steps=3 format=3 uid="uid://bkte1y0dyq4v0"]
 
 [ext_resource type="Script" uid="uid://v8jxc3a6vixs" path="res://scenes/bots/weapon_bomb.gd" id="1_cmsxb"]
-[ext_resource type="Texture2D" uid="uid://be5rs7vpvtlf4" path="res://res/bot_parts/icon_bomb.png" id="1_ddjuh"]
+[ext_resource type="Texture2D" uid="uid://b0w38o6rqs7h0" path="res://res/bot_parts/icon_weapon_mine_big.png" id="1_ddjuh"]
 
 [resource]
 script = ExtResource("1_cmsxb")
@@ -11,5 +11,6 @@ damage = 1.5
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Bomb 2"
+description = ""
 icon = ExtResource("1_ddjuh")
 metadata/_custom_type_script = "uid://sg0e6ejxfyca"

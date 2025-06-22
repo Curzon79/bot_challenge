@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponLaser" load_steps=3 format=3 uid="uid://c1n4ff73mwmqs"]
 
 [ext_resource type="Script" uid="uid://sg0e6ejxfyca" path="res://scenes/bots/weapon_laser.gd" id="1_me6k5"]
-[ext_resource type="Texture2D" uid="uid://bqmnsvnndxsp7" path="res://res/bot_parts/icon_laser.png" id="1_uwdt8"]
+[ext_resource type="Texture2D" uid="uid://c07fcy1m65eg4" path="res://res/bot_parts/icon_weapon_laser.png" id="1_uwdt8"]
 
 [resource]
 script = ExtResource("1_me6k5")
@@ -12,5 +12,6 @@ damage = 1.0
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Laser I"
+description = ""
 icon = ExtResource("1_uwdt8")
 metadata/_custom_type_script = "uid://sg0e6ejxfyca"

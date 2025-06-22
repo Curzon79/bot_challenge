@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CPU_Aim_Module" load_steps=3 format=3 uid="uid://c534t0lt0p08e"]
 
 [ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="1_w4c8t"]
-[ext_resource type="Texture2D" uid="uid://dv0141v07w8u5" path="res://res/bot_parts/icon_aim.png" id="1_xr2a1"]
+[ext_resource type="Texture2D" uid="uid://b0mdanme1e31a" path="res://res/bot_parts/icon_cpu_aim_enemy_3.png" id="1_xr2a1"]
 
 [resource]
 script = ExtResource("1_w4c8t")
@@ -11,5 +11,6 @@ spread_type = 0
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Aim III"
+description = ""
 icon = ExtResource("1_xr2a1")
 metadata/_custom_type_script = "uid://bsbv8r7v5st3w"

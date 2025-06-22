@@ -14,6 +14,9 @@
 
 - enemies: friend/foe detection
 
+-balance: repair too strong
+-add slots to upgrade options
+
 --- UI ----
 
 - upgrade screen
@@ -96,18 +99,20 @@
 
 + no wall bumping
 
-
+- avoid walls
+- 
 
 ---- Bot logic -----
 
 Color: 
   - light: easy - dark: hard
   - green: normal
-  - blue: defense oriented
+  - blue: defense oriented / fast
   - red: attack oriented 
 
 Design
   - bot_small: no real threat
   - normal: light weapons
   - large: boss
+  - turret: stationary
   

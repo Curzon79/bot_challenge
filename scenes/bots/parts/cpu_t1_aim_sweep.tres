@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CPU_Aim_Module" load_steps=3 format=3 uid="uid://5yrvnd0e6oou"]
 
-[ext_resource type="Texture2D" uid="uid://dv0141v07w8u5" path="res://res/bot_parts/icon_aim.png" id="1_6of5i"]
+[ext_resource type="Texture2D" uid="uid://cr4fyrojomihw" path="res://res/bot_parts/icon_cpu_aim_sweep.png" id="1_6of5i"]
 [ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="2_xkr2o"]
 
 [resource]
@@ -13,5 +13,6 @@ modifier = Dictionary[int, float]({
 10: 0.95
 })
 name = "Bullet Sweep"
+description = ""
 icon = ExtResource("1_6of5i")
 metadata/_custom_type_script = "uid://bsbv8r7v5st3w"

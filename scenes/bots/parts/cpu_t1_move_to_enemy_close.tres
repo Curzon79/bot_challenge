@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CPU_Move_Module" load_steps=3 format=3 uid="uid://bbc0aaeer1p6k"]
 
 [ext_resource type="Script" uid="uid://b2cre8f5jra7b" path="res://scenes/bots/cpu_move_module.gd" id="1_i15gx"]
-[ext_resource type="Texture2D" uid="uid://c1vq54lheqbb5" path="res://res/bot_parts/icon_tracking_ufo.png" id="1_w608w"]
+[ext_resource type="Texture2D" uid="uid://db53myj3axwjm" path="res://res/bot_parts/icon_cpu_move_close.png" id="1_w608w"]
 
 [resource]
 script = ExtResource("1_i15gx")
@@ -10,5 +10,6 @@ target_distance = 50
 cost = 100
 modifier = Dictionary[int, float]({})
 name = "Follow Close"
+description = ""
 icon = ExtResource("1_w608w")
 metadata/_custom_type_script = "uid://b2cre8f5jra7b"

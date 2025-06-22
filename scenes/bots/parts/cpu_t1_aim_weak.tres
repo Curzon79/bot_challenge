@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CPU_Aim_Module" load_steps=3 format=3 uid="uid://d2uu5rtuuwp6d"]
 
 [ext_resource type="Script" uid="uid://bsbv8r7v5st3w" path="res://scenes/bots/cpu_aim_module.gd" id="1_1865b"]
-[ext_resource type="Texture2D" uid="uid://dv0141v07w8u5" path="res://res/bot_parts/icon_aim.png" id="1_v4sfl"]
+[ext_resource type="Texture2D" uid="uid://cml0psv8cjeh1" path="res://res/bot_parts/icon_cpu_aim_enemy_1.png" id="1_v4sfl"]
 
 [resource]
 script = ExtResource("1_1865b")
