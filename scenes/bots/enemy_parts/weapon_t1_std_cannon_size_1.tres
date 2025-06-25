@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://bgdb1jgal2daj"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bgdb1jgal2daj"]
 
-[ext_resource type="Texture2D" uid="uid://bgy37m4cgmd7a" path="res://res/bot_parts/cannon_1.png" id="1_l5grt"]
 [ext_resource type="Script" uid="uid://da2ffydwbhbfh" path="res://scenes/bots/weapon.gd" id="2_dljdd"]
 
 [resource]
 script = ExtResource("2_dljdd")
-cost = 100
 base_frequency = 0.05
 damage = 0.1
+cost = 100
+modifier = Dictionary[int, float]({})
 name = "Cannon I"
-icon = ExtResource("1_l5grt")
+description = ""
 metadata/_custom_type_script = "uid://da2ffydwbhbfh"
