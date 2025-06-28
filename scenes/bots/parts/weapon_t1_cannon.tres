@@ -5,10 +5,12 @@
 
 [resource]
 script = ExtResource("1_oqbvd")
-base_frequency = 0.2
+base_frequency = 0.25
 damage = 1.0
 cost = 100
-modifier = Dictionary[int, float]({})
+modifier = Dictionary[int, float]({
+11: 1.1
+})
 name = "Cannon I"
 description = ""
 icon = ExtResource("1_vhwwt")

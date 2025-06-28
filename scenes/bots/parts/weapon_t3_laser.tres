@@ -7,10 +7,12 @@
 script = ExtResource("2_jvpy6")
 duration = 2.0
 sweep = 1000.0
-base_frequency = 4.0
+base_frequency = 3.5
 damage = 1.0
 cost = 500
-modifier = Dictionary[int, float]({})
+modifier = Dictionary[int, float]({
+11: 1.7
+})
 name = "Laser III"
 description = ""
 icon = ExtResource("1_3fr62")

@@ -101,6 +101,7 @@
 
 - avoid walls
 - 
+-follow close corner bug
 
 ---- Bot logic -----
 

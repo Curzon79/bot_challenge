@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_cmsxb")
 time = 0.9
-base_frequency = 0.8
+base_frequency = 0.7
 damage = 1.5
 cost = 100
 modifier = Dictionary[int, float]({})

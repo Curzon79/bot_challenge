@@ -19,7 +19,7 @@ func call_post_process(bot: CustomBot, delta: float):
 		var collision = bot.get_slide_collision(i)
 		var collider = collision.get_collider()
 		
-		if (collider.has_method("receive_damage")):
+		if (collider != null and collider.has_method("receive_damage")):
 			if (runtime_data.has (collider) and runtime_data[collider] > 0):
 				runtime_data[collider] -= delta
 				collider_keys.erase(collider)

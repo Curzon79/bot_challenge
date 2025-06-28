@@ -41,7 +41,9 @@ const Items = {
 		"res://scenes/bots/parts/cpu_t1_aim_no_walls.tres",	
 		"res://scenes/bots/parts/imp_t2_condensator_2.tres", 
 		"res://scenes/bots/parts/imp_t2_engine_fast.tres", 
-		"res://scenes/bots/parts/imp_t2_ram_2.tres"
+		"res://scenes/bots/parts/imp_t2_ram_2.tres",
+		"res://scenes/bots/parts/slot_t2_weapon.tres"
+
 	],
 	"rare":[
 		"res://scenes/bots/parts/cpu_t2_aim_perfect.tres",
@@ -50,7 +52,6 @@ const Items = {
 		"res://scenes/bots/parts/weapon_t3_shocker.tres",
 		"res://scenes/bots/parts/slot_t1_cpu.tres", 
 		"res://scenes/bots/parts/slot_t1_improvement.tres", 
-		"res://scenes/bots/parts/slot_t2_weapon.tres"
 
 	]
 }
