@@ -3,10 +3,11 @@ extends Node2D
 const DEFAULT_BOT = "res://scenes/controller/default_bot.gd"
 
 func _ready() -> void:
-	pass
+	$menu.visible = true
 
 
 func start_game():
+	$menu.visible = false
 	var item_select = load("res://scenes/bots/bot_item_select.tscn").instantiate()
 	item_select.set_items(1.0)
 	add_child(item_select)

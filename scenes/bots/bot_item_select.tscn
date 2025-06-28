@@ -5,10 +5,14 @@
 [ext_resource type="Script" uid="uid://btfp0gbu4h5or" path="res://scenes/bots/bot_item_select.gd" id="2_lrsfk"]
 
 [node name="ItemSelect" type="Panel"]
-offset_left = 40.0
-offset_top = 24.0
-offset_right = 376.0
-offset_bottom = 312.0
+custom_minimum_size = Vector2(632, 376)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = -200.0
+offset_bottom = -144.0
 theme = ExtResource("1_e5pmf")
 script = ExtResource("2_lrsfk")
 
@@ -30,23 +34,23 @@ offset_bottom = 114.0
 [node name="Item2" parent="." instance=ExtResource("1_6yotc")]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 128.0
-offset_right = 122.0
-offset_bottom = 178.0
+offset_top = 136.0
+offset_right = 272.0
+offset_bottom = 206.0
 
 [node name="Item3" parent="." instance=ExtResource("1_6yotc")]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 192.0
-offset_right = 122.0
-offset_bottom = 242.0
+offset_top = 208.0
+offset_right = 272.0
+offset_bottom = 278.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 240.0
-offset_top = 232.0
-offset_right = 312.0
-offset_bottom = 272.0
+offset_left = 232.0
+offset_top = 312.0
+offset_right = 416.0
+offset_bottom = 357.0
 text = "Ok"
 
 [connection signal="selected" from="Item1" to="." method="_on_item_selected"]
