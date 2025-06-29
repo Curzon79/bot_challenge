@@ -8,6 +8,9 @@ const Ranks = [
 	20.0, 		# Rank 2
 ]
 
+const ExtraSlotProbabilty = 0.85
+const SameTypeProbabilty = 0.4
+
 const Items = {
 	"common": [
 		"res://scenes/bots/parts/cpu_t1_aim_forward.tres",
@@ -42,6 +45,8 @@ const Items = {
 		"res://scenes/bots/parts/imp_t2_condensator_2.tres", 
 		"res://scenes/bots/parts/imp_t2_engine_fast.tres", 
 		"res://scenes/bots/parts/imp_t2_ram_2.tres",
+		"res://scenes/bots/parts/slot_t1_cpu.tres", 
+		"res://scenes/bots/parts/slot_t1_improvement.tres", 
 		"res://scenes/bots/parts/slot_t2_weapon.tres"
 
 	],
@@ -50,8 +55,6 @@ const Items = {
 		"res://scenes/bots/parts/weapon_t3_bomb.tres", 
 		"res://scenes/bots/parts/weapon_t3_laser.tres", 
 		"res://scenes/bots/parts/weapon_t3_shocker.tres",
-		"res://scenes/bots/parts/slot_t1_cpu.tres", 
-		"res://scenes/bots/parts/slot_t1_improvement.tres", 
 
 	]
 }
@@ -86,7 +89,10 @@ func get_item_Selection(amount:int = 0) -> Array:
 	var items = []
 	
 	for i in range(amount):
-		items.append(get_random_item())
+		var item = get_random_item()
+		while( not check_item(item, items, Progress.player_character) ):
+			item = get_random_item()
+		items.append(item)
 	
 	return items
 
@@ -105,3 +111,24 @@ func get_random_item():
 	item.merge(addition, option[1])
 	item.rank = rank
 	return item
+
+func check_item(item, items: Array, bot: BotDefinition) -> bool:
+	if (item is ExtraSlots):
+		# slots are slightly more rare if the same type is already there
+		if ( randf() > pow(ExtraSlotProbabilty, bot.extra_slots[item.slot_type])):
+			return false
+		
+		# no more than 3 weapon slots possible
+		if (item.slot_type == BotDefinition.SLOT_TYPE.Weapon and
+			bot.get_slots(BotDefinition.SLOT_TYPE.Weapon) == 3):
+			return false
+	
+	# items are more rare when the samy type is there already
+	for existing_item in items:
+		if (item.matches_type(item)):
+			if (randf() > SameTypeProbabilty):
+				return false
+		
+	return true
+	
+	

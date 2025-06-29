@@ -6,6 +6,7 @@ var weapons: Array[Weapon]
 var improvements: Array[Improvement]
 var cpus: Array[CPU_Module]
 
+
 func _init() -> void:
 	pass
 	#weapons = [

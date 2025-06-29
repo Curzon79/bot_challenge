@@ -8,6 +8,10 @@ const Bullet = preload("res://scenes/projectile.tscn")
 @export var base_frequency = 0.2
 @export var damage = 1.0
 
+func matches_type(other):
+	return other is Weapon
+
+
 func get_description() -> String:
 	return "Shoots bullets at the enemy.\n\nbase damage: {damage}\nbase frequency: {frequency}/s"\
 			.format({"damage" : damage, "frequency":base_frequency})

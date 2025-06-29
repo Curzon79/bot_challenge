@@ -22,6 +22,9 @@ const Prefixes = {
 	"hi" : ["High performance", "Professional", "Military grade"],
 }
 
+func matches_type(other):
+	return false
+
 func does_modify(type):
 	return modifier.has(type)
 	

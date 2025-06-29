@@ -26,6 +26,7 @@ offset_right = 1216.0
 offset_bottom = 760.0
 
 [node name="start" type="Button" parent="menu"]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 472.0
 offset_right = 800.0
