@@ -99,9 +99,9 @@
 
 + no wall bumping
 
-- avoid walls
-- 
--follow close corner bug
++ avoid walls
+
++ follow close corner bug
 
 ---- Bot logic -----
 

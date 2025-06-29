@@ -20,6 +20,8 @@ func call_move(bot:CustomBot):
 	match target:
 		Target.ENEMY:
 			var enemy_position = get_direction_to_closest_enemy(bot.global_position, controller.vision_enemies)
+			if (enemy_position == Vector2()):
+				return Vector2()
 			return get_force_to_position(bot.global_position, enemy_position, target_distance) * 5
 		Target.WALLS:
 			return get_avg_force_to_positions(bot.global_position, controller.vision_all) * 5
