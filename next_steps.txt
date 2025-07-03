@@ -103,6 +103,8 @@
 
 + follow close corner bug
 
+- elite scene bug
+
 ---- Bot logic -----
 
 Color: 

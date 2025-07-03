@@ -9,7 +9,7 @@ const Ranks = [
 ]
 
 const ExtraSlotProbabilty = 0.85
-const SameTypeProbabilty = 0.4
+const SameTypeProbabilty = 0.3
 
 const Items = {
 	"common": [
