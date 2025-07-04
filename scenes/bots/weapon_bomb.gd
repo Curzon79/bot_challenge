@@ -2,7 +2,7 @@ extends Weapon
 
 class_name WeaponBomb
 
-const Bomb = preload("res://scenes/bomb.tscn")
+const Bomb = preload("res://scenes/ui/bomb.tscn")
 
 #Structure
 @export var time = 1.0

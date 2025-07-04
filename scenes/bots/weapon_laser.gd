@@ -2,7 +2,7 @@ extends Weapon
 
 class_name WeaponLaser
 
-const Laser = preload("res://scenes/laser.tscn")
+const Laser = preload("res://scenes/ui/laser.tscn")
 
 #Structure
 @export var duration = 1.0

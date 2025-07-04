@@ -1,0 +1,95 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scenes/bots/effect_resource.gd" id="1_finfp"]
+[ext_resource type="Script" path="res://scenes/bots/cpu_aim_module.gd" id="2_mf45x"]
+[ext_resource type="Script" path="res://scenes/bots/hull.gd" id="3_40lhi"]
+[ext_resource type="Texture2D" path="res://res/bots/bot_stripes.png" id="4_tix6f"]
+[ext_resource type="Script" path="res://scenes/bots/bot_definition.gd" id="5_u12pf"]
+[ext_resource type="Script" path="res://scenes/bots/weapon.gd" id="6_bhtfk"]
+
+[sub_resource type="Resource" id="Resource_u1qop"]
+script = ExtResource("2_mf45x")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.6
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_8weup"]
+script = ExtResource("2_mf45x")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.7
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_fqbt0"]
+script = ExtResource("2_mf45x")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.75
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_m2hkb"]
+script = ExtResource("3_40lhi")
+cost = 100
+health = 10.0
+speed = 400.0
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "Hawk III"
+sprite = ExtResource("4_tix6f")
+
+[sub_resource type="Resource" id="Resource_nlxeu"]
+script = ExtResource("1_finfp")
+cost = 100
+modifier = Dictionary[int, float]({
+12: 2.0
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_08yok"]
+script = ExtResource("6_bhtfk")
+base_frequency = 0.12
+damage = 0.7
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_o7n7b"]
+script = ExtResource("6_bhtfk")
+base_frequency = 0.12
+damage = 0.7
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+description = ""
+
+[resource]
+script = ExtResource("5_u12pf")
+color = Color(0.118286, 0.199219, 0.176456, 1)
+hull = SubResource("Resource_m2hkb")
+weapons = Array[ExtResource("6_bhtfk")]([SubResource("Resource_08yok"), SubResource("Resource_o7n7b")])
+improvements = Array[ExtResource("1_finfp")]([SubResource("Resource_nlxeu")])
+cpus = Array[ExtResource("1_finfp")]([SubResource("Resource_u1qop"), SubResource("Resource_8weup"), SubResource("Resource_fqbt0")])
+extra_slots = {
+0: 0,
+1: 0,
+2: 0
+}

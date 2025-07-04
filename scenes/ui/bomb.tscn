@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dwbi38jxd6n4g"]
 
-[ext_resource type="Script" uid="uid://5jnu6np54ege" path="res://scenes/bomb.gd" id="1_vpdcx"]
+[ext_resource type="Script" uid="uid://5jnu6np54ege" path="res://scenes/ui/bomb.gd" id="1_vpdcx"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_j15uc"]
 [ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/sounds/explosion.wav" id="3_j15uc"]
 

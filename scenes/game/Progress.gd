@@ -66,8 +66,9 @@ const ENEMIES = {
 }
 
 const ELITES = {
-	FIGHTER_VERY_HEAVY: 140,
-	FIGHTER_SUPER_HEAVY: 250,
+	HAWK_I: 160,
+	HAWK_II: 190,
+	HAWK_III: 220,
 }
 
 const BOSSES = [
@@ -91,9 +92,12 @@ const WASP_I = "res://scenes/bots/enemies/Wasp I.tres"
 const WASP_II = "res://scenes/bots/enemies/Wasp II.tres"
 const WASP_III = "res://scenes/bots/enemies/Wasp III.tres"
 
-const FIGHTER_VERY_HEAVY = "res://scenes/bots/enemies/fighter_very_heavy.tres"
-const FIGHTER_SUPER_HEAVY = "res://scenes/bots/enemies/fighter_super_heavy.tres"
+#Elites
+const HAWK_I = "res://scenes/bots/enemies/Hawk I.tres"
+const HAWK_II = "res://scenes/bots/enemies/Hawk II.tres"
+const HAWK_III = "res://scenes/bots/enemies/Hawk III.tres"
 
+#Bosses
 const BOSS_1 = "res://scenes/bots/enemies/boss_1.tres"
 
 #var rooms : Array = []
@@ -117,7 +121,7 @@ func progress_difficulty():
 func get_next_room():
 	if (player_progression > BOSS_THRESHOLD):
 		return BOSS_ROOM
-	return CHALLENGE_ROOMS.pick_random()
+	return CHALLENGE_ROOMS[0]#.pick_random()
 
 func get_enemy_set(room:Dictionary):
 	if (room.has("selection")):

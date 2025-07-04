@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="BotDefinition" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scenes/bots/effect_resource.gd" id="1_325at"]
+[ext_resource type="Script" path="res://scenes/bots/cpu_aim_module.gd" id="2_46flk"]
+[ext_resource type="Script" path="res://scenes/bots/hull.gd" id="3_be6rj"]
+[ext_resource type="Texture2D" path="res://res/bots/bot_stripes.png" id="4_t46cf"]
+[ext_resource type="Script" path="res://scenes/bots/bot_definition.gd" id="5_hdbs3"]
+[ext_resource type="Script" path="res://scenes/bots/weapon.gd" id="6_jrq5v"]
+
+[sub_resource type="Resource" id="Resource_u1qop"]
+script = ExtResource("2_46flk")
+accurracy = 0.8
+selection = 2
+spread_type = 0
+cost = 100
+modifier = Dictionary[int, float]({
+15: 0.6
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_m2hkb"]
+script = ExtResource("3_be6rj")
+cost = 100
+health = 6.0
+speed = 400.0
+cpu_slots = 1
+weapon_slots = 1
+improvement_slots = 1
+name = "Hawk I"
+sprite = ExtResource("4_t46cf")
+
+[sub_resource type="Resource" id="Resource_qoki8"]
+script = ExtResource("1_325at")
+cost = 100
+modifier = Dictionary[int, float]({
+12: 2.0
+})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_e6fck"]
+script = ExtResource("6_jrq5v")
+base_frequency = 0.15
+damage = 0.5
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+description = ""
+
+[sub_resource type="Resource" id="Resource_rex4i"]
+script = ExtResource("6_jrq5v")
+base_frequency = 0.15
+damage = 0.5
+cost = 100
+modifier = Dictionary[int, float]({})
+name = ""
+description = ""
+
+[resource]
+script = ExtResource("5_hdbs3")
+color = Color(0.150925, 0.246094, 0.219327, 1)
+hull = SubResource("Resource_m2hkb")
+weapons = Array[ExtResource("6_jrq5v")]([SubResource("Resource_e6fck"), SubResource("Resource_rex4i")])
+improvements = Array[ExtResource("1_325at")]([SubResource("Resource_qoki8")])
+cpus = Array[ExtResource("1_325at")]([SubResource("Resource_u1qop")])
+extra_slots = {
+0: 0,
+1: 0,
+2: 0
+}

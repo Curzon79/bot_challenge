@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjcj36m060btt"]
 
-[ext_resource type="Script" uid="uid://cy06fk1uh7diy" path="res://scenes/laser.gd" id="1_xmihv"]
+[ext_resource type="Script" uid="uid://cy06fk1uh7diy" path="res://scenes/ui/laser.gd" id="1_xmihv"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_a7dhc"]
 
 [sub_resource type="Curve" id="Curve_a7dhc"]
