@@ -95,9 +95,12 @@ func receive_damage(damage: float):
 		die()
 
 func repair(value: float):
+	var old_health = health
 	health += value
 	health = min(health, max_health)
 	update_health_indication()
+	if int(old_health) + 1 <= health:
+		$heal.emitting = true
 	if health <= 0:
 		die()
 

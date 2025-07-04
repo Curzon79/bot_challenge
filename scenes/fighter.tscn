@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcfm8j5usc016"]
+[gd_scene load_steps=16 format=3 uid="uid://dcfm8j5usc016"]
 
 [ext_resource type="Script" uid="uid://i5x48jgqdbf2" path="res://scenes/fighter.gd" id="1_a4q2m"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="2_38ety"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dyg5r68xjda0i" path="res://res/sounds/schuss.wav" id="4_rsphg"]
 [ext_resource type="AudioStream" uid="uid://b5n7mllqgkgxn" path="res://res/sounds/explosion.wav" id="5_tlqsq"]
 [ext_resource type="Shader" uid="uid://qb857lqqebqr" path="res://scenes/bots/glowing.gdshader" id="7_1bj3w"]
+[ext_resource type="Texture2D" uid="uid://1qv7ou66wl1v" path="res://res/plus.png" id="8_ql5yn"]
 
 [sub_resource type="Curve" id="Curve_38ety"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.271845, 0.80483), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -25,6 +26,14 @@ point_count = 3
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ql5yn"]
 shader = ExtResource("7_1bj3w")
 shader_parameter/color = Color(0, 0, 0.99, 1)
+
+[sub_resource type="Curve" id="Curve_3wvek"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.639344, 0.862069), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ql5yn"]
+offsets = PackedFloat32Array(0, 0.336918, 0.706093, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [node name="fighter" type="CharacterBody2D" groups=["Fighter"]]
 script = ExtResource("1_a4q2m")
@@ -217,5 +226,17 @@ gravity = Vector2(0, 0)
 initial_velocity_max = 55.21
 scale_amount_min = 0.0
 scale_amount_max = 0.01
+
+[node name="heal" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("8_ql5yn")
+one_shot = true
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 34.76
+gravity = Vector2(0, -40.68)
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_3wvek")
+color_ramp = SubResource("Gradient_ql5yn")
 
 [connection signal="finished" from="death_particles" to="." method="_on_death_particles_finished"]
