@@ -20,13 +20,15 @@ var curr_rounds_done = 0
 
 const CUSTOM_BOT_SCENE = preload("res://scenes/bots/custom_bot.tscn")
 @export var hull : Hull
-@export var enemy_bot_defenition : BotDefinition
+@export var enemy_bot_definition : BotDefinition
 
 var bot1
 var bot2
 
 
 func _ready() -> void:
+	Engine.time_scale = 2.0
+	print_result()
 	start_new_round()
 
 
@@ -35,15 +37,21 @@ func start_new_round():
 		print(Weapons_wins)
 		return
 		
-	spawn_bot(get_new_player_bot_defenition(), $playing_field/Startposition.global_position, on_bot_1_died, 1)
-	spawn_bot(enemy_bot_defenition, $playing_field/Startposition2.global_position, on_bot_2_died, 2)
+	spawn_bot(get_new_player_bot_definition(), $playing_field/Startposition.global_position, on_bot_1_died, 1)
+	spawn_bot(enemy_bot_definition, $playing_field/Startposition2.global_position, on_bot_2_died, 2)
+
 	curr_rounds_done += 1
-	if curr_rounds_done == 100:
+	if curr_rounds_done > 100:
 		curr_rounds_done = 0
 		used_weapons += 1
+		
+		print_result()
 
+func print_result():
+	var file = FileAccess.open("res://simulation.dat", FileAccess.WRITE)
+	file.store_string(str(Weapons_wins))
 
-func get_new_player_bot_defenition():
+func get_new_player_bot_definition():
 	var bot_definition = BotDefinition.new()
 	bot_definition.hull = hull
 	bot_definition.weapons.clear()	
@@ -68,8 +76,6 @@ func clear_bots():
 		bot1.queue_free()
 	if bot2:
 		bot2.queue_free()
-
-
 
 func on_bot_1_died():
 	Weapons_wins[weapon_list[used_weapons]] += 1
