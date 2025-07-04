@@ -57,7 +57,7 @@ func spawn_bot(bot_def, position:Vector2, signal_, bot_number):
 		bot.set_bot_definition(bot_def)
 		bot.global_position = position 
 		bot.connect("died", signal_)
-		$bot_root.add_child(bot)
+		call_deferred("add_child", bot)
 		if bot_number == 1:
 			bot1 = bot
 		else:
