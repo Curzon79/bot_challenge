@@ -112,7 +112,6 @@ var player_progression_rank = 0
 
 func _init():
 	#rooms = CHALLENGE_ROOMS.duplicate()
-	
 	reset()
 
 func reset():

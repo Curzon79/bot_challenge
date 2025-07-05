@@ -42,6 +42,7 @@ func player_died():
 	var scene = load("res://scenes/menu_game.tscn").instantiate()
 	get_tree().root.add_child(scene)
 	get_node("/root/room").queue_free()
+	Progress.reset()
 	
 func next_level():
 	#store player health

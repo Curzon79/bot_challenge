@@ -8,8 +8,7 @@ var cpus: Array[CPU_Module]
 
 
 func _init() -> void:
-	pass
-	#weapons = [
+	weapons = [
 		#load("res://scenes/bots/parts/weapon_t1_cannon.tres"), 
 		#load("res://scenes/bots/parts/weapon_t1_laser.tres"), 
 		#load("res://scenes/bots/parts/weapon_t2_cannon_fast.tres"),
@@ -24,8 +23,8 @@ func _init() -> void:
 		#load("res://scenes/bots/parts/weapon_t1_shocker.tres"),
 		#load("res://scenes/bots/parts/weapon_t2_shocker.tres"),
 		#load("res://scenes/bots/parts/weapon_t3_shocker.tres"),
-		#]
-	#improvements = [
+		]
+	improvements = [
 		#load("res://scenes/bots/parts/imp_t1_engine.tres"), 
 		#load("res://scenes/bots/parts/imp_t1_brittler.tres"), 
 		#load("res://scenes/bots/parts/imp_t1_optics_1.tres"), 
@@ -35,7 +34,7 @@ func _init() -> void:
 		#load("res://scenes/bots/parts/imp_t1_ram_1.tres"),
 		#load("res://scenes/bots/parts/imp_t1_condensator.tres"),
 		#load("res://scenes/bots/parts/imp_t1_condensator_2.tres"),
-		#]
+		]
 	cpus = [
 		#load("res://scenes/bots/parts/cpu_t1_aim_weak.tres"), 
 		#load("res://scenes/bots/parts/cpu_t1_aim_med.tres"), 
