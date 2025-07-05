@@ -9,7 +9,7 @@ base_frequency = 0.15
 damage = 1.0
 cost = 100
 modifier = Dictionary[int, float]({
-10: 0.9
+10: 0.95
 })
 name = "Cannon II"
 description = ""

@@ -24,6 +24,8 @@ func _ready() -> void:
 	$Timer.start(time)
 
 func _physics_process(delta: float) -> void:
+	if (self == null):	#shouldn#t ever happen but seems to be possible
+		return
 	self.global_position = ignore_character.global_position
 	var collision_point : Vector2
 	

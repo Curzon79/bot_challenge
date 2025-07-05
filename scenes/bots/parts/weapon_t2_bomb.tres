@@ -9,7 +9,9 @@ time = 0.9
 base_frequency = 0.7
 damage = 1.5
 cost = 100
-modifier = Dictionary[int, float]({})
+modifier = Dictionary[int, float]({
+11: 1.2
+})
 name = "Bomb 2"
 description = ""
 icon = ExtResource("1_ddjuh")

@@ -3,7 +3,6 @@ extends Node2D
 var Weapons_wins = {
 	"res://scenes/bots/parts/weapon_t1_big_cannon.tres" : 0,
 	"res://scenes/bots/parts/weapon_t2_big_cannon.tres" : 0,
-	"res://scenes/bots/parts/weapon_t3_big_cannon.tres" : 0,
 	"res://scenes/bots/parts/weapon_t1_bomb.tres" : 0,
 	"res://scenes/bots/parts/weapon_t2_bomb.tres" : 0,
 	"res://scenes/bots/parts/weapon_t3_bomb.tres" : 0,
@@ -19,8 +18,10 @@ var used_weapons = 0
 var curr_rounds_done = 0
 
 const CUSTOM_BOT_SCENE = preload("res://scenes/bots/custom_bot.tscn")
-@export var hull : Hull
-@export var enemy_bot_definition : BotDefinition
+const PLAYER_CUSTOM_BOT_SCENE = preload("res://scenes/bots/player_custom_bot.tscn")
+#@export var hull : Hull
+#@export var enemy_bot_definition : BotDefinition
+@export var base_bot_definition : BotDefinition
 
 var bot1
 var bot2
@@ -37,8 +38,8 @@ func start_new_round():
 		print(Weapons_wins)
 		return
 		
-	spawn_bot(get_new_player_bot_definition(), $playing_field/Startposition.global_position, on_bot_1_died, 1)
-	spawn_bot(enemy_bot_definition, $playing_field/Startposition2.global_position, on_bot_2_died, 2)
+	spawn_bot(PLAYER_CUSTOM_BOT_SCENE, get_new_player_bot_definition(), $playing_field/Startposition.global_position, on_bot_1_died, 1)
+	spawn_bot(CUSTOM_BOT_SCENE, base_bot_definition, $playing_field/Startposition2.global_position, on_bot_2_died, 2)
 
 	curr_rounds_done += 1
 	if curr_rounds_done > 100:
@@ -52,16 +53,15 @@ func print_result():
 	file.store_string(str(Weapons_wins))
 
 func get_new_player_bot_definition():
-	var bot_definition = BotDefinition.new()
-	bot_definition.hull = hull
+	var bot_definition = base_bot_definition.duplicate()
 	bot_definition.weapons.clear()	
 	var weapon = weapon_list[used_weapons]
 	bot_definition.weapons.append(load(weapon))
 	return bot_definition
 
-func spawn_bot(bot_def, position:Vector2, signal_, bot_number): 
+func spawn_bot(bot_scene, bot_def, position:Vector2, signal_, bot_number): 
 	if (bot_def is BotDefinition):
-		var bot = CUSTOM_BOT_SCENE.instantiate()
+		var bot = bot_scene.instantiate()
 		bot.set_bot_definition(bot_def)
 		bot.global_position = position 
 		bot.connect("died", signal_)

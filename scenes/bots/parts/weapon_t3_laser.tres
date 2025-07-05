@@ -11,7 +11,7 @@ base_frequency = 3.5
 damage = 1.0
 cost = 500
 modifier = Dictionary[int, float]({
-11: 1.7
+11: 1.5
 })
 name = "Laser III"
 description = ""
