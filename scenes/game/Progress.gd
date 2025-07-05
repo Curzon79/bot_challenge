@@ -2,15 +2,10 @@ extends Node
 
 const PROGRESSION_FACTOR = 1.15
 const BOSS_THRESHOLD = 220
+const ELITE_1_RANK = 5
+const ELITE_2_RANK = 7
 
 const CHALLENGE_ROOMS = [
-	{
-		"name": "Challenge 1",
-		"scene": "res://scenes/rooms/challenge_rooms/room_empty_1.tscn",
-		"preview": "res://res/room1.png",
-		"positions" : 1,
-		"selection" : "elite"
-	},
 	{
 		"name": "Challenge 2",
 		"scene": "res://scenes/rooms/challenge_rooms/room_empty_2.tscn",
@@ -37,6 +32,13 @@ const CHALLENGE_ROOMS = [
 		"selection": "swarm"
 	},	
 ]
+const ELITE_ROOM = {
+		"name": "Challenge 1",
+		"scene": "res://scenes/rooms/challenge_rooms/room_empty_1.tscn",
+		"preview": "res://res/room1.png",
+		"positions" : 1,
+		"selection" : "elite"
+	}
 
 const BOSS_ROOM = {
 		"name": "Boss",
@@ -106,22 +108,34 @@ var player_health: float
 var player_inventory: Inventory
 
 var player_progression =  100
+var player_progression_rank = 0
 
 func _init():
 	#rooms = CHALLENGE_ROOMS.duplicate()
 	
+	reset()
+
+func reset():
+	player_progression =  100
+	player_progression_rank = 0
+
 	player_character = load("res://scenes/bots/bot_definitions/player_start.tres").duplicate()
 	player_character.color = Color.CORAL
 	player_health = player_character.hull.health
 	player_inventory = Inventory.new()
-
+	
+	
 func progress_difficulty():
 	player_progression *= PROGRESSION_FACTOR
+	player_progression_rank += 1
 
 func get_next_room():
 	if (player_progression > BOSS_THRESHOLD):
 		return BOSS_ROOM
-	return CHALLENGE_ROOMS[0]#.pick_random()
+	if (player_progression_rank == ELITE_1_RANK or 
+		player_progression_rank == ELITE_2_RANK):
+		return ELITE_ROOM
+	return CHALLENGE_ROOMS.pick_random()
 
 func get_enemy_set(room:Dictionary):
 	if (room.has("selection")):

@@ -6,6 +6,7 @@ signal closed
 	
 func _ready():
 	$AnimationPlayer.play("appear")
+	get_tree().paused = true
 	
 func set_items(tier:float):
 	var item_fields = [$Item1, $Item2, $Item3]
@@ -18,6 +19,7 @@ func set_items(tier:float):
 
 func _on_button_pressed() -> void:
 	if (selected_item):
+		get_tree().paused = false
 		if (selected_item.item is ExtraSlots):
 			Progress.player_character.add_slot(selected_item.item.slot_type)
 		else:
