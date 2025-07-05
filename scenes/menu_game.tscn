@@ -1,23 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgmb6vrlludco"]
+[gd_scene load_steps=9 format=3 uid="uid://dgmb6vrlludco"]
 
 [ext_resource type="Script" uid="uid://dqob7m0ujegbt" path="res://scenes/menu_game.gd" id="1_kf46e"]
-[ext_resource type="Texture2D" uid="uid://8wwvqpvm46p3" path="res://res/background.png" id="2_5kk4x"]
+[ext_resource type="Shader" uid="uid://1b7d5fbqm6cl" path="res://scenes/ui/menu_game.gdshader" id="2_kf46e"]
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="3_bkshc"]
+[ext_resource type="Texture2D" uid="uid://1qv7ou66wl1v" path="res://res/plus.png" id="3_kmjg7"]
+[ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="4_5kk4x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kmjg7"]
+shader = ExtResource("2_kf46e")
+shader_parameter/total_speed = 1.0
+shader_parameter/new_color = Color(0.0432, 0.08928, 0.12, 1)
+shader_parameter/bottom_texture = ExtResource("3_kmjg7")
+shader_parameter/velocity_bottom = Vector2(-0.785, 1.06)
+shader_parameter/size_bottom = -33.02
+shader_parameter/middle_texture = ExtResource("4_5kk4x")
+shader_parameter/velocity_middle = Vector2(-0.19, 0.02)
+shader_parameter/top_texture = ExtResource("4_5kk4x")
+shader_parameter/velocity_top = Vector2(0.1, 0.1)
+
+[sub_resource type="Gradient" id="Gradient_dpr24"]
+offsets = PackedFloat32Array(0, 0.134276, 0.286219, 0.551237, 0.780919, 1)
+colors = PackedColorArray(0.0324, 0.06696, 0.09, 1, 0.0864, 0.46656, 0.72, 1, 0.025, 0.04, 0.05, 1, 0, 0.6, 1, 1, 0, 0, 0, 1, 0, 0.6, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kf46e"]
+gradient = SubResource("Gradient_dpr24")
+fill_from = Vector2(0.764957, 0.730769)
+fill_to = Vector2(0.923077, 0.235043)
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_kf46e")
-
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(608, 336)
-texture = ExtResource("2_5kk4x")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 232.0
-offset_bottom = 72.0
-theme = ExtResource("3_bkshc")
-text = "Bot Fighter"
 
 [node name="menu" type="Control" parent="."]
 layout_mode = 3
@@ -25,12 +36,47 @@ anchors_preset = 0
 offset_right = 1216.0
 offset_bottom = 760.0
 
+[node name="backround_shader" type="TextureRect" parent="menu"]
+material = SubResource("ShaderMaterial_kmjg7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -35.0
+offset_right = -52.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_kf46e")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_top = 82.0
+offset_right = 216.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme = ExtResource("3_bkshc")
+text = "tempurary Name placeholder"
+
 [node name="start" type="Button" parent="menu"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 472.0
-offset_right = 800.0
-offset_bottom = 584.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -56.0
+offset_right = 176.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_bkshc")
 text = "Start"
 

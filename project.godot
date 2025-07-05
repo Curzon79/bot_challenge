@@ -24,6 +24,7 @@ ItemSelection="*res://scenes/game/ItemSelection.gd"
 
 [display]
 
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://bxju2ry5gnu86"
 
 [editor]
