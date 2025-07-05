@@ -35,15 +35,20 @@ func set_bots(bots: Array, player: BotDefinition = null):
 func bot_died():
 	alive_bots -= 1
 	if (alive_bots == 0):
+		#bot won stage
+		player_bot.repair(1)
+		await get_tree().create_timer(2.0).timeout
 		next_level()
 
 func player_died():
 	#game over -> menu
+	
 	var scene = load("res://scenes/menu_game.tscn").instantiate()
 	get_tree().root.add_child(scene)
 	get_node("/root/room").queue_free()
 	Progress.reset()
-	
+
+
 func next_level():
 	#store player health
 	Progress.player_health = player_bot.health

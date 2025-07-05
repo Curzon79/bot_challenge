@@ -18,8 +18,8 @@ func set_items(tier:float):
 		
 
 func _on_button_pressed() -> void:
+	get_tree().paused = false
 	if (selected_item):
-		get_tree().paused = false
 		if (selected_item.item is ExtraSlots):
 			Progress.player_character.add_slot(selected_item.item.slot_type)
 		else:
