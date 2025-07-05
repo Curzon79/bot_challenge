@@ -19,9 +19,11 @@ func set_item(item):
 
 func set_highlight(highlight: bool):
 	if (highlight):
-		modulate = Color.YELLOW
+		$selcted.visible = true
+		#modulate = Color.YELLOW
 	else:
-		modulate = Color.WHITE
+		$selcted.visible = false
+		#modulate = Color.WHITE
 
 func _get_drag_data(_pos):
 	# Use another rext as drag preview.

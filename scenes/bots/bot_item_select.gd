@@ -5,7 +5,7 @@ var selected_item = null
 signal closed
 	
 func _ready():
-	pass
+	$AnimationPlayer.play("appear")
 	
 func set_items(tier:float):
 	var item_fields = [$Item1, $Item2, $Item3]

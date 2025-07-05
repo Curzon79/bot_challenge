@@ -1,35 +1,129 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpgiyqc8s3e7o"]
+[gd_scene load_steps=7 format=3 uid="uid://cpgiyqc8s3e7o"]
 
 [ext_resource type="PackedScene" uid="uid://bes6kt2gocxop" path="res://scenes/bots/builder_item.tscn" id="1_6yotc"]
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_e5pmf"]
 [ext_resource type="Script" uid="uid://btfp0gbu4h5or" path="res://scenes/bots/bot_item_select.gd" id="2_lrsfk"]
 
+[sub_resource type="Animation" id="Animation_lrsfk"]
+resource_name = "appear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(2.54912, 1.8025, 0.5),
+"update": 0,
+"values": [Vector2(0, 707.955), Vector2(0, -2.438), Vector2(0, 96.9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(8.665, 8.665)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.199088, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-68.3938, 147.197), Vector2(-68.394, -2.803), Vector2(-68.394, -168.848)]
+}
+
+[sub_resource type="Animation" id="Animation_flvub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-68.3938, 147.197)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_flvub"]
+_data = {
+&"RESET": SubResource("Animation_flvub"),
+&"appear": SubResource("Animation_lrsfk")
+}
+
 [node name="ItemSelect" type="Panel"]
+process_mode = 3
 custom_minimum_size = Vector2(632, 376)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 320.0
-offset_top = 128.0
-offset_right = -200.0
-offset_bottom = -144.0
+offset_right = -520.0
+offset_bottom = -229.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.965, 0.965)
 theme = ExtResource("1_e5pmf")
 script = ExtResource("2_lrsfk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -68.3938
+offset_top = 147.197
+offset_right = 89.6062
+offset_bottom = 274.197
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 288.0
-offset_bottom = 48.0
+offset_bottom = 51.0
 text = "Select an upgrade"
 
 [node name="Item1" parent="." instance=ExtResource("1_6yotc")]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 64.0
-offset_right = 122.0
-offset_bottom = 114.0
+offset_right = 272.0
+offset_bottom = 134.0
 
 [node name="Item2" parent="." instance=ExtResource("1_6yotc")]
 layout_mode = 0
@@ -52,6 +146,11 @@ offset_top = 312.0
 offset_right = 416.0
 offset_bottom = 357.0
 text = "Ok"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_flvub")
+}
 
 [connection signal="selected" from="Item1" to="." method="_on_item_selected"]
 [connection signal="selected" from="Item2" to="." method="_on_item_selected"]

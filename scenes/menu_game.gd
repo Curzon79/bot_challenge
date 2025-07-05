@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func start_game():
-	$menu.visible = false
+	$menu/start.visible = false
 	var item_select = load("res://scenes/bots/bot_item_select.tscn").instantiate()
 	item_select.set_items(1.0)
 	add_child(item_select)
