@@ -24,8 +24,8 @@ func _ready() -> void:
 	$Timer.start(time)
 
 func _physics_process(delta: float) -> void:
-	if (self == null):	#shouldn#t ever happen but seems to be possible
-		return
+	if (ignore_character == null):	#can happen if the laser is shooting while the character is dying
+		self.queue_free()
 	self.global_position = ignore_character.global_position
 	var collision_point : Vector2
 	
