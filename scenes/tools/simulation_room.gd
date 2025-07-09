@@ -42,7 +42,7 @@ func start_new_round():
 	spawn_bot(CUSTOM_BOT_SCENE, base_bot_definition, $playing_field/Startposition2.global_position, on_bot_2_died, 2)
 
 	curr_rounds_done += 1
-	if curr_rounds_done > 100:
+	if curr_rounds_done >= 100:
 		curr_rounds_done = 0
 		used_weapons += 1
 		
@@ -78,10 +78,10 @@ func clear_bots():
 		bot2.queue_free()
 
 func on_bot_1_died():
-	Weapons_wins[weapon_list[used_weapons]] += 1
 	clear_bots()
 	start_new_round()
 
 func on_bot_2_died():
+	Weapons_wins[weapon_list[used_weapons]] += 1
 	clear_bots()
 	start_new_round()
