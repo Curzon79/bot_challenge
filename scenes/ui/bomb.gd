@@ -1,5 +1,6 @@
 extends Node2D
 
+class_name Bomb
 
 var time = 1.0
 var damage = 1.0
@@ -8,7 +9,6 @@ var ignore_character: Node
 func _ready() -> void:
 	$functional/Timer.wait_time = time
 	
-
 
 func explode():
 	$visuals/explosion_particles.emitting = true

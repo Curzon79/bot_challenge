@@ -23,5 +23,5 @@ func shoot_weapon(command:Command, bot:CustomBot):
 	new_laser.modulate = bot.modulate
 	new_laser.damage = bot.bot_definition.get_modifier(bot, BotDefinition.Hook.MOD_DEAL_DAMAGE, damage)
 	
-	bot.get_parent().add_child(new_laser)
+	bot.add_child(new_laser)
 	

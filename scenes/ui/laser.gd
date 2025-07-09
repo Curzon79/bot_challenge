@@ -1,5 +1,7 @@
 extends RayCast2D
 
+class_name Laser
+
 var ignore_character: Node
 var direction: Vector2
 var time = 1.0

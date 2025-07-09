@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_cmsxb")
-time = 0.9
+time = 1.2
 base_frequency = 0.7
 damage = 1.5
 cost = 100

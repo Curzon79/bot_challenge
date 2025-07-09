@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_sehfa")
-base_frequency = 0.6
+base_frequency = 0.5
 damage = 4.0
 cost = 200
 modifier = Dictionary[int, float]({

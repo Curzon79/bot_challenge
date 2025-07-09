@@ -34,6 +34,7 @@ func _ready() -> void:
 
 
 func start_new_round():
+	clean_up()
 	if used_weapons >= weapon_list.size():
 		print(Weapons_wins)
 		return
@@ -71,17 +72,18 @@ func spawn_bot(bot_scene, bot_def, position:Vector2, signal_, bot_number):
 		else:
 			bot2 = bot
 
-func clear_bots():
-	if bot1:
-		bot1.queue_free()
-	if bot2:
-		bot2.queue_free()
+func clean_up():
+	for child in get_children():
+		if (child is Fighter or 
+			child is Projectile or 
+			child is Bomb or
+			child is Laser ):
+			child.queue_free()
+			child.queue_free()
 
 func on_bot_1_died():
-	clear_bots()
 	start_new_round()
 
 func on_bot_2_died():
 	Weapons_wins[weapon_list[used_weapons]] += 1
-	clear_bots()
 	start_new_round()
