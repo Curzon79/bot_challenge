@@ -35,19 +35,21 @@ func _ready() -> void:
 
 func start_new_round():
 	clean_up()
-	if used_weapons >= weapon_list.size():
-		print(Weapons_wins)
-		return
-		
-	spawn_bot(PLAYER_CUSTOM_BOT_SCENE, get_new_player_bot_definition(), $playing_field/Startposition.global_position, on_bot_1_died, 1)
-	spawn_bot(CUSTOM_BOT_SCENE, base_bot_definition, $playing_field/Startposition2.global_position, on_bot_2_died, 2)
-
 	curr_rounds_done += 1
-	if curr_rounds_done >= 100:
+	if curr_rounds_done >= 300:
 		curr_rounds_done = 0
 		used_weapons += 1
 		
 		print_result()
+
+	if used_weapons >= weapon_list.size():
+		print(Weapons_wins)
+		return
+		
+	spawn_bot(PLAYER_CUSTOM_BOT_SCENE, get_new_player_bot_definition(), $playing_field/Startposition.global_position, on_bot_1_died)
+	spawn_bot(CUSTOM_BOT_SCENE, base_bot_definition, $playing_field/Startposition2.global_position, on_bot_2_died)
+
+
 
 func print_result():
 	var file = FileAccess.open("res://simulation.dat", FileAccess.WRITE)
@@ -60,17 +62,14 @@ func get_new_player_bot_definition():
 	bot_definition.weapons.append(load(weapon))
 	return bot_definition
 
-func spawn_bot(bot_scene, bot_def, position:Vector2, signal_, bot_number): 
+func spawn_bot(bot_scene, bot_def, position:Vector2, signal_): 
 	if (bot_def is BotDefinition):
 		var bot = bot_scene.instantiate()
 		bot.set_bot_definition(bot_def)
 		bot.global_position = position 
 		bot.connect("died", signal_)
 		call_deferred("add_child", bot)
-		if bot_number == 1:
-			bot1 = bot
-		else:
-			bot2 = bot
+		
 
 func clean_up():
 	for child in get_children():
@@ -78,7 +77,6 @@ func clean_up():
 			child is Projectile or 
 			child is Bomb or
 			child is Laser ):
-			child.queue_free()
 			child.queue_free()
 
 func on_bot_1_died():

@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("2_jvpy6")
 duration = 2.0
-sweep = 1000.0
-base_frequency = 3.5
+sweep = 180.0
+base_frequency = 3.0
 damage = 1.0
 cost = 500
 modifier = Dictionary[int, float]({

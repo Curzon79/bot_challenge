@@ -6,11 +6,11 @@
 [resource]
 script = ExtResource("1_b3jfp")
 time = 1.0
-base_frequency = 0.2
+base_frequency = 0.25
 damage = 2.0
 cost = 1000
 modifier = Dictionary[int, float]({
-11: 1.2
+11: 1.3
 })
 name = "Bomb 3"
 description = ""

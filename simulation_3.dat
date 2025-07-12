@@ -1,0 +1,16 @@
+{ 
+"res://scenes/bots/parts/weapon_t1_big_cannon.tres": 42, 
+"res://scenes/bots/parts/weapon_t2_big_cannon.tres": 72, 
+
+"res://scenes/bots/parts/weapon_t1_bomb.tres": 40, 
+"res://scenes/bots/parts/weapon_t2_bomb.tres": 53, 
+"res://scenes/bots/parts/weapon_t3_bomb.tres": 85, 
+
+"res://scenes/bots/parts/weapon_t1_cannon.tres": 48, 
+"res://scenes/bots/parts/weapon_t2_cannon_fast.tres": 65, 
+
+"res://scenes/bots/parts/weapon_t1_laser.tres": 38, 
+"res://scenes/bots/parts/weapon_t2_laser.tres": 79, 
+"res://scenes/bots/parts/weapon_t3_laser.tres": 84, 
+
+"res://scenes/bots/parts/weapon_t1_pea_shooter.tres": 3 }

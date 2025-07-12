@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_m0ipd")
-base_frequency = 0.06
-damage = 0.2
+base_frequency = 0.1
+damage = 0.5
 cost = 100
 modifier = Dictionary[int, float]({
 11: 0.95
