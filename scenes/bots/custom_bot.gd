@@ -40,29 +40,34 @@ func set_controller(script: Script):
 func _process(delta: float) -> void:
 	if ! alive:
 		return
-		
+	
 	if check_freese(delta):
 		return
 	
-	command = controller.getNextCommand($RayCast2D, $ShapeCast2D, delta)
-	#execute current command (if allowed)
-	if (!command.type in allowed_commands):
-		return
-	match command.type:
-		Command.IDLE:
-			pass
-		Command.MOVE:
-			velocity = command.direction * bot_definition.get_speed(self)
-			var collided = move_and_slide()
-			if (collided && controller.has_method("update_last_direction")):
-				controller.update_last_direction(velocity.normalized())
-		Command.SHOOT_W1:
-			shoot_weapon(command, 0)
-		Command.SHOOT_W2:
-			shoot_weapon(command, 1)
-		Command.SHOOT_W3:
-			shoot_weapon(command, 2)
+	while (true): 
+		#we allow multiple shoot command and a single move command
+		command = controller.getNextCommand($RayCast2D, $ShapeCast2D, delta)
+		#execute current command (if allowed)
+		if (!command.type in allowed_commands):
+			return
+		match command.type:
+			Command.IDLE:
+				pass
+				return
+			Command.MOVE:
+				velocity = command.direction * bot_definition.get_speed(self)
+				var collided = move_and_slide()
+				if (collided && controller.has_method("update_last_direction")):
+					controller.update_last_direction(velocity.normalized())
+				return
+			Command.SHOOT_W1:
+				shoot_weapon(command, 0)
+			Command.SHOOT_W2:
+				shoot_weapon(command, 1)
+			Command.SHOOT_W3:
+				shoot_weapon(command, 2)
 			
+	
 
 func receive_damage(damage: float):
 	health -= bot_definition.get_modifier(self, BotDefinition.Hook.MOD_RECEIVE_DAMAGE, damage)
@@ -75,7 +80,7 @@ func shoot_weapon(command, weapon_slot: int):
 	if weapon_cooldowns[weapon_slot].get_time_left() > 0:
 		return
 	
-	weapon_cooldowns[weapon_slot].wait_time = bot_definition.get_shoot_frequency(self, weapon_slot)
+	weapon_cooldowns[weapon_slot].wait_time = weapon_cooldowns[weapon_slot].get_time_left() + bot_definition.get_shoot_frequency(self, weapon_slot)
 	weapon_cooldowns[weapon_slot].start()
 	
 	var pitch = rng.randf_range(1.00, 1.7)

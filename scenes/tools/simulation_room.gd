@@ -1,16 +1,16 @@
 extends Node2D
 
 var Weapons_wins = {
-	"res://scenes/bots/parts/weapon_t1_big_cannon.tres" : 0,
-	"res://scenes/bots/parts/weapon_t2_big_cannon.tres" : 0,
-	"res://scenes/bots/parts/weapon_t1_bomb.tres" : 0,
-	"res://scenes/bots/parts/weapon_t2_bomb.tres" : 0,
-	"res://scenes/bots/parts/weapon_t3_bomb.tres" : 0,
-	"res://scenes/bots/parts/weapon_t1_cannon.tres" : 0,
-	"res://scenes/bots/parts/weapon_t2_cannon_fast.tres" : 0,
-	"res://scenes/bots/parts/weapon_t1_laser.tres" : 0,
-	"res://scenes/bots/parts/weapon_t2_laser.tres" : 0,
-	"res://scenes/bots/parts/weapon_t3_laser.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t1_big_cannon.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t2_big_cannon.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t1_bomb.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t2_bomb.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t3_bomb.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t1_cannon.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t2_cannon_fast.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t1_laser.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t2_laser.tres" : 0,
+	#"res://scenes/bots/parts/weapon_t3_laser.tres" : 0,
 	"res://scenes/bots/parts/weapon_t1_pea_shooter.tres" : 0,
 }
 var weapon_list = Weapons_wins.keys()

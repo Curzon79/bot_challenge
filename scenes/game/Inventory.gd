@@ -10,7 +10,7 @@ var cpus: Array[CPU_Module]
 func _init() -> void:
 	weapons = [
 		#load("res://scenes/bots/parts/weapon_t1_cannon.tres"), 
-		#load("res://scenes/bots/parts/weapon_t1_laser.tres"), 
+		load("res://scenes/bots/parts/weapon_t1_laser.tres"), 
 		#load("res://scenes/bots/parts/weapon_t2_cannon_fast.tres"),
 		#load("res://scenes/bots/parts/weapon_t2_laser.tres"),
 		#load("res://scenes/bots/parts/weapon_t3_laser.tres"),

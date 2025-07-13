@@ -122,6 +122,9 @@ func check_item(item, items: Array, bot: BotDefinition) -> bool:
 		if (item.slot_type == BotDefinition.SLOT_TYPE.Weapon and
 			bot.get_slots(BotDefinition.SLOT_TYPE.Weapon) == 3):
 			return false
+		
+		if (bot.get_slots(item.slot_type) == 5):
+			return false
 	
 	# items are more rare when the samy type is there already
 	for existing_item in items:
