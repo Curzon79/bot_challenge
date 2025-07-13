@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgmb6vrlludco"]
+[gd_scene load_steps=10 format=3 uid="uid://dgmb6vrlludco"]
 
 [ext_resource type="Script" uid="uid://dqob7m0ujegbt" path="res://scenes/menu_game.gd" id="1_kf46e"]
 [ext_resource type="Shader" uid="uid://1b7d5fbqm6cl" path="res://scenes/ui/menu_game.gdshader" id="2_kf46e"]
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="3_bkshc"]
 [ext_resource type="Texture2D" uid="uid://1qv7ou66wl1v" path="res://res/plus.png" id="3_kmjg7"]
 [ext_resource type="Texture2D" uid="uid://cvtkk1jb4wfoi" path="res://res/light.png" id="4_5kk4x"]
+[ext_resource type="AudioStream" uid="uid://d0hy7iwv8fbxi" path="res://res/sounds/click.wav" id="6_bkshc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kmjg7"]
 shader = ExtResource("2_kf46e")
@@ -79,5 +80,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_bkshc")
 text = "Start"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bkshc")
 
 [connection signal="pressed" from="menu/start" to="." method="start_game"]

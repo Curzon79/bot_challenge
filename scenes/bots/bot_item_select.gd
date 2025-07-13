@@ -18,7 +18,14 @@ func set_items(tier:float):
 		
 
 func _on_button_pressed() -> void:
+	#do click sound
+	$AudioStreamPlayer.play()
+	
+	$AnimationPlayer.play("disappear")
 	get_tree().paused = false
+	
+	await $AnimationPlayer.animation_finished
+	
 	if (selected_item):
 		if (selected_item.item is ExtraSlots):
 			Progress.player_character.add_slot(selected_item.item.slot_type)

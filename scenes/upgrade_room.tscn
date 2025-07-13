@@ -1,8 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfnka5feom23q"]
+[gd_scene load_steps=8 format=3 uid="uid://cfnka5feom23q"]
 
 [ext_resource type="Script" uid="uid://ckn2eia1kpbsj" path="res://scenes/upgrade_room.gd" id="1_en2w0"]
 [ext_resource type="PackedScene" uid="uid://dv5tw37ef07im" path="res://scenes/bots/bot_builder.tscn" id="2_wkujk"]
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="3_ltfsr"]
+[ext_resource type="AudioStream" uid="uid://d0hy7iwv8fbxi" path="res://res/sounds/click.wav" id="4_h5fag"]
+
+[sub_resource type="Animation" id="Animation_wkujk"]
+resource_name = "appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3497, 2134), Vector2(579, 275)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1147, -681), Vector2(327, 719)]
+}
+
+[sub_resource type="Animation" id="Animation_h5fag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3497, 2134)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1147, -681)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_krimu"]
+_data = {
+&"RESET": SubResource("Animation_h5fag"),
+&"appear": SubResource("Animation_wkujk")
+}
 
 [node name="upgrade" type="Node2D"]
 script = ExtResource("1_en2w0")
@@ -26,5 +88,21 @@ offset_right = 1144.0
 offset_bottom = 624.0
 theme = ExtResource("3_ltfsr")
 text = "Next Level"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -1147.0
+offset_top = -681.0
+offset_right = 2350.0
+offset_bottom = 1453.0
+theme = ExtResource("3_ltfsr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel")
+libraries = {
+&"": SubResource("AnimationLibrary_krimu")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h5fag")
 
 [connection signal="pressed" from="start" to="." method="start_game"]

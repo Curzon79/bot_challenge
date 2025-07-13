@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv5tw37ef07im"]
+[gd_scene load_steps=7 format=3 uid="uid://dv5tw37ef07im"]
 
 [ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_av852"]
 [ext_resource type="Script" uid="uid://c1rfjij3co4lc" path="res://scenes/bots/bot_builder.gd" id="2_5u2f6"]
+[ext_resource type="AudioStream" uid="uid://cqfo4itp6d4rv" path="res://res/sounds/item_select.wav" id="3_v2k25"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u2f6"]
+bg_color = Color(0.72549, 0.352941, 0.270588, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2k25"]
+bg_color = Color(0.380392, 0.552941, 0.752941, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ii343"]
+bg_color = Color(0.447059, 0.45098, 0.345098, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="BotBuilder" type="Control"]
 layout_mode = 3
@@ -53,25 +90,40 @@ layout_mode = 0
 offset_left = 640.0
 offset_top = 24.0
 offset_right = 1120.0
-offset_bottom = 608.0
+offset_bottom = 485.0
 current_tab = 0
 
 [node name="Weapons" type="TabBar" parent="Inventory"]
 layout_mode = 2
 metadata/_tab_index = 0
 
+[node name="Panel" type="Panel" parent="Inventory/Weapons"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 484.0
+offset_bottom = 423.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5u2f6")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Weapons"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 13.0
 offset_right = 384.0
-offset_bottom = 509.0
+offset_bottom = 405.0
 theme_override_constants/separation = 8
 
 [node name="Cpu" type="TabBar" parent="Inventory"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="Panel" type="Panel" parent="Inventory/Cpu"]
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 484.0
+offset_bottom = 423.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v2k25")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Cpu"]
 layout_mode = 0
@@ -86,6 +138,13 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
+[node name="Panel" type="Panel" parent="Inventory/Improvements"]
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 484.0
+offset_bottom = 423.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ii343")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Improvements"]
 layout_mode = 0
 offset_left = 64.0
@@ -93,3 +152,6 @@ offset_top = 13.0
 offset_right = 448.0
 offset_bottom = 509.0
 theme_override_constants/separation = 8
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v2k25")

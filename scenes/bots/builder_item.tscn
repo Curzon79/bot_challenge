@@ -1,9 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bes6kt2gocxop"]
+[gd_scene load_steps=7 format=3 uid="uid://bes6kt2gocxop"]
 
 [ext_resource type="Script" uid="uid://csavps1uq1vla" path="res://scenes/bots/builder_item.gd" id="1_igkdc"]
-[ext_resource type="Theme" uid="uid://dx7xs6c0v4ixh" path="res://scenes/menu.tres" id="1_wtlpt"]
 [ext_resource type="Texture2D" uid="uid://c7ttk2d0kaoqb" path="res://res/ui/stars.png" id="3_8jfs1"]
+[ext_resource type="AudioStream" uid="uid://cqfo4itp6d4rv" path="res://res/sounds/item_select.wav" id="4_jt4nr"]
 [ext_resource type="Texture2D" uid="uid://bsagbr5xrc7xw" path="res://res/pfeil.png" id="4_nr0qr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jfs1"]
+bg_color = Color(0, 0, 0, 0.145098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="Theme" id="Theme_wtlpt"]
 
@@ -13,7 +25,7 @@ offset_left = -8.0
 offset_top = -8.0
 offset_right = 256.0
 offset_bottom = 62.0
-theme = ExtResource("1_wtlpt")
+theme_override_styles/panel = SubResource("StyleBoxFlat_8jfs1")
 script = ExtResource("1_igkdc")
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -59,5 +71,8 @@ position = Vector2(-289, -1)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("4_nr0qr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jt4nr")
 
 [connection signal="gui_input" from="Icon" to="." method="_on_icon_gui_input"]

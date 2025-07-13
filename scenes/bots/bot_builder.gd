@@ -45,6 +45,8 @@ func fill_inventory():
 		
 
 func add_item(control:Control, item:Resource):
+		#do ddtt sound
+		$AudioStreamPlayer.play()
 		var item_box = ITEM_SCENE.instantiate()
 		item_box.item = item
 		control.add_child(item_box)

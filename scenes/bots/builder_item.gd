@@ -18,6 +18,8 @@ func set_item(item):
 	$Rank.value = item.rank
 
 func set_highlight(highlight: bool):
+	#do ddtt sound
+	$AudioStreamPlayer.play()
 	if (highlight):
 		$selcted.visible = true
 		#modulate = Color.YELLOW
