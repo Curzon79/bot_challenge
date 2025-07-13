@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	if ! alive:
 		return
 		
-	if check_freese(delta):
+	if check_freeze(delta):
 		return
 	command = controller.getNextCommand($RayCast2D, $ShapeCast2D, delta)
 	#execute current command (if allowed)
@@ -128,7 +128,7 @@ func die():
 	$Light.visible = false
 	$CPUParticles2D.visible = false
 
-func check_freese(delta):
+func check_freeze(delta):
 	if freeze_time > 0:
 		if ! $shocked_particles.emitting:
 			$shocked_particles.emitting = true

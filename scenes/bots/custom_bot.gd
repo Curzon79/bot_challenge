@@ -7,10 +7,14 @@ class_name CustomBot
 const custom_controller_script = preload("res://scenes/controller/custom_bot_controller.gd")
 
 var weapon_cooldowns = []
+const COOLDOWN_OFFSET = 0.2
 
 func _ready() -> void:
 	#initialize bot
 	weapon_cooldowns = [$cooldown, $cooldown2, $cooldown3]
+	for cooldown in weapon_cooldowns:		#hack for making timer go below 0
+		cooldown.wait_time = COOLDOWN_OFFSET
+		cooldown.start()
 	#set_bot_definition(bot_definition)
 	update_health_indication()
 	
@@ -41,7 +45,7 @@ func _process(delta: float) -> void:
 	if ! alive:
 		return
 	
-	if check_freese(delta):
+	if check_freeze(delta):
 		return
 	
 	while (true): 
@@ -77,7 +81,7 @@ func receive_damage(damage: float):
 
 
 func shoot_weapon(command, weapon_slot: int):
-	if weapon_cooldowns[weapon_slot].get_time_left() > 0:
+	if weapon_cooldowns[weapon_slot].get_time_left() > COOLDOWN_OFFSET:
 		return
 	
 	weapon_cooldowns[weapon_slot].wait_time = weapon_cooldowns[weapon_slot].get_time_left() + bot_definition.get_shoot_frequency(self, weapon_slot)

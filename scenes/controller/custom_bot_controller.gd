@@ -108,7 +108,7 @@ func is_collider_enemy(self_bot, collider) -> bool:
 
 func check_weapon_availability(bot):
 	for i in range(len(bot_definition.weapons)):
-		if (bot.weapon_cooldowns[i].time_left <= 0):
+		if (bot.weapon_cooldowns[i].time_left <= CustomBot.COOLDOWN_OFFSET):
 			return Command.new(SHOOT_CMDS[i], get_aim_direction(bot, vision_enemies.keys(), vision_all))
 		
 	return null
