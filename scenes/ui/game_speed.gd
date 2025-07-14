@@ -2,10 +2,7 @@ extends Node2D
 
 var hidden_ = true
 
-func _on_h_slider_drag_ended(value_changed: bool) -> void:
-	if ! value_changed:
-		return
-	Engine.time_scale = $HSlider.value
+
 
 
 func _on_button_pressed() -> void:
@@ -27,3 +24,8 @@ func _on_pause_pressed() -> void:
 
 func _on_play_pressed() -> void:
 	get_tree().paused = false
+
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	Engine.time_scale = value

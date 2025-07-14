@@ -20,6 +20,16 @@ func _ready():
 	add_child(TIME_SCENE.instantiate())
 	add_child(START_TIMER.instantiate())
 
+
+func clean_up():
+	for child in get_children():
+		if (child is Fighter or 
+			child is Projectile or 
+			child is Bomb or
+			child is Laser ):
+			child.queue_free()
+			
+			
 func add_sound():
 	var audioPlayer = AudioStreamPlayer.new()
 	audioPlayer.stream = load("res://res/sounds/background_theme_1.mp3")
@@ -37,7 +47,9 @@ func bot_died():
 	if (alive_bots == 0):
 		#bot won stage
 		player_bot.repair(1)
+		Engine.time_scale = 1
 		await get_tree().create_timer(2.0).timeout
+		clean_up()
 		next_level()
 
 func player_died():

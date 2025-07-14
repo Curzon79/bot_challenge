@@ -118,6 +118,7 @@ layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="Panel" type="Panel" parent="Inventory/Cpu"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = -4.0
 offset_right = 484.0
@@ -138,6 +139,7 @@ layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="Panel" type="Panel" parent="Inventory/Improvements"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = -4.0
 offset_right = 484.0

@@ -183,7 +183,7 @@ theme = SubResource("Theme_0wtdq")
 text = "Quit"
 flat = true
 
-[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Node2D/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
