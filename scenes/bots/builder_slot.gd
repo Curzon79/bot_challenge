@@ -19,6 +19,9 @@ func _can_drop_data(_pos, data):
 			return data is CPU_Module
 	
 func _drop_data(_pos, data):
+	#do ddtt sound
+	$AudioStreamPlayer.play()
+		
 	emit_signal("dropped", data, item)
 	set_item(data)
 

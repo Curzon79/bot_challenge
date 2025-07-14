@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bes6kt2gocxop"]
+[gd_scene load_steps=9 format=3 uid="uid://bes6kt2gocxop"]
 
 [ext_resource type="Script" uid="uid://csavps1uq1vla" path="res://scenes/bots/builder_item.gd" id="1_igkdc"]
+[ext_resource type="Shader" uid="uid://djnya03k756aq" path="res://scenes/ui/rounded_corners.gdshader" id="2_jt4nr"]
 [ext_resource type="Texture2D" uid="uid://c7ttk2d0kaoqb" path="res://res/ui/stars.png" id="3_8jfs1"]
 [ext_resource type="AudioStream" uid="uid://cqfo4itp6d4rv" path="res://res/sounds/item_select.wav" id="4_jt4nr"]
 [ext_resource type="Texture2D" uid="uid://bsagbr5xrc7xw" path="res://res/pfeil.png" id="4_nr0qr"]
@@ -17,6 +18,10 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i36bc"]
+shader = ExtResource("2_jt4nr")
+shader_parameter/radius = 0.125
+
 [sub_resource type="Theme" id="Theme_wtlpt"]
 
 [node name="BuilderItem" type="Panel"]
@@ -29,6 +34,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8jfs1")
 script = ExtResource("1_igkdc")
 
 [node name="Icon" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_i36bc")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 16.0
@@ -75,4 +81,4 @@ texture = ExtResource("4_nr0qr")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jt4nr")
 
-[connection signal="gui_input" from="Icon" to="." method="_on_icon_gui_input"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

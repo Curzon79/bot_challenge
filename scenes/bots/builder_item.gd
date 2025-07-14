@@ -46,8 +46,8 @@ func _get_drag_data(_pos):
 	return item
 
 
-func _on_icon_gui_input(event: InputEvent) -> void:
+
+
+func _on_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.pressed):
 		emit_signal("selected", self)
-		
-	

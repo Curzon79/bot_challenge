@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwrnnp4vpy1u8"]
+[gd_scene load_steps=6 format=3 uid="uid://bwrnnp4vpy1u8"]
 
 [ext_resource type="Script" uid="uid://de1fxqpypet2u" path="res://scenes/bots/builder_slot.gd" id="1_6u4wj"]
 [ext_resource type="Texture2D" uid="uid://b2darjujfkq5n" path="res://res/ui/cpu_base.png" id="2_g01it"]
 [ext_resource type="Texture2D" uid="uid://c7ttk2d0kaoqb" path="res://res/ui/stars.png" id="3_65bbp"]
+[ext_resource type="AudioStream" uid="uid://cqfo4itp6d4rv" path="res://res/sounds/item_select.wav" id="4_e6ibr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u4wj"]
 bg_color = Color(0.272456, 0.638567, 0.857472, 1)
@@ -45,3 +46,6 @@ offset_bottom = 48.0
 max_value = 5.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_65bbp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e6ibr")
